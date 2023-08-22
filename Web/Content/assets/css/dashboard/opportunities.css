@@ -1,0 +1,380 @@
+﻿.page-opportunities .card {
+  position: relative;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  max-width: 514px; }
+
+.page-project-details .row {
+  margin-bottom: 0; }
+
+.page-project-details ._ficha-image {
+  position: relative;
+  min-height: 160px;
+  max-height: 540px;
+  overflow: hidden; }
+  .page-project-details ._ficha-image .bottom-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 54px;
+    background-color: rgba(0, 0, 0, 0.7); }
+  .page-project-details ._ficha-image .bottom-background.loan {
+    border-top: 4px solid #b7da70;
+    color: #b7da70; }
+  .page-project-details ._ficha-image i.fa {
+    margin-right: 5px;
+    font-size: 30px; }
+
+.page-project-details .icon-financial-type {
+  position: absolute;
+  bottom: 7px;
+  left: 15px;
+  width: 100%; }
+
+.page-project-details .img-responsive {
+  display: block;
+  width: 100%; }
+
+.page-project-details .project-grouped-info-sheet {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #fff; }
+  .page-project-details .project-grouped-info-sheet .city-info, .page-project-details .project-grouped-info-sheet .property-info {
+    font-size: 15px;
+    color: #666; }
+  .page-project-details .project-grouped-info-sheet .flip-container {
+    border-top: 0 !important; }
+  .page-project-details .project-grouped-info-sheet .title, .page-project-details .project-grouped-info-sheet .percents, .page-project-details .project-grouped-info-sheet .time {
+    font-weight: 700;
+    font-size: 14px;
+    color: #666; }
+  .page-project-details .project-grouped-info-sheet .time {
+    font-weight: 400; }
+  .page-project-details .project-grouped-info-sheet dl.investment-bar {
+    margin: 10px 0; }
+    .page-project-details .project-grouped-info-sheet dl.investment-bar dd.total {
+      background-color: #f1f1f1;
+      width: 100%;
+      height: 10px;
+      position: relative;
+      overflow: hidden; }
+      .page-project-details .project-grouped-info-sheet dl.investment-bar dd.total span.percent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        background-color: #33b5e5; }
+
+.page-project-details .status-project-band {
+  padding: 8px 15px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px; }
+  .page-project-details .status-project-band .status-name {
+    font-weight: 700; }
+
+.page-project-details .status-project-band {
+  padding: 8px 15px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12px; }
+
+.page-project-details .status-project-band.standar-color {
+  color: #2a1b1d;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #f5f5f5; }
+
+.page-project-details .status-project-band.marketplace-color {
+  background-color: #33b5e5; }
+
+.page-project-details .flip-container__wrapper {
+  border: 1px solid #b8b8b8; }
+  .page-project-details .flip-container__wrapper .front {
+    padding-top: 0; }
+  .page-project-details .flip-container__wrapper .back {
+    padding: 5px 5px 5px 10px;
+    background-color: transparent; }
+    .page-project-details .flip-container__wrapper .back p {
+      font-size: 12px;
+      color: #666; }
+
+.page-project-details .flip-container {
+  perspective: 800px;
+  transform-style: preserve-3d; }
+  .page-project-details .flip-container .info-triangle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 98;
+    cursor: pointer; }
+  .page-project-details .flip-container .front {
+    z-index: 2; }
+  .page-project-details .flip-container .back {
+    background-color: #f1f0f0;
+    color: #666;
+    text-align: left;
+    font-weight: 400;
+    font-size: 12px;
+    position: absolute;
+    width: 100%; }
+
+.page-project-details .flip-container__wrapper__flipper {
+  -webkit-transition: -webkit-transform .5s;
+  -moz-transition: -moz-transform .5s;
+  -o-transition: -o-transform .5s;
+  transition: transform .5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative; }
+
+.page-project-details .front-info-profitability, .page-project-details .front-info-investment {
+  font-weight: 400;
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+  margin: 14px 0; }
+
+.page-project-details .front-info-profitability {
+  border-right: 1px solid #ccc; }
+
+.page-project-details .flip-container.infostocks .front-info-investment.ahorro.titles, .page-project-details .flip-container.infostocks .front-info-profitability.titles {
+  margin: 10px 0;
+  font-size: 9px; }
+
+.page-project-details .flip-container.infostocks .front-info-investment.ahorro.titles .number-wrapper, .page-project-details .flip-container.infostocks .front-info-profitability.titles .number-wrapper {
+  font-size: 13px; }
+
+.page-project-details .nopadding-right-md {
+  padding-right: 0; }
+
+.page-project-details .nota-mkplace p {
+  padding-top: 10px;
+  font-size: 11px;
+  margin-bottom: 0; }
+
+.page-project-details .small-percent {
+  font-size: 11px; }
+
+.page-project-details .front-info-profitability .number-wrapper, .page-project-details .front-info-investment .number-wrapper {
+  color: #463d3e;
+  font-size: 2em; }
+
+.page-project-details .simulador-row .simulador-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 40px; }
+
+.page-project-details .form-control {
+  height: 1rem;
+  margin-top: -3px;
+  margin-left: 4px; }
+
+.page-project-details #simulador-result, .page-project-details #simulador-result-xs {
+  font-weight: 500;
+  color: #463d3e;
+  overflow: hidden;
+  max-width: 45px;
+  text-align: right;
+  font-size: 20px;
+  word-wrap: break-word;
+  line-height: 40px; }
+
+.page-project-details .st-btns {
+  direction: ltr;
+  display: block;
+  opacity: 1;
+  text-align: center;
+  z-index: 94034; }
+  .page-project-details .st-btns .st-btn {
+    background-color: #33b5e5;
+    cursor: pointer;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin: 2px;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    white-space: nowrap;
+    -moz-transition: top 0.2s ease-in;
+    -ms-transition: top 0.2s ease-in;
+    -o-transition: top 0.2s ease-in;
+    -webkit-transition: top 0.2s ease-in;
+    transition: top 0.2s ease-in; }
+  .page-project-details .st-btns .st-btn > i {
+    color: #FFFFFF;
+    width: 20px; }
+  .page-project-details .st-btns .column-section-title {
+    font-weight: 700;
+    font-size: 12px;
+    color: #493d3e;
+    text-transform: uppercase; }
+
+.page-project-details .single-precio-zona, .page-project-details .linea-temporal-section {
+  border: 1px solid #ccc;
+  padding: 15px 15px 0 15px;
+  background-color: #fff; }
+  .page-project-details .single-precio-zona .temporal-point-title, .page-project-details .linea-temporal-section .temporal-point-title {
+    font-size: 16px;
+    color: #666; }
+  .page-project-details .single-precio-zona .temporal-point-date, .page-project-details .linea-temporal-section .temporal-point-date {
+    font-size: 13px;
+    color: #999; }
+
+.page-project-details .nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  padding: 0;
+  margin-left: 0; }
+
+.page-project-details .nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0; }
+
+.page-project-details .project-intro-links {
+  box-shadow: none; }
+  .page-project-details .project-intro-links > li {
+    display: inline-block !important;
+    width: 25% !important;
+    float: left !important;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    display: inline-block !important; }
+    .page-project-details .project-intro-links > li:first-child {
+      border-left: 1px solid #ccc !important; }
+    .page-project-details .project-intro-links > li:last-child {
+      border-right: 1px solid #ccc !important; }
+    .page-project-details .project-intro-links > li > a,
+    .page-project-details .project-intro-links > li > div.tablink {
+      display: block;
+      min-height: initial !important;
+      border: 0 !important;
+      padding: 14px 5px;
+      background-color: #dcdddf;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #57585a;
+      text-align: center;
+      border-radius: 0; }
+    .page-project-details .project-intro-links > li > a,
+    .page-project-details .project-intro-links > li > div.tablink {
+      display: block;
+      min-height: initial !important;
+      border: 0 !important;
+      padding: 14px 5px;
+      background-color: #dcdddf;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #57585a;
+      text-align: center;
+      border-radius: 0; }
+    .page-project-details .project-intro-links > li > a.active {
+      background-color: #33b5e5;
+      color: #fff; }
+  .page-project-details .project-intro-links > li.four-tabs {
+    width: 25% !important; }
+  .page-project-details .project-intro-links > li.three-tabs {
+    width: calc(100% / 3) !important; }
+
+.page-project-details .tab-content {
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  background-color: #fff; }
+
+.page-project-details .tab-content-single-project {
+  min-height: 556px; }
+
+.page-project-details .project-content {
+  font-size: 14px; }
+
+.page-project-details .table-responsive {
+  min-height: .01%;
+  overflow-x: auto;
+  border: 0; }
+
+.page-project-details .explanations {
+  font-size: 12px; }
+
+.page-project-details .explanations-list {
+  clear: both;
+  padding: 15px;
+  font-size: 9px; }
+
+.page-project-details .promotor-documents p {
+  margin-top: 10px; }
+
+.page-project-details .promotor-documents a {
+  color: #2a191d; }
+  .page-project-details .promotor-documents a i {
+    font-size: 25px;
+    margin-right: 3px; }
+
+.page-project-details #amount-inversion {
+  height: 15px;
+  font-size: 20px;
+  color: #333;
+  text-align: right; }
+
+.page-invest #tradingOperation {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: none; }
+  .page-invest #tradingOperation .summary, .page-invest #tradingOperation .payment {
+    min-height: 470px;
+    padding: 20px; }
+  .page-invest #tradingOperation .payment {
+    background-color: #e9e8e8;
+    height: 100%; }
+  .page-invest #tradingOperation .title {
+    padding: 15px; }
+    .page-invest #tradingOperation .title h5 {
+      font-weight: 500; }
+  .page-invest #tradingOperation .flip-container {
+    border: 1px solid #ccc; }
+    .page-invest #tradingOperation .flip-container .flipperBlock {
+      font-weight: 400;
+      color: #666;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+      .page-invest #tradingOperation .flip-container .flipperBlock span.value {
+        font-size: 1.7em; }
+      .page-invest #tradingOperation .flip-container .flipperBlock p.title {
+        font-size: 12px;
+        padding: 0;
+        margin: 0 0 10px; }
+    .page-invest #tradingOperation .flip-container .borderRightSeparator {
+      border-right: 1px solid #ccc; }
+    .page-invest #tradingOperation .flip-container .col-md-offset-2 {
+      margin-left: 16.66666667%; }
+  .page-invest #tradingOperation .info-triangle {
+    top: 0;
+    right: 15px;
+    position: absolute;
+    z-index: 98;
+    cursor: pointer; }
+  .page-invest #tradingOperation input[type='text'] {
+    font-size: 1.5em;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.46); }
+
+.page-invest .bottomBox {
+  bottom: 20px;
+  position: absolute;
+  width: 100%; }

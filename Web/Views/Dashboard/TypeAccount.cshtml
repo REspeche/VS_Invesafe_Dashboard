@@ -1,0 +1,184 @@
+﻿<div class="container-fluid page-type-account" ng-controller="typeaccountController" ng-init="loadTypeAccount()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.TypeAccount.title</h6>
+        <h2>@Resource.Views.Dashboard.TypeAccount.subTitle</h2>
+    </section>
+
+    <div class="col-md-12 mb-2">
+
+        <div class="text-left">
+            <h4 class="font-weight-bold">@Resource.Views.Dashboard.TypeAccount.titTypeInvestor</h4>
+            <hr class="mt-1">
+        </div>
+
+        <div>
+            <!--Section Message-->
+            <section ng-show="loadPage">
+                <div class="alert alert-warning" role="alert" ng-show="showMessage.validating">@Html.Raw(Resource.Messages.Info.statePendingIdentity)</div>
+            </section>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-cascade narrower">
+                    <div class="ribbon-wrapper" ng-show="dataForm.typeInvest==1">
+                        <div class="ribbon">@Resource.Views.Dashboard.TypeAccount.lblSelected</div>
+                    </div>
+                    <div class="admin-panel info-admin-panel">
+                        <div class="view">
+                            <h5><i class="fa fa-user"></i> @Resource.Views.Dashboard.TypeAccount.lblInvestor</h5>
+                        </div>
+                        <div class="card-block">
+                            <h3 class="card-title">@Resource.Views.Dashboard.TypeAccount.titNoAccredit</h3>
+                            <p class="card-text">@Resource.Views.Dashboard.TypeAccount.infoNoAccredit</p>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#modalInfoInversorNoAcreditado">{{(dataForm.typeInvest==1)?'@Resource.Views.Dashboard.TypeAccount.btnViewDetail':'@Resource.Views.Dashboard.TypeAccount.btnSelect...'}}</button>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <p>@Resource.Views.Dashboard.TypeAccount.lblNoAccreditAmount</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-cascade narrower">
+                    <div class="ribbon-wrapper" ng-show="dataForm.typeInvest==2">
+                        <div class="ribbon">@Resource.Views.Dashboard.TypeAccount.lblSelected</div>
+                    </div>
+                    <div class="admin-panel info-admin-panel">
+                        <div class="view">
+                            <h5><i class="fa fa-user"></i> @Resource.Views.Dashboard.TypeAccount.lblInvestor</h5>
+                        </div>
+                        <div class="card-block">
+                            <h3 class="card-title">@Resource.Views.Dashboard.TypeAccount.titAccredit</h3>
+                            <p class="card-text">@Resource.Views.Dashboard.TypeAccount.infoAccredit</p>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#modalInfoInversorAcreditado">{{(dataForm.typeInvest==2)?'@Resource.Views.Dashboard.TypeAccount.btnViewDetail':'@Resource.Views.Dashboard.TypeAccount.btnSelect...'}}</button>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <p>@Resource.Views.Dashboard.TypeAccount.lblAccreditAmount</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="modalInfoInversorNoAcreditado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-info modal-lg" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">@Resource.Views.Dashboard.TypeAccount.titInfoInvestorNo</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <p class="text-justify">
+                        @Resource.Views.Dashboard.TypeAccount.txtInfoInvestorNo
+                    </p>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-primary"
+                       ng-click="selectOption(1)"
+                       ng-show="dataForm.typeInvest!=1">Seleccionar<i class="fa fa-check ml-1"></i></button>
+                    <button type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">{{(dataForm.typeInvest==1)?'@Resource.Views.Dashboard.TypeAccount.btnClose':'@Resource.Views.Dashboard.TypeAccount.btnCancel'}}</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <div class="modal fade" id="modalInfoInversorAcreditado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-info modal-lg" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">@Resource.Views.Dashboard.TypeAccount.titInfoInvestor</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <p>@Resource.Views.Dashboard.TypeAccount.txtInfoInvestor</p>
+                    <div class="form-group">
+                        <div class="mb-1">
+                            <strong>@Resource.Views.Dashboard.TypeAccount.question1</strong>:
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="opt4" type="radio" ng-value="1"
+                                   ng-model="dataForm.question2"
+                                   ng-change="enableSaveForm()">
+                            <label class="form-check-label" for="opt4">
+                                @Resource.Views.Dashboard.TypeAccount.option1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="opt5" type="radio" ng-value="2"
+                                   ng-model="dataForm.question2"
+                                   ng-change="enableSaveForm()">
+                            <label class="form-check-label" for="opt5">
+                                @Resource.Views.Dashboard.TypeAccount.option2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="opt6" type="radio" ng-value="3"
+                                   ng-model="dataForm.question2"
+                                   ng-change="enableSaveForm()">
+                            <label class="form-check-label" for="opt6">
+                                @Resource.Views.Dashboard.TypeAccount.option3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="opt7" type="radio" ng-value="4"
+                                   ng-model="dataForm.question2"
+                                   ng-change="enableSaveForm()">
+                            <label class="form-check-label" for="opt7">
+                                @Resource.Views.Dashboard.TypeAccount.option4
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" id="opt8" type="radio" ng-value="5"
+                                   ng-model="dataForm.question2"
+                                   ng-change="enableSaveForm()">
+                            <label class="form-check-label" for="opt8">
+                                @Resource.Views.Dashboard.TypeAccount.option5
+                            </label>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="defaultCheckbox1" ng-model="dataForm.agree">
+                        <label class="form-check-label" for="defaultCheckbox1">@Resource.Views.Dashboard.TypeAccount.check1</label>
+                    </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <span class="hidden-xl-down aceptAgree">@Resource.Messages.Warning.aceptAgree</span>
+                    <button type="button" class="btn btn-primary"
+                            ng-disabled="enableSubmit"
+                            ng-click="selectOption(2)"
+                            ng-show="dataForm.typeInvest!=2">
+                        @Resource.Views.Dashboard.TypeAccount.btnSelect<i class="fa fa-check ml-1"></i>
+                        </button>
+                    <button type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">{{(dataForm.typeInvest==2)?'@Resource.Views.Dashboard.TypeAccount.btnClose':'@Resource.Views.Dashboard.TypeAccount.btnCancel'}}</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!-- Modals-->
+</div>
+

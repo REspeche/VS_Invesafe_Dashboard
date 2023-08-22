@@ -1,0 +1,25 @@
+﻿.modal-dialog.modal-notify.modal-info {
+    .modal-header {
+        background-color: #33b5e5;
+
+        p.heading {
+            color: #fff;
+        }
+    }
+    .fa {
+        color: #33b5e5;
+    }
+}
+
+.modal-dialog.modal-notify.modal-warning {
+    .modal-header {
+        background-color: #fb3;
+
+        p.heading {
+            color: #fff;
+        }
+    }
+    .fa {
+        color: #fb3;
+    }
+}

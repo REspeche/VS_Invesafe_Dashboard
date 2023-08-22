@@ -1,0 +1,68 @@
+﻿.page-entry-funds {
+    .nav-tabs {
+        box-shadow:none;
+        margin-left: 0;
+        margin-right: 0;
+
+        li {
+            width:100%;
+            text-align:center;
+        }
+    }
+    .tab-content.ingresos {
+        padding: 25px;
+    }
+    #transferencia {
+        .row {
+            margin-bottom: 10px;
+        }
+        .row:last-child {
+			margin-bottom: 0;
+			p {
+				margin-bottom: 0;
+			}
+        }
+    }
+    .number {
+        width: 24px;
+        height: 24px;
+        border-radius: 30px;
+        -moz-border-radius: 30px;
+        -webkit-border-radius: 30px;
+        background-color: transparent;
+        display: inline-block;
+        text-align: center;
+        font-weight: 500;
+        border: 1px solid #4285F4;
+		background-color: #d9edf7;
+        font-size: 16px;
+        margin-right: 7px;
+    }
+    .datos-adicionales {
+        font-weight: 400;
+        padding: 20px 50px 10px 25px;
+        font-size: 14px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        display: inline-block;
+        margin-top: 5px;
+        margin-top: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+
+        .row>div:first-child {
+            text-align: right;
+        }
+        .titular {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #666;
+        }
+        .ordenante-text {
+            white-space: initial;
+        }
+    }
+    .important-text {
+        color: #f00;
+    }
+}

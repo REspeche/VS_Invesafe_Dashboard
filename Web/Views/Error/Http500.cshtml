@@ -1,0 +1,105 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@Resource.Views.Error.Http500.title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    @Styles.Render("~/css/error")
+    <!-- Template CSS -->
+    <link href="~/Content/assets/css/error/style500.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+    <link href="~/Content/assets/css/error/respons500.css" rel="stylesheet" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="~/Content/assets/js/error/createjs.min.js"></script>
+    <script src="~/Content/assets/js/error/dinosaur.js"></script>
+    <script>
+        var canvas, stage, exportRoot;
+        function init() {
+            canvas = document.getElementById("canvas");
+            handleComplete();
+        }
+        function handleComplete() {
+            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+            exportRoot = new lib.dinosaur();
+            stage = new createjs.Stage(canvas);
+            stage.addChild(exportRoot);
+            //Registers the "tick" event listener.
+            createjs.Ticker.setFPS(lib.properties.fps);
+            createjs.Ticker.addEventListener("tick", stage);
+            //Code to support hidpi screens and responsive scaling.
+            (function (isResp, respDim, isScale, scaleType) {
+                var lastW, lastH, lastS = 1;
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+                function resizeCanvas() {
+                    var w = lib.properties.width, h = lib.properties.height;
+                    var iw = window.innerWidth, ih = window.innerHeight;
+                    var pRatio = window.devicePixelRatio, xRatio = iw / w, yRatio = ih / h, sRatio = 1;
+                    if (isResp) {
+                        if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
+                            sRatio = lastS;
+                        }
+                        else if (!isScale) {
+                            if (iw < w || ih < h)
+                                sRatio = Math.min(xRatio, yRatio);
+                        }
+                        else if (scaleType == 1) {
+                            sRatio = Math.min(xRatio, yRatio);
+                        }
+                        else if (scaleType == 2) {
+                            sRatio = Math.max(xRatio, yRatio);
+                        }
+                    }
+                    canvas.width = w * pRatio * sRatio;
+                    canvas.height = h * pRatio * sRatio;
+                    canvas.style.width = w * sRatio - 15 + 'px';
+                    canvas.style.height = h * sRatio - 15 + 'px';
+                    stage.scaleX = pRatio * sRatio;
+                    stage.scaleY = pRatio * sRatio;
+                    lastW = iw; lastH = ih; lastS = sRatio;
+                }
+            })(true, 'both', false, 1);
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,800italic,800,700italic,700,600italic,600,400italic,300' rel='stylesheet' type='text/css' />
+</head>
+<body onload="init();">
+    <!-- Load page -->
+    <div class="animationload">
+        <div class="loader">
+        </div>
+    </div>
+    <!-- End load page -->
+    <!-- Content Wrapper -->
+    <div id="wrapper">
+        <div class="container">
+            <!-- Dinosaur -->
+            <div class="dinosaur">
+                <canvas id="canvas" width="700" height="310" style="display: block;"></canvas>
+            </div>
+            <!-- end Dinosaur -->
+            <!-- Info -->
+            <div class="info">
+                <h2>@Resource.Views.Error.Http500.titInfo</h2>
+                <p>
+                    @Html.Raw(Resource.Views.Error.Http500.txtInfo)
+                </p>
+                <a href="/" class="btn">@Resource.Views.Error.Http500.btnGo</a>
+            </div>
+            <!-- end Info -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end Content Wrapper -->
+    @Scripts.Render("~/js/error")
+    <script src="~/Content/assets/js/error/scripts500.js"></script>
+</body>
+</html>
+

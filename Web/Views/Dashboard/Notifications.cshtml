@@ -1,0 +1,38 @@
+﻿<div class="container-fluid page-change-password" ng-controller="notificationsController" ng-init="loadNotifications()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.Notifications.title</h6>
+        <h2>@Resource.Views.Dashboard.Notifications.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+
+
+        <!--Header-->
+        <div class="text-left mb-1">
+            <p>@Resource.Views.Dashboard.Notifications.text</p>
+        </div>
+
+        <div ng-hide="loadForm" class="mb-1">@Resource.Common.loading</div>
+        <form name="frmNotifications" ng-submit="submitNotifications()" novalidate autocomplete="off" ng-show="loadForm">
+            <div class="card card-cascade">
+                <!--Naked Form-->
+                <div class="card-block">
+                    <div class="form-check" ng-repeat="notification in notifications">
+                        <input type="checkbox" class="form-check-input" id="chk{{notification.id}}"
+                               ng-model="notification.enable"
+                               ng-checked="notification.enable"
+                               ng-change="isEditingForm()">
+                        <label class="form-check-label" for="chk{{notification.id}}">{{notification.name | translate}}</label>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-info waves-effect waves-light" ng-disabled="!editForm">@Resource.Views.Dashboard.Notifications.btnSave <i class="fa fa-save ml-1"></i></button>
+                    </div>
+                </div>
+                <!--Naked Form-->
+            </div>
+        </form>
+
+    </div>
+</div>

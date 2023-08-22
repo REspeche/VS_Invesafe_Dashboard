@@ -1,0 +1,90 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-personal-data" ng-controller="personaldataController" ng-init="loadPersonalDocuments()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.PersonalDocuments.title</h6>
+        <h2>@Resource.Views.Dashboard.PersonalDocuments.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+        <div>
+            <p>@Resource.Views.Dashboard.PersonalDocuments.text</p>
+            <!--Section Message-->
+            <div class="alert alert-warning" role="alert" ng-hide="stateDocument==2 || stateDocument==3">@Html.Raw(Resource.Views.Dashboard.PersonalDocuments.msgWarning)</div>
+            <div class="alert alert-info" role="alert" ng-show="stateDocument==2">@Html.Raw(String.Format(Resource.Messages.Info.stateValidating, @CommonHelper.getParamCache().emailSupport))</div>
+            <div class="alert alert-danger" role="alert" ng-show="stateDocument==3">@Html.Raw(Resource.Messages.Info.stateRejected)</div>
+        </div>
+
+        <div class="card card-cascade mb-2">
+            <!--Naked Form-->
+            <div class="card-block">
+
+                <!--Header-->
+                <div class="text-left">
+                    <h4 class="font-weight-bold">@Resource.Views.Dashboard.PersonalDocuments.titDNI</h4>
+                    <hr class="mt-1 mb-2">
+                </div>
+
+                <div ng-hide="loadForm">@Resource.Common.loading</div>
+                <form name="frmPersonalDocuments" ng-submit="submitPersonalDocuments()" novalidate autocomplete="off" ng-show="loadForm">
+                    <span class="hidden-xl-down formIncomplete">@Resource.Messages.Warning.formIncomplete</span>
+                    <!--Body-->
+                    <div class="row mt-2">
+                        <div class="col-md-9">
+                            <div class="file-field big">
+                                <div class="btn-floating btn-lg amber lighten-1 mt-0 float-left">
+                                    <i class="fa fa-image" aria-hidden="true"></i>
+                                    <input type="file" fileinput="fileFront" accept="image/*">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="@Resource.Views.Dashboard.PersonalDocuments.infoFrontDNI">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="fa fa-2x fa-{{(personalData.photoDocumentFront && !fileFront)?'check color-4':'question'}}" ng-show="personalData.photoDocumentFront"></i>
+                        </div>
+                        <div class="col-md-2" ng-show="!fileFront">
+                            <a target="_blank" href="{{personalData.photoDocumentFront}}">
+                                <img ng-src="{{personalData.photoDocumentFront}}" class="img-thumbnail">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-9">
+                            <div class="file-field big">
+                                <div class="btn-floating btn-lg amber lighten-1 mt-0 float-left">
+                                    <i class="fa fa-image" aria-hidden="true"></i>
+                                    <input type="file" fileinput="fileBack" accept="image/*">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="@Resource.Views.Dashboard.PersonalDocuments.infoBackDNI">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="fa fa-2x fa-{{(personalData.photoDocumentBack && !fileBack)?'check color-4':'question'}}" ng-show="personalData.photoDocumentBack"></i>
+                        </div>
+                        <div class="col-md-2" ng-show="!fileBack">
+                            <a target="_blank" href="{{personalData.photoDocumentBack}}">
+                                <img ng-src="{{personalData.photoDocumentBack}}" class="img-thumbnail">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-info waves-effect waves-light">@Resource.Views.Dashboard.PersonalDocuments.btnSave <i class="fa fa-save ml-1"></i></button>
+                    </div>
+
+                    <div class="mt-1">
+                        <span class="text-small">
+                            @Html.Raw(String.Format(Resource.Views.Dashboard.PersonalDocuments.msgInfo, "<a href='mailto:" + @CommonHelper.getParamCache().emailSupport + ">" + @CommonHelper.getParamCache().emailSupport + "</a>"))
+                        </span>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>

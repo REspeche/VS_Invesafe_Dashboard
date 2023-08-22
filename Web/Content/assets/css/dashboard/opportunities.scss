@@ -1,0 +1,449 @@
+﻿.page-opportunities {
+    .card {
+        position: relative;
+        min-width: 0;
+        word-wrap: break-word;
+        background-clip: border-box;
+        border: none;
+		box-shadow: none;
+		background-color: transparent;
+        max-width: 514px;
+    }
+}
+.page-project-details {
+	.row {
+		margin-bottom: 0;
+	}
+	._ficha-image {
+		position: relative;
+		min-height: 160px;
+		max-height: 540px;
+		overflow: hidden;
+
+		.bottom-background {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+			height: 54px;
+			background-color: rgba(0,0,0,0.7);
+		}
+
+		.bottom-background.loan {
+			border-top: 4px solid #b7da70;
+			color: #b7da70;
+		}
+
+		i.fa {
+			margin-right: 5px;
+			font-size: 30px;
+		}
+	}
+	.icon-financial-type {
+		position: absolute;
+		bottom: 7px;
+		left: 15px;
+		width: 100%;
+	}
+	.img-responsive {
+		display: block;
+		width: 100%;
+	}
+	.project-grouped-info-sheet {
+		border: 1px solid #ccc;
+		padding: 15px;
+		background-color: #fff;
+
+		.city-info, .property-info {
+			font-size: 15px;
+			color: #666;
+		}
+		.flip-container {
+			border-top: 0!important;
+		}
+		.title, .percents, .time {
+			font-weight: 700;
+			font-size: 14px;
+			color: #666;
+		}
+		.time {
+			font-weight: 400;
+		}
+		dl.investment-bar {
+			margin: 10px 0;
+
+			dd.total {
+				background-color: #f1f1f1;
+				width: 100%;
+				height: 10px;
+				position: relative;
+				overflow: hidden;
+
+				span.percent {
+					position: absolute;
+					top: 0;
+					left: 0;
+					display: block;
+					height: 100%;
+					background-color: #33b5e5;
+				}
+			}
+		}
+	}
+	.status-project-band {
+		padding: 8px 15px;
+		text-transform: uppercase;
+		color: #fff;
+		font-size: 12px;
+
+		.status-name {
+			font-weight: 700;
+		}
+	}
+	.status-project-band {
+		padding: 8px 15px;
+		text-transform: uppercase;
+		color: #fff;
+		font-size: 12px;
+	}
+	.status-project-band.standar-color {
+		color: #2a1b1d;
+		border-top: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+		background-color: #f5f5f5;
+	}
+	.status-project-band.marketplace-color {
+		background-color: #33b5e5;
+	}
+	.flip-container__wrapper {
+		border: 1px solid #b8b8b8;
+
+		.front {
+			padding-top: 0;
+		}
+		.back {
+			padding: 5px 5px 5px 10px;
+			background-color: transparent;
+
+			p {
+				font-size: 12px;
+				color: #666;
+			}
+		}
+	}
+	.flip-container {
+		perspective: 800px;
+		transform-style: preserve-3d;
+
+		.info-triangle {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 98;
+			cursor: pointer;
+		}
+		.front {
+			z-index: 2;
+		}
+		.back {
+			background-color: #f1f0f0;
+			color: #666;
+			text-align: left;
+			font-weight: 400;
+			font-size: 12px;
+			position: absolute;
+			width: 100%;
+		}
+	}
+	.flip-container__wrapper__flipper {
+		-webkit-transition: -webkit-transform .5s;
+		-moz-transition: -moz-transform .5s;
+		-o-transition: -o-transform .5s;
+		transition: transform .5s;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		position: relative;
+	}
+	.front-info-profitability, .front-info-investment {
+		font-weight: 400;
+		font-size: 10px;
+		color: #666;
+		text-align: center;
+		margin: 14px 0;
+	}
+	.front-info-profitability {
+		border-right: 1px solid #ccc;
+	}
+	.flip-container.infostocks .front-info-investment.ahorro.titles, .flip-container.infostocks .front-info-profitability.titles {
+		margin: 10px 0;
+		font-size: 9px;
+	}
+	.flip-container.infostocks .front-info-investment.ahorro.titles .number-wrapper, .flip-container.infostocks .front-info-profitability.titles .number-wrapper {
+		font-size: 13px;
+	}
+	.nopadding-right-md {
+		padding-right: 0;
+	}
+	.nota-mkplace p {
+		padding-top: 10px;
+		font-size: 11px;
+		margin-bottom: 0;
+	}
+	.small-percent {
+		font-size: 11px;
+	}
+	.front-info-profitability .number-wrapper, .front-info-investment .number-wrapper {
+		color: #463d3e;
+		font-size: 2em;
+	}
+	.simulador-row .simulador-text {
+		font-size: 14px;
+		color: #666;
+		line-height: 40px;
+	}
+	.form-control {
+		height: 1rem;
+		margin-top: -3px;
+		margin-left: 4px;
+	}
+	#simulador-result, #simulador-result-xs {
+		font-weight: 500;
+		color: #463d3e;
+		overflow: hidden;
+		max-width: 45px;
+		text-align: right;
+		font-size: 20px;
+		word-wrap: break-word;
+		line-height: 40px;
+	}
+	.st-btns {
+		direction: ltr;
+		display: block;
+		opacity: 1;
+		text-align: center;
+		z-index: 94034;
+
+		.st-btn {
+			background-color: #33b5e5;
+			cursor: pointer;
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			margin: 2px;
+			padding: 0 10px;
+			position: relative;
+			text-align: center;
+			vertical-align: top;
+			white-space: nowrap;
+			-moz-transition: top 0.2s ease-in;
+			-ms-transition: top 0.2s ease-in;
+			-o-transition: top 0.2s ease-in;
+			-webkit-transition: top 0.2s ease-in;
+			transition: top 0.2s ease-in;
+		}
+		.st-btn > i {
+			color: #FFFFFF;
+			width: 20px;
+		}
+		.column-section-title {
+			font-weight: 700;
+			font-size: 12px;
+			color: #493d3e;
+			text-transform: uppercase;
+		}
+	}
+	.single-precio-zona, .linea-temporal-section {
+		border: 1px solid #ccc;
+		padding: 15px 15px 0 15px;
+		background-color: #fff;
+
+		.temporal-point-title {
+			font-size: 16px;
+			color: #666;
+		}
+		.temporal-point-date {
+			font-size: 13px;
+			color: #999;
+		}
+	}
+	.nav {
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+		padding: 0;
+		margin-left: 0;
+	}
+	.nav-tabs.nav-justified {
+		width: 100%;
+		border-bottom: 0;
+	}
+	.project-intro-links {
+		box-shadow: none;
+
+		>li {
+			display: inline-block !important;
+			width: 25% !important;
+			float: left !important;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+			display: inline-block !important;
+			&:first-child {
+				border-left: 1px solid #ccc !important;
+			}
+			&:last-child {
+				border-right: 1px solid #ccc !important;
+			}
+			>a,
+			>div.tablink{
+				display:block;
+				min-height: initial !important;
+				border: 0 !important;
+				padding: 14px 5px;
+				background-color: #dcdddf;
+				font-weight: 500;
+				font-size: 12px;
+				text-transform: uppercase;
+				color: #57585a;
+				text-align: center;
+				border-radius: 0;
+			}
+			>a,
+			>div.tablink{
+				display:block;
+				min-height: initial !important;
+				border: 0 !important;
+				padding: 14px 5px;
+				background-color: #dcdddf;
+				font-weight: 500;
+				font-size: 12px;
+				text-transform: uppercase;
+				color: #57585a;
+				text-align: center;
+				border-radius: 0;
+			}
+			>a.active {
+				background-color: #33b5e5;
+				color: #fff;
+			}
+		}
+		>li.four-tabs {
+			width: 25% !important;
+		}
+		>li.three-tabs {
+			width: calc(100% / 3) !important;
+		}
+	}
+	.tab-content {
+		border-bottom: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		background-color: #fff;
+	}
+
+	.tab-content-single-project {
+		min-height: 556px;
+	}
+
+	.project-content {
+		font-size: 14px;
+	}
+
+	.table-responsive {
+		min-height: .01%;
+		overflow-x: auto;
+		border:0;
+	}
+	.explanations {
+		font-size: 12px;
+	}
+	.explanations-list {
+		clear: both;
+		padding: 15px;
+		font-size: 9px;
+	}
+	.promotor-documents {
+		p {
+			margin-top: 10px;
+		}
+		a {
+			color: #2a191d;
+			i {
+				font-size: 25px;
+				margin-right: 3px;
+			}
+		}
+	}
+	#amount-inversion {
+		height: 15px;
+		font-size: 20px;
+		color: #333;
+		text-align: right;
+	}
+}
+.page-invest {
+	#tradingOperation {
+		border: 1px solid #ccc;
+		background-color: #fff;
+        display: none;
+
+		.summary, .payment {
+			min-height: 470px;
+			padding: 20px;
+		}
+		.payment {
+			background-color: #e9e8e8;
+			height: 100%;
+		}
+		.title {
+			padding: 15px;
+			h5 {
+				font-weight: 500;
+			}
+		}
+		.flip-container {
+			border: 1px solid #ccc;
+			.flipperBlock {
+				font-weight: 400;
+				color: #666;
+				text-align: center;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				span.value {
+					font-size: 1.7em;
+				}
+				p.title {
+					font-size: 12px;
+					padding: 0;
+					margin: 0 0 10px;
+				}
+			}
+			.borderRightSeparator {
+				border-right: 1px solid #ccc;
+			}
+			.col-md-offset-2 {
+				margin-left: 16.66666667%;
+			}
+		}
+		.info-triangle {
+			top: 0;
+			right: 15px;
+			position: absolute;
+			z-index: 98;
+			cursor: pointer;
+		}
+		input[type='text'] {
+			font-size: 1.5em;
+			height: 20px;
+			border: 1px solid rgba(0, 0, 0, 0.46);
+		}
+	}
+	.bottomBox {
+		bottom: 20px;
+		position: absolute;
+		width: 100%;
+	}
+}

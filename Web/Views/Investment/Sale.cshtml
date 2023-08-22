@@ -1,0 +1,230 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-invest" ng-controller="myinvestmentsController" ng-init="loadSaleInvest()">
+
+    <section class="section section-title">
+        <div class="row">
+
+            <div class="col-xs-10 col-sm-8">
+                <h6>@Resource.Views.Investment.Sale.title {{invest.namePro}}</h6>
+                <h2>@Resource.Views.Investment.Sale.subTitle</h2>
+            </div>
+            <div class="col-xs-2 col-sm-4">
+                <div class="pull-right">
+                    <a ng-click="clickSlideAjax('myinvestments')"><i class="fa fa-arrow-circle-left"></i>&nbsp;<span class="hidden-xs">@Resource.Views.Investment.Sale.btnBack</span></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="col-md-12">
+        <div id="tradingOperation" ng-show="loadPage">
+
+            <div class="row">
+
+                <div class="nopadding-right-md" ng-class="{'col-md-8':invest.idSin>0,'col-md-12':invest.idSin==0}">
+                    <div class="summary">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-center text-uppercase title">
+                                    <h5>@Resource.Views.Investment.Sale.titInvestDetail</h5>
+                                </div>
+                                <div class="separador-20"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="flip-container">
+                                    <div class="row">
+                                        <div class="col-md-4 pr-0 flipperBlock borderRightSeparator">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.Sale.lblNroFractions</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-2 col-md-8">
+                                                    <span class="value">{{invest.amount | number}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 pr-0 flipperBlock borderRightSeparator">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.Sale.lblFractionValue</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-2 col-md-8">
+                                                    <span class="value">$ {{invest.fractionValue | number : 2}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 nopadding-left-md flipperBlock">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.Sale.lblCapitalEstimated</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span class="value">$ {{invest.amount * invest.fractionValue | number : 2}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="separador-30"></div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="flip-container">
+                                    <div class="row">
+                                        <div class="col-md-4 pr-0 flipperBlock borderRightSeparator">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.Sale.titFractionSale</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-2 col-md-8">
+                                                    <input type="text" pattern="\d*" class="form-control text-center value"
+                                                           ng-model="fractionToSale">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 pr-0 flipperBlock borderRightSeparator">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.Sale.lblFractionValue ($)</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-2 col-md-8">
+                                                    <input type="text" class="form-control text-center value"
+                                                           ng-model="fractionValue" fix-decimal>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 nopadding-left-md flipperBlock">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.Sale.lblCostOrder</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span class="value text-success"><strong>$ {{fractionToSale * fractionValue | number : 2}}</strong></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="separador-16"></div>
+                                <hr>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" ng-model="formInvest.agree" id="defaultCheckbox1">
+                                    <label class="form-check-label" for="defaultCheckbox1">
+                                        @Html.Raw(String.Format(Resource.Views.Investment.Sale.chkAgree, CommonHelper.getStoragePath() + "invesafedocs/contrato-venta.pdf"))
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="separador-16"></div>
+                                <span class="hidden-xl-down aceptAgree">@Resource.Messages.Warning.aceptAgree</span>
+                                <button type="button" class="btn btn-info" data-locale="es"
+                                        ng-click="confirmSale()" ng-disabled="fractionToSale==0 || fractionValue==0">
+                                    <span ng-show="invest.idSin==0">@Resource.Views.Investment.Sale.btnPublish</span>
+                                    <span ng-hide="invest.idSin==0">@Resource.Views.Investment.Sale.btnEdit</span>
+                                </button>
+                                <div class="separador-20"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4 nopadding-left-md" ng-show="invest.idSin>0">
+                    <div class="payment">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-center text-uppercase title">
+                                    <h5>@Resource.Views.Investment.Sale.titRemove</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="flip-container">
+                                    <div class="row">
+                                        <div class="col-md-12 nopadding-left-md flipperBlock">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.Sale.lblFractionMP</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span class="value">{{invest.amountSin | number}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="separador-30"></div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>@Resource.Views.Investment.Sale.txtInfo</p>
+                            </div>
+                        </div>
+
+                        <div class="row bottomBox">
+                            <div class="col-md-12 text-center">
+                                <div class="separador-16"></div>
+                                <button type="button" class="btn btn-danger" data-locale="es" ng-click="removeSale()">
+                                    @Resource.Views.Investment.Sale.btnRemove
+                                </button>
+                                <div class="separador-20"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

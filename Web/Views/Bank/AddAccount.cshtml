@@ -1,0 +1,144 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-bank-accounts" ng-controller="bankaccountsController" ng-init="loadAddAccount()">
+
+    <section class="section section-title">
+        <div class="row mb-0">
+
+            <div class="col-xs-10 col-sm-8">
+                <h6>@Resource.Views.Bank.AddAccount.title</h6>
+                <h2>@Resource.Views.Bank.AddAccount.subTitle</h2>
+            </div>
+            <div class="col-xs-2 col-sm-4">
+                <div class="pull-right text-right">
+                    <a ng-click="clickSlideAjax('bankaccounts')"><i class="fa fa-arrow-circle-left"></i>&nbsp;<span class="hidden-xs">@Resource.Views.Bank.AddAccount.lnkBack</span></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    @Html.Partial("_AlertDanger")
+
+    <div class="col-md-12" ng-hide="showActiveAccount">
+        <p>@Html.Raw(Resource.Views.Bank.AddAccount.text)</p>
+        <div ng-hide="loadForm">@Resource.Common.loading</div>
+        <form name="frmBankAccount" ng-submit="submitBankAccount()" novalidate autocomplete="off" ng-show="loadForm">
+            <span class="hidden-xl-down formIncomplete">@Resource.Messages.Warning.formIncomplete</span>
+            <!--Header-->
+            <div class="text-left mb-1 text-small">
+                <p>@Resource.Common.lblRequiredField</p>
+            </div>
+
+            <div class="card card-cascade mb-2">
+                <!--Naked Form-->
+                <div class="card-block">
+
+                    <!--Header-->
+                    <div class="text-left">
+                        <h4 class="font-weight-bold">@Resource.Views.Bank.AddAccount.title</h4>
+                        <hr class="mt-1 mb-2">
+                    </div>
+
+                    <!-- Body -->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <select class="form-control" ng-model="bankAccount.tacId"
+                                    ng-options="item.id as item.label for item in typeAccount"
+                                    ng-change="isEditingForm()" required>
+                                <option value="">@Resource.Common.optionSelect</option>
+                            </select>
+                            <label>@Resource.Views.Bank.AddAccount.inpTypeAccount *</label>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtHolder" name="txtHolder"
+                                       ng-model="bankAccount.holder" minlength="2" maxlength="50"
+                                       ng-change="isEditingForm()" required>
+                                <label for="txtHolder">@Resource.Views.Bank.AddAccount.inpOwner *</label>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtHolder.$touched && frmBankAccount.txtHolder.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtHolder.$touched && frmBankAccount.txtHolder.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtHolder.$touched && frmBankAccount.txtHolder.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 50)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtAccountNbr" name="txtAccountNbr"
+                                       ng-model="bankAccount.accountNbr" minlength="2" maxlength="20"
+                                       ng-change="isEditingForm()" required
+                                       title="@Resource.Views.Bank.AddAccount.lblAccountNbr"
+                                       data-toggle="tooltip" data-placement="top">
+                                <label for="txtAccountNbr">@Resource.Views.Bank.AddAccount.inpAccountNbr *</label>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtAccountNbr.$touched && frmBankAccount.txtAccountNbr.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtAccountNbr.$touched && frmBankAccount.txtAccountNbr.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtAccountNbr.$touched && frmBankAccount.txtAccountNbr.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 20)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtCBU" name="txtCBU"
+                                       ng-model="bankAccount.cbu" minlength="2" maxlength="22"
+                                       ng-change="isEditingForm()"
+                                       title="@Resource.Views.Bank.AddAccount.lblCBU"
+                                       data-toggle="tooltip" data-placement="top">
+                                <label for="txtCBU">@Resource.Views.Bank.AddAccount.inpCBU *</label>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtCBU.$touched && frmBankAccount.txtCBU.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtCBU.$touched && frmBankAccount.txtCBU.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtCBU.$touched && frmBankAccount.txtCBU.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 22)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtBankName" name="txtBankName"
+                                       ng-model="bankAccount.bankName" minlength="2" maxlength="50"
+                                       ng-change="isEditingForm()">
+                                <label for="txtBankName">@Resource.Views.Bank.AddAccount.inpBankName</label>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtBankName.$touched && frmBankAccount.txtBankName.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtBankName.$touched && frmBankAccount.txtBankName.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmBankAccount.txtBankName.$touched && frmBankAccount.txtBankName.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 50)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-left sub-header">
+                        <h4 class="font-weight-bold">@Resource.Views.Bank.AddAccount.titTicket</h4>
+                        <hr class="mt-1 mb-2">
+                        <p>@Resource.Views.Bank.AddAccount.lblAddDocument <a href="mailto:@CommonHelper.getParamCache().emailSupport">@CommonHelper.getParamCache().emailSupport</a>.</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-11">
+                            <div class="file-field big">
+                                <div class="btn-floating btn-lg pink lighten-1 mt-0 float-left">
+                                    <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                    <input type="file" fileinput="fileDocument" accept="application/pdf">
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="@Resource.Views.Bank.AddAccount.lblUploadFile">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="fa fa-2x fa-question"></i>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-info waves-effect waves-light"
+                                ng-disabled="!editForm">
+                            @Resource.Views.Bank.AddAccount.btnAdd <i class="fa fa-plus ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+
+
+

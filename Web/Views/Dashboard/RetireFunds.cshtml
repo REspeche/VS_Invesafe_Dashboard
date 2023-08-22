@@ -1,0 +1,80 @@
+﻿<div class="container-fluid page-retire-funds" ng-controller="retirefundsController" ng-init="loadRetireFunds()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.RetireFunds.title</h6>
+        <h2>@Resource.Views.Dashboard.RetireFunds.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+
+        <div>
+            <p>@Html.Raw(Resource.Views.Dashboard.RetireFunds.text)</p>
+            <!--Section Message-->
+            <section>
+                <div class="alert alert-info" role="alert" ng-hide="accounts.length==0">@Html.Raw(Resource.Views.Dashboard.RetireFunds.msgInfo)</div>
+                <div class="alert alert-warning" role="alert" ng-show="accounts.length==0">@Html.Raw(Resource.Views.Dashboard.RetireFunds.msgWarning)</div>
+            </section>
+        </div>
+
+        <div class="resumee" ng-show="accounts.length>0">
+            <div ng-hide="loadForm">@Resource.Common.loading</div>
+            <form method="get" class="form-inline form-horizontal" novalidate autocomplete="off" id="frmTransfer" ng-show="loadForm">
+                <span class="hidden-xl-down formIncomplete">@Resource.Messages.Warning.formIncomplete</span>
+                <span class="hidden-xl-down errorAmountMaxRetry">@Resource.Messages.Warning.errorAmountMaxRetry</span>
+                <!--Header-->
+                <div class="text-left text-small">
+                    <p>@Resource.Common.lblRequiredField</p>
+                </div>
+                <div class="card card-cascade mb-2" ng-disabled="blockPage">
+                    <!--Naked Form-->
+                    <div class="card-block pb-0">
+                        <!--Header-->
+                        <div class="text-left">
+                            <h4 class="font-weight-bold">@Resource.Views.Dashboard.RetireFunds.titRequestTransfer</h4>
+                            <hr class="mt-1 mb-2">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-5">
+                                <select class="form-control validate" ng-model="filterForm.account" id="selAccount"
+                                        ng-options="item.id as item.accountNbr+' ('+item.bankName+')' for item in accounts"
+                                        ng-change="isEditingForm()">
+                                    <option value="">@Resource.Common.optionSelect</option>
+                                </select>
+                                <label for="selAccount">@Resource.Views.Dashboard.RetireFunds.inpAccountBank *</label>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="md-form form-sm">
+                                    <label>@Resource.Views.Dashboard.RetireFunds.inpConcept</label>
+                                    <input type="text" id="txtConcept" class="form-control"
+                                           ng-model="filterForm.concept"
+                                           ng-change="isEditingForm()">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="md-form form-sm">
+                                    <label>@Resource.Views.Dashboard.RetireFunds.inpAmount *</label>
+                                    <input type="text" id="txtAmmount" class="form-control"
+                                           ng-model="filterForm.ammount"
+                                           ng-change="isEditingForm()"
+                                           title="@Resource.Views.Dashboard.RetireFunds.lblAmount" data-toggle="tooltip" data-placement="top">
+                                </div>
+                            </div>
+                            <div class="col-md-2 pr-0">
+                                <button class="btn btn-info waves-effect waves-light float-right"
+                                        ng-click="transferExecute()"
+                                        ng-disabled="!editForm"
+                                        title="@Resource.Views.Dashboard.RetireFunds.lblTransfer" data-toggle="tooltip" data-placement="top">
+                                    @Resource.Views.Dashboard.RetireFunds.btnTransfer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+

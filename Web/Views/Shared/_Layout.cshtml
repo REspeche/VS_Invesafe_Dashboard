@@ -1,0 +1,52 @@
+﻿@using BusinessLayer.Helpers;
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="@Common.meta_lang">
+<!--<![endif]-->
+<head>
+    <base href="/">
+    <title>@Resource.Views.Shared._Layout.meta_title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/assets/css/fontawesome.css">
+    @Styles.Render("~/css/layoutDashboard")
+    @RenderSection("Style", required: false)
+</head>
+<body class="@("white-skin " + ((bool)Session["isLogin"] ? "fixed-sn" : ""))" ng-app="mainApp" ng-controller="dashboardCtrl" ng-init="loadDashboard()" ng-strict-di ng-cloak>
+    @if ((bool)Session["isLogin"]) { Html.RenderPartial("_Header"); } else { Html.RenderPartial("_Navbar"); }
+
+    <!--Main layout-->
+    <main ng-hide="transitionPage">
+        @RenderBody()
+    </main>
+    <!--/Main layout-->
+
+    @Html.Partial("_Footer")
+    @Html.Partial("_InnerObjects")
+    @Scripts.Render("~/js/layoutDashboard")
+    @Html.Raw(String.Format("<script>var pathSite = '{0}';</script>", CommonHelper.getSitePath()))
+</body>
+</html>

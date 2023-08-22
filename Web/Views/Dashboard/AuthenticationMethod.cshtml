@@ -1,0 +1,166 @@
+﻿<div class="container-fluid page-authentication-method" ng-controller="authenticationmethodController" ng-init="loadAuthenticationMethod()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.AuthenticationMethod.title</h6>
+        <h2>@Resource.Views.Dashboard.AuthenticationMethod.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+        <div ng-hide="loadForm">@Resource.Common.loading</div>
+        <form name="frmAuthenticationMethod" novalidate autocomplete="off" ng-show="loadForm">
+            <span class="hidden-xl-down formIncomplete">@Resource.Messages.Warning.formIncomplete</span>
+            <span class="hidden-xl-down codeFail">@Resource.Messages.Info.codeFail</span>
+
+            <!--Header-->
+            <div class="text-left mb-1">
+                <p>@Resource.Views.Dashboard.AuthenticationMethod.text</p>
+            </div>
+
+            <div class="card card-cascade">
+                <!--Naked Form-->
+                <div class="card-block">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="md-form form-sm">
+                                <label>@Resource.Views.Dashboard.AuthenticationMethod.lblAuthenticationGoogle</label>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <p ng-show="enableTwoFactor">Doble factor validado <i class="fa fa-check color-4"></i></p>
+                            <button type="button" class="btn btn-warning waves-effect waves-light ml-0"
+                                    ng-click="enableTwoFactorCode()" ng-hide="enableTwoFactor">
+                                @Resource.Views.Dashboard.AuthenticationMethod.btn2Factor<i class="fa fa-mobile ml-2"></i>
+                            </button>
+                            <p class="mt-1 text-small">@Resource.Views.Dashboard.AuthenticationMethod.msgInfo1 <span ng-hide="showPhone">@Resource.Views.Dashboard.AuthenticationMethod.msgInfo2 <a href="#" ng-click="wannaPhone()">@Resource.Views.Dashboard.AuthenticationMethod.lnkClick</a>.</span></p>
+                        </div>
+                    </div>
+
+                    <hr class="mb-2" ng-show="showPhone" />
+
+                    <div class="row" ng-show="showPhone">
+                        <div class="col-md-3">
+                            <div class="md-form form-sm">
+                                <label for="txtPhoneNumber">@Resource.Views.Dashboard.AuthenticationMethod.lblAuthenticationSMS</label>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="md-form form-sm mb-0">
+                                <p ng-show="enableSMS">@Resource.Views.Dashboard.AuthenticationMethod.titPhone <i class="fa fa-check color-4"></i></p>
+                                <div class="row mb-0">
+                                    <div class="col-md-2 pl-3">
+                                        <div class="md-form form-sm">
+                                            <input type="text" class="form-control validate" id="txtPhoneCode" name="txtPhoneCode"
+                                                   ng-model="data.codePhone" size="4" minlength="3" maxlength="4"
+                                                   ng-disabled="enableSMS">
+                                            <label for="txtPhoneCode">@Resource.Views.Dashboard.AuthenticationMethod.lblCodePhone</label>
+                                            <span class="mdl-textfield__error" ng-show="frmAuthenticationMethod.txtPhoneCode.$touched && frmAuthenticationMethod.txtPhoneCode.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 6)</span>
+                                            <span class="mdl-textfield__error" ng-show="frmAuthenticationMethod.txtPhoneCode.$touched && frmAuthenticationMethod.txtPhoneCode.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 20)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pl-0">
+                                        <div class="md-form form-sm">
+                                            <input type="tel" class="form-control validate" id="txtPhone" name="txtPhone"
+                                                   ng-model="data.phone" minlength="6" maxlength="20"
+                                                   ng-disabled="enableSMS">
+                                            <label for="txtPhone">@Resource.Views.Dashboard.AuthenticationMethod.inpPhoneNbr</label>
+                                            <span class="mdl-textfield__error" ng-show="frmAuthenticationMethod.txtPhone.$touched && frmAuthenticationMethod.txtPhone.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 6)</span>
+                                            <span class="mdl-textfield__error" ng-show="frmAuthenticationMethod.txtPhone.$touched && frmAuthenticationMethod.txtPhone.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 20)</span>
+                                            <span class="mdl-textfield__error" ng-show="frmAuthenticationMethod.txtPhone.$touched && frmAuthenticationMethod.txtPhone.$error.pattern && !frmAuthenticationMethod.txtPhone.$error.minlength">@Resource.Messages.Info.errorIncorrectFormat</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pl-0">
+                                        <div class="md-form form-sm">
+                                            <button ng-hide="enableSMS" type="button" class="btn btn-info waves-effect waves-light ml-0 mb-0" ng-click="showVerifySMS()">@Resource.Views.Dashboard.AuthenticationMethod.btnVerify</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-left mt-0 text-small" ng-hide="enableSMS">
+                                    <i class="fas fa-exclamation-triangle mr-2 text-warning"></i>@Html.Raw(Resource.Views.Dashboard.AuthenticationMethod.msgWarning)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-warning waves-effect waves-light"
+                                ng-show="enableTwoFactor || enableSMS" ng-click="removeMethod()">
+                            @Resource.Views.Dashboard.AuthenticationMethod.btnCancel <i class="fa fa-times ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                <!--Naked Form-->
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="enableTwoFactor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100 font-weight-bold">@Resource.Views.Dashboard.AuthenticationMethod.titEnable2Factor</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="mb-0">@Resource.Views.Dashboard.AuthenticationMethod.txtQR</p>
+                            <div class="text-center">
+                                <img class="codeQR" ng-src="{{formCode.imgQR}}" />
+                            </div>
+                            <p>@Resource.Views.Dashboard.AuthenticationMethod.txt2Factor</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <ng-digit-code name="txtDigit1" ng-model="formCode.code"></ng-digit-code>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" ng-click="enableAuthenticationTwoFactor()" ng-disabled="formCode.code==''">@Resource.Views.Dashboard.AuthenticationMethod.btnActive</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="verifySMS" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100 font-weight-bold">@Resource.Views.Dashboard.AuthenticationMethod.titEnableSMS</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>@Resource.Views.Dashboard.AuthenticationMethod.txtSMSPhone ({{data.codePhone}}) {{data.phone.substr(0,3) + '-' + data.phone.substr(3,data.phone.length)}}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form">
+                                <ng-digit-code name="txtDigit2" ng-model="formCode.code"></ng-digit-code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" ng-click="enableAuthenticationSMS()" ng-disabled="formCode.code==''">@Resource.Views.Dashboard.AuthenticationMethod.btnActive</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

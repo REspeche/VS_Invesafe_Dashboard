@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="answer1" xml:space="preserve">
+    <value>Invesafe es una plataforma de inversión colectiva de proyectos inmobiliarios, o crowdfunding inmobiliario, que permite a inversionistas y a promotores inmobiliarios conseguir una mejor alternativa de financiación a las existentes actualmente en el mercado. Los inversionistas pueden invertir desde pequeños montos y de forma conjunta con otros inversores en un mismo proyecto inmobiliario</value>
+  </data>
+  <data name="answer10" xml:space="preserve">
+    <value>Por supuesto, ponemos a disposición de los inversionistas la documentación del activo como también la dirección para que puedan visitar y corroborar físicamente.</value>
+  </data>
+  <data name="answer11" xml:space="preserve">
+    <value>Tu inversión tendrá un respaldo mediante un contrato de fideicomiso ordinario por cada proyecto. En cada contrato se estipula toda la información del proyecto y tu porcentaje de inversión de acuerdo al monto que has destinado.</value>
+  </data>
+  <data name="answer12" xml:space="preserve">
+    <value>Es un contrato en la cual una persona (inversor) le transmite un capital a otra (promotor), en donde este promotor la ejerce en beneficio al inversor, en un determinado tiempo o hasta que se cumpla una condición *.&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 11px; line-height: 11px;"&gt;(*) El fideicomiso es un contrato en el cual una parte (Fiduciante –&amp;gt; Inversor), transmite o se compromete a transferir un dinero (Inversión) a otra persona (Fiduciario), quien se obliga a ejercerla en beneficio de otra llamada beneficiario (Inversor/Promotor), que se designa en el contrato, y a transmitirla al cumplimiento de un plazo o condición al fideicomisario (en el caso sería eventualmente el Inversor)&lt;/span&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="answer2" xml:space="preserve">
+    <value>Nuestra atención se centra principalmente en propiedades residenciales y comerciales. Estos inmuebles en los que podrás invertir, siempre serán a precio de costo de construcción (en pozo), para reformas o como oportunidad a un precio sustancialmente más bajo al que se ofrece en el mercado. Siendo así una oportunidad única para obtener un buen retorno de la inversión.</value>
+  </data>
+  <data name="answer3" xml:space="preserve">
+    <value>Invertir en Inmuebles no es fácil, requiere de mucho tiempo, conocimientos y un gran capital. Por eso creamos esta plataforma! Para que puedas invertir aquí en tu ciudad, con el capital que dispongas y por medio de expertos en bienes raíces.</value>
+  </data>
+  <data name="answer4" xml:space="preserve">
+    <value>En nuestra plataforma Invesafe, tendrás una cuenta como inversor donde podrás controlar y gestionar tus inversiones desde cualquier lugar y en todo momento. Periódicamente, nuestros auditores irán subiendo toda la información de avances de obras, evolución e información de cada proyecto para que puedas estar tranquilo y ver día a día como crece tu inversión.</value>
+  </data>
+  <data name="answer5" xml:space="preserve">
+    <value>Realizamos un due diligence para saber cómo ha trabajado el promotor, solicitando referencias y revisando la documentación tanto legal como financiera de la empresa.</value>
+  </data>
+  <data name="answer6" xml:space="preserve">
+    <value>Lo hacemos mediante un equipo de especialistas, que analizan y auditan rigurosamente las oportunidades de bienes raíces ofrecidas por los distintos promotores inmobiliarios. Seleccionamos sólo aquellos que tengan un atractivo valor en relación al costo de adquisición, costo construcción y/u obra, características generales, ubicación de la propiedad y el valor potencial a futuro del inmueble para venta y alquiler, según las tendencias del mercado. Esto disminuye al mínimo cualquier riesgo en la inversión.</value>
+  </data>
+  <data name="answer7" xml:space="preserve">
+    <value>Si que es fácil! Una vez que tengas tu cuenta inversor, debes elegir cuáles proyectos te gustaría invertir y luego sólo esperar a recibir tus ganancias. Nosotros nos encargaremos de todo.</value>
+  </data>
+  <data name="answer8" xml:space="preserve">
+    <value>No, crear tu cuenta en Invesafe es gratis y tampoco tendrás ningún gasto fijo de mantenimiento.</value>
+  </data>
+  <data name="answer9" xml:space="preserve">
+    <value>Estamos directamente asociados al éxito de cada proyecto y sólo cobramos una comisión del 10% sobre la ganancia que recibirás de tu inversión. A mayor rentabilidad logremos, más ganas tú y también nosotros</value>
+  </data>
+  <data name="question1" xml:space="preserve">
+    <value>Cómo funciona Invesafe?</value>
+  </data>
+  <data name="question10" xml:space="preserve">
+    <value>Se puede ver el inmueble?</value>
+  </data>
+  <data name="question11" xml:space="preserve">
+    <value>Qué documentación legal respalda mi inversión?</value>
+  </data>
+  <data name="question12" xml:space="preserve">
+    <value>Que es un Fideicomiso?</value>
+  </data>
+  <data name="question2" xml:space="preserve">
+    <value>Que tipo de proyectos se ofrecen?</value>
+  </data>
+  <data name="question3" xml:space="preserve">
+    <value>Porque invertir en Invesafe?</value>
+  </data>
+  <data name="question4" xml:space="preserve">
+    <value>Que control tengo de mi inversión?</value>
+  </data>
+  <data name="question5" xml:space="preserve">
+    <value>Cómo es el proceso de aceptación de los promotores inmobiliarios?</value>
+  </data>
+  <data name="question6" xml:space="preserve">
+    <value>Cómo selecciona Invesafe los proyectos a financiar?</value>
+  </data>
+  <data name="question7" xml:space="preserve">
+    <value>Es fácil de participar?</value>
+  </data>
+  <data name="question8" xml:space="preserve">
+    <value>Tiene algún costo?</value>
+  </data>
+  <data name="question9" xml:space="preserve">
+    <value>Qué gana Invesafe?</value>
+  </data>
+  <data name="subTitle" xml:space="preserve">
+    <value>Preguntas Frecuentes</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Sobre Invesafe</value>
+  </data>
+</root>

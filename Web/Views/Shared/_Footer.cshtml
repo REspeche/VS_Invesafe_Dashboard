@@ -1,0 +1,93 @@
+﻿@using BusinessLayer.Helpers;
+
+<!--Footer-->
+<footer class="page-footer center-on-small-only" ng-hide="transitionPage">
+
+    <!--Footer Links-->
+    <div class="container-fluid">
+        <div class="row info-invesafe" ng-if="session.isLogin">
+
+            <!--First column-->
+            <div class="col-md-2 offset-md-1">
+                <h6 class="title">@Resource.Views.Shared._Footer.lblBrand</h6>
+                <p>
+                    <a href="mailto:@Resource.Views.Shared._Footer.mail">@Resource.Views.Shared._Footer.mail</a><br />
+                    @CommonHelper.getParamCache().addressInvesafe<br />
+                    @CommonHelper.getParamCache().phoneInvesafe
+                </p>
+            </div>
+            <!--/.First column-->
+
+            <hr class="hidden-md-up">
+
+            <!--Second column-->
+            <div class="col-md-2 offset-md-1">
+                <h6 class="title">@Resource.Views.Shared._Footer.titJoinInvesafe</h6>
+                <ul>
+                    <li><a ng-click="clickSlideAjax('howwork')">@Resource.Views.Shared._Footer.lnkHowWork</a></li>
+                    <li><a ng-click="clickSlideAjax('opportunities')">@Resource.Views.Shared._Footer.lnkOpportunities</a></li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+
+            <hr class="hidden-md-up">
+
+            <!--Third column-->
+            <div class="col-md-2">
+                <h6 class="title">@Resource.Views.Shared._Footer.titAboutInvesafe</h6>
+                <ul>
+                    <li><a ng-click="clickSlideAjax('faq')">@Resource.Views.Shared._Footer.lnkFAQ</a></li>
+                    <li><a ng-click="clickSlideAjax('aboutus')">@Resource.Views.Shared._Footer.lnkAboutUs</a></li>
+                    <li><a ng-click="clickSlideAjax('support')">@Resource.Views.Shared._Footer.lnkSupport</a></li>
+                </ul>
+            </div>
+            <!--/.Third column-->
+
+            <hr class="hidden-md-up">
+
+            <!--Fourth column-->
+            <div class="col-md-2">
+                <h6 class="title">@Resource.Views.Shared._Footer.titInfo</h6>
+                <ul>
+                    <li><a ng-click="clickSlideAjax('basicinformation')">@Resource.Views.Shared._Footer.lnkBasicInformation</a></li>
+                    <li><a ng-click="clickSlideAjax('useconditions')">@Resource.Views.Shared._Footer.lnkUseConditions</a></li>
+                    <li><a ng-click="clickSlideAjax('privacypolicy')">@Resource.Views.Shared._Footer.lnkPrivacyPolicy</a></li>
+                    <li><a ng-click="clickSlideAjax('invesafereports')">@Resource.Views.Shared._Footer.lnkInvesafeReports</a></li>
+                </ul>
+            </div>
+            <!--/.Fourth column-->
+
+        </div>
+        <!--/.Footer Links-->
+
+        <hr>
+
+        <!--Text Company-->
+        <div class="text-company">
+            <p>@Resource.Views.Shared._Footer.footerP1</p>
+            <p>@Resource.Views.Shared._Footer.footerP2</p>
+        </div>
+
+        <hr>
+
+        <div class="text-company mb-1">
+            <p>@Resource.Views.Shared._Footer.footerP3</p>
+            <p>@Resource.Views.Shared._Footer.footerP4</p>
+            <p>@Resource.Views.Shared._Footer.footerP5</p>
+            <p>@Resource.Views.Shared._Footer.footerP6</p>
+            <p>@Resource.Views.Shared._Footer.footerP7</p>
+        </div>
+        <!--/.Text Company-->
+
+    </div>
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            @Resource.Views.Shared._Footer.copyBrand @Resource.Views.Shared._Footer.copyright - <a href="http://www.incloux.com" target="_blank" rel="noopener"><img id="incloux" src="https://incloux.com/img/iconIncloux25.png" alt="Incloux"></a>
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->

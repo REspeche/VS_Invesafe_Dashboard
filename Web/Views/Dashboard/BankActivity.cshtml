@@ -1,0 +1,96 @@
+﻿<div class="container-fluid page-bank-activity" ng-controller="bankactivityController" ng-init="loadBankActivity()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.BankActivity.title</h6>
+        <h2>@Resource.Views.Dashboard.BankActivity.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+
+        <section ng-show="blockPage">
+            <div>@Html.Raw(Resource.Views.Dashboard.BankActivity.text)</div>
+
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-info waves-effect waves-light"
+                        ng-click="clickSlideAjax('personaldata')">
+                    @Resource.Views.Dashboard.BankActivity.btnGoToDocumentation
+                </button>
+            </div>
+        </section>
+
+        <div class="resumee" ng-hide="blockPage">
+            <div class="card card-cascade mb-2">
+                <!--Naked Form-->
+                <div class="card-block pb-0">
+                    <div ng-hide="loadForm" class="mb-1">@Resource.Common.loading</div>
+                    <form method="get" class="form-inline form-horizontal" id="frmFilter" ng-show="loadForm">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <select class="form-control" ng-model="filterForm.typeOperation"
+                                        ng-options="item.id as item.label for item in typeOperation"
+                                        ng-change="isEditingForm()">
+                                    <option value="">@Resource.Common.optionSelect</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <input placeholder="@Resource.Views.Dashboard.BankActivity.inpStartDate" type="text" id="txtDateStart" class="form-control datepicker"
+                                       ng-model="filterForm.startDate"
+                                       ng-change="isEditingForm()">
+                            </div>
+                            <div class="col-md-3">
+                                <input placeholder="@Resource.Views.Dashboard.BankActivity.inpEndDate" type="text" id="txtDateEnd" class="form-control datepicker"
+                                       ng-model="filterForm.endDate"
+                                       ng-change="isEditingForm()">
+                            </div>
+                            <div class="col-md-2 pr-0">
+                                <button class="btn btn-info waves-effect waves-light float-right"
+                                        ng-click="filterExecute()"
+                                        ng-disabled="!editForm">
+                                    @Resource.Views.Dashboard.BankActivity.btnFilter
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--Table-->
+            <div ng-hide="loadList">@Resource.Common.loading</div>
+            <table class="table table-bordered table-hover" ng-show="loadList">
+
+                <!--Table head-->
+                <thead class="mdb-color darken-3">
+                    <tr class="text-white">
+                        <th>@Resource.Views.Dashboard.BankActivity.col1</th>
+                        <th>@Resource.Views.Dashboard.BankActivity.col2</th>
+                        <th>@Resource.Views.Dashboard.BankActivity.col3</th>
+                        <th>@Resource.Views.Dashboard.BankActivity.col4</th>
+                    </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody ng-show="movements.length==0">
+                    <tr class="movements-table-blank-row">
+                        <td colspan="6" style="text-align: center !important;">@Resource.Views.Dashboard.BankActivity.notData</td>
+                    </tr>
+                </tbody>
+                <tbody ng-hide="movements.length==0">
+                    <tr ng-repeat="movement in movements" ng-class="{'alert-danger': !movement.validate}">
+                        <td title="{{movement.concept}}"
+                            data-toggle="{{(movement.concept)?'tooltip':''}}" data-placement="top">
+                            {{movement.type}}{{(!movement.validate)?' (Validandose)':''}}
+                        </td>
+                        <td>{{getDate(movement.dateApply)}}</td>
+                        <td>$ {{(!movement.validate)?'('+(movement.amount | number : 0)+')':(movement.amount | number : 0)}}</td>
+                        <td>{{movement.inputOutput}}</td>
+                    </tr>
+                </tbody>
+                <!--Table body-->
+
+            </table>
+            <!--Table-->
+        </div>
+    </div>
+
+</div>
+

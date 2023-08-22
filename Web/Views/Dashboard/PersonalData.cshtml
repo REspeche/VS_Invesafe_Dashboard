@@ -1,0 +1,221 @@
+﻿<div class="container-fluid page-personal-data" ng-controller="personaldataController" ng-init="loadPersonalData()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.PersonalData.title</h6>
+        <h2>@Resource.Views.Dashboard.PersonalData.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+        <div>
+            <p>@Resource.Views.Dashboard.PersonalData.text</p>
+        </div>
+
+        <div ng-hide="loadForm">@Resource.Common.loading</div>
+        <form name="frmPersonalData" ng-submit="submitPersonalData()" novalidate autocomplete="off" ng-show="loadForm">
+            <span class="hidden-xl-down formIncomplete">@Resource.Messages.Warning.formIncomplete</span>
+            <!--Header-->
+            <div class="text-left mb-1 text-small">
+                <p>@Resource.Common.lblRequiredField</p>
+            </div>
+
+            <div class="card card-cascade mb-2">
+                <!--Naked Form-->
+                <div class="card-block">
+
+                    <!--Header-->
+                    <div class="text-left">
+                        <h4 class="font-weight-bold">@Resource.Views.Dashboard.PersonalData.titIdentificationData</h4>
+                        <hr class="mt-1 mb-2">
+                    </div>
+
+                    <!--Body-->
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtCUIT" name="txtCUIT"
+                                       ng-model="personalData.cuit" minlength="6" maxlength="15" required
+                                       pattern="^[0-9]*$"
+                                       ng-change="isEditingForm()"
+                                       title="@Resource.Views.Dashboard.PersonalData.lblCUIT"
+                                       data-toggle="tooltip" data-placement="top">
+                                <label for="txtCUIT">@Resource.Views.Dashboard.PersonalData.inpCUIT *</label>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtCUIT.$touched && frmPersonalData.txtCUIT.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtCUIT.$touched && frmPersonalData.txtCUIT.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 6)</span>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtCUIT.$touched && frmPersonalData.txtCUIT.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 15)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtFirstName" name="txtFirstName"
+                                       ng-model="personalData.firstName" minlength="2" maxlength="50" required
+                                       ng-change="isEditingForm()">
+                                <label for="txtFirstName">@Resource.Views.Dashboard.PersonalData.inpFullName *</label>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtFirstName.$touched && frmPersonalData.txtFirstName.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtFirstName.$touched && frmPersonalData.txtFirstName.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtFirstName.$touched && frmPersonalData.txtFirstName.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 50)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-0">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtLastName" name="txtLastName"
+                                       ng-model="personalData.lastName" minlength="2" maxlength="50" required
+                                       ng-change="isEditingForm()">
+                                <label for="txtLastName">@Resource.Views.Dashboard.PersonalData.inpLastName *</label>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtLastName.$touched && frmPersonalData.txtLastName.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtLastName.$touched && frmPersonalData.txtLastName.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtLastName.$touched && frmPersonalData.txtLastName.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 50)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control" id="txtEmail" name="txtEmail"
+                                       ng-model="personalData.email" disabled>
+                                <label for="txtEmail" class="disabled">@Resource.Views.Dashboard.PersonalData.inpEmail</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form form-sm">
+                                <div class="row">
+                                    <div class="col-md-2 pl-0">
+                                        <div class="md-form form-sm">
+                                            <input type="text" class="form-control validate" id="txtPhoneCode" name="txtPhoneCode"
+                                                   ng-model="personalData.codePhone" size="4" minlength="3" maxlength="4"
+                                                   ng-change="isEditingForm()" ng-disabled="personalData.authenticationMethod==2">
+                                            <label for="txtPhoneCode">@Resource.Views.Dashboard.PersonalData.inpAreaCode</label>
+                                            <span class="mdl-textfield__error" ng-show="frmPersonalData.txtPhoneCode.$touched && frmPersonalData.txtPhoneCode.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 6)</span>
+                                            <span class="mdl-textfield__error" ng-show="frmPersonalData.txtPhoneCode.$touched && frmPersonalData.txtPhoneCode.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 20)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10 pl-0">
+                                        <div class="md-form form-sm">
+                                            <input type="tel" class="form-control validate" id="txtPhone" name="txtPhone"
+                                                   ng-model="personalData.phone" minlength="6" maxlength="20"
+                                                   ng-change="isEditingForm()" required ng-disabled="personalData.authenticationMethod==2">
+                                            <label for="txtPhone">@Resource.Views.Dashboard.PersonalData.inpPhone *</label>
+                                            <span class="mdl-textfield__error" ng-show="frmPersonalData.txtPhone.$touched && frmPersonalData.txtPhone.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                            <span class="mdl-textfield__error" ng-show="frmPersonalData.txtPhone.$touched && frmPersonalData.txtPhone.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 6)</span>
+                                            <span class="mdl-textfield__error" ng-show="frmPersonalData.txtPhone.$touched && frmPersonalData.txtPhone.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 20)</span>
+                                            <span class="mdl-textfield__error" ng-show="frmPersonalData.txtPhone.$touched && frmPersonalData.txtPhone.$error.pattern && !frmPersonalData.txtPhone.$error.minlength">@Resource.Messages.Info.errorIncorrectFormat</span>
+                                            <div class="text-left mt-0 text-small" ng-show="personalData.authenticationMethod==2">
+                                                <i class="fas fa-exclamation-triangle mr-2 text-warning"></i>@Html.Raw(Resource.Views.Dashboard.PersonalData.infoPhone)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input placeholder="Seleccione una fecha" type="text" id="txtDateBorn" class="form-control datepicker"
+                                   ng-model="personalData._bornDate" required
+                                   ng-change="isEditingForm()">
+                            <label for="date-picker-example">@Resource.Views.Dashboard.PersonalData.inpBornDate</label>
+                            <span class="mdl-textfield__error" ng-show="frmPersonalData.txtDateBorn.$touched && frmPersonalData.txtDateBorn.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                        </div>
+                        <div class="col-md-6 pl-0">
+                            <select class="form-control" ng-model="personalData.exposedPolitician"
+                                    ng-options="item.id as item.label for item in yesNoList"
+                                    ng-change="isEditingForm()"
+                                    title="@Resource.Views.Dashboard.PersonalData.infoPolitician"
+                                    data-toggle="tooltip" data-placement="top">
+                                <option value="">@Resource.Common.optionSelect</option>
+                            </select>
+                            <label class="textred">@Resource.Views.Dashboard.PersonalData.inpPolitician *</label>
+                        </div>
+                    </div>
+
+                    <div class="text-left sub-header">
+                        <h4 class="font-weight-bold">@Resource.Views.Dashboard.PersonalData.titNationality</h4>
+                        <hr class="mt-1 mb-2">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-control" ng-model="personalData.nationality"
+                                    ng-options="item.id as item.label for item in countryList"
+                                    ng-change="isEditingForm()">
+                                <option value="">@Resource.Common.optionSelect</option>
+                            </select>
+                            <label>@Resource.Views.Dashboard.PersonalData.inpNationality *</label>
+                        </div>
+                    </div>
+
+                    <div class="text-left sub-header">
+                        <h4 class="font-weight-bold">@Resource.Views.Dashboard.PersonalData.titAddress</h4>
+                        <hr class="mt-1 mb-2">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-control" ng-model="personalData.live"
+                                    ng-options="item.id as item.label for item in countryList"
+                                    ng-change="isEditingForm()">
+                                <option value="">@Resource.Common.optionSelect</option>
+                            </select>
+                            <label>@Resource.Views.Dashboard.PersonalData.inpCountry *</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-8 pl-0">
+                                    <div class="md-form form-sm">
+                                        <input type="text" class="form-control validate" id="txtCity" name="txtCity"
+                                               ng-model="personalData.city" minlength="2" maxlength="50"
+                                               ng-change="isEditingForm()">
+                                        <label for="txtCity">@Resource.Views.Dashboard.PersonalData.inpCity *</label>
+                                        <span class="mdl-textfield__error" ng-show="frmPersonalData.txtCity.$touched && frmPersonalData.txtCity.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                        <span class="mdl-textfield__error" ng-show="frmPersonalData.txtCity.$touched && frmPersonalData.txtCity.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 50)</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pl-0">
+                                    <div class="md-form form-sm">
+                                        <input type="text" class="form-control validate" id="txtCp" name="txtCp"
+                                               ng-model="personalData.cp" size="4" minlength="2" maxlength="4" required
+                                               ng-change="isEditingForm()">
+                                        <label for="txtCp" class="disabled">@Resource.Views.Dashboard.PersonalData.inpZip *</label>
+                                        <span class="mdl-textfield__error" ng-show="frmPersonalData.txtCp.$touched && frmPersonalData.txtCp.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                        <span class="mdl-textfield__error" ng-show="frmPersonalData.txtCp.$touched && frmPersonalData.txtCp.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                        <span class="mdl-textfield__error" ng-show="frmPersonalData.txtCp.$touched && frmPersonalData.txtCp.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 50)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtAddress" name="txtAddress"
+                                       ng-model="personalData.address" minlength="2" maxlength="100" required
+                                       ng-change="isEditingForm()"
+                                       title="@Resource.Views.Dashboard.PersonalData.lblAddress"
+                                       data-toggle="tooltip" data-placement="top">
+                                <label for="txtAddress">@Resource.Views.Dashboard.PersonalData.inpAddress *</label>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtAddress.$touched && frmPersonalData.txtAddress.$error.required">@Resource.Messages.Info.errorFieldRequired</span>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtAddress.$touched && frmPersonalData.txtAddress.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmPersonalData.txtAddress.$touched && frmPersonalData.txtAddress.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 100)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-info waves-effect waves-light"
+                                ng-disabled="!editForm">
+                            @Resource.Views.Dashboard.PersonalData.btnSave <i class="fa fa-save ml-1"></i>
+                        </button>
+                        </div>
+
+                    </div>
+                <!--Naked Form-->
+            </div>
+        </form>
+
+    </div>
+</div>

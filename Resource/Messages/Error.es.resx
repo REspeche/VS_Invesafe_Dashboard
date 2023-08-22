@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="errorCodeExpired" xml:space="preserve">
+    <value>El código ha expirado.</value>
+    <comment>300</comment>
+  </data>
+  <data name="errorCodeInvalid" xml:space="preserve">
+    <value>El código ingresado ha expirado o no corresponde al mostrado según su metodo de autenticación. Por favor, intente nuevamente.</value>
+    <comment>301</comment>
+  </data>
+  <data name="errorCodeInvalidSMS" xml:space="preserve">
+    <value>El código ingresado no corresponde al enviado por SMS. Por favor, intente nuevamente.</value>
+    <comment>317</comment>
+  </data>
+  <data name="errorProcedure" xml:space="preserve">
+    <value>Hubo un error al intentar guardar la transacción. Por favor intente nuevamente más tarde o comuníquese con el departamento técnico.</value>
+    <comment>302</comment>
+  </data>
+  <data name="errorRetireNotApproved" xml:space="preserve">
+    <value>La transferencia no puede cargarse, ya que todavía existe una en sistema que no fue validada.</value>
+    <comment>303</comment>
+  </data>
+  <data name="errorUploadDocumentBack" xml:space="preserve">
+    <value>No se ha podido subir correctamente la imagen que corresponde al dorso del documento. Por favor intente nuevamente.</value>
+    <comment>304</comment>
+  </data>
+  <data name="errorUploadDocumentFront" xml:space="preserve">
+    <value>No se ha podido subir correctamente la imagen que corresponde al frente del documento. Por favor intente nuevamente.</value>
+    <comment>305</comment>
+  </data>
+  <data name="errorUploadDocuments" xml:space="preserve">
+    <value>No se ha podido subir correctamente los archivos adjuntados. Por favor intente nuevamente.</value>
+    <comment>306</comment>
+  </data>
+  <data name="errorUploadFileNotFound" xml:space="preserve">
+    <value>Por favor, intenta subir nuevamente la imagen</value>
+    <comment>307</comment>
+  </data>
+  <data name="errorUploadSizeLong" xml:space="preserve">
+    <value>El archivo es demasiado grande, máximo tamaño admitido: {0}</value>
+    <comment>308</comment>
+  </data>
+  <data name="errorUserExist" xml:space="preserve">
+    <value>Ya existe un usuario registrado con dicho mail. El procedimiento no podrá llevarse a cabo. Por favor, intente con otra cuenta.</value>
+    <comment>309</comment>
+  </data>
+  <data name="infoUserExist" xml:space="preserve">
+    <value>Ya existe un usuario registrado con dicho mail. Se procederá a la autentificación.</value>
+    <comment>317</comment>
+  </data>
+  <data name="loginError1" xml:space="preserve">
+    <value>Contraseña incorrecta</value>
+    <comment>310</comment>
+  </data>
+  <data name="loginError10" xml:space="preserve">
+    <value>La cuenta se encuentra bloqueada para seguir siendo usada.  Por favor, comuníquese con soporte.</value>
+    <comment>311</comment>
+  </data>
+  <data name="loginError2" xml:space="preserve">
+    <value>Correo electrónico no registrado</value>
+    <comment>312</comment>
+  </data>
+  <data name="loginError3" xml:space="preserve">
+    <value>El correo ya se encuentra registrado</value>
+    <comment>313</comment>
+  </data>
+  <data name="loginError4" xml:space="preserve">
+    <value>Expiro el tiempo para cambiar la contraseña</value>
+    <comment>314</comment>
+  </data>
+  <data name="loginError7" xml:space="preserve">
+    <value>Hubo un error al intentar cambiar su contraseña</value>
+    <comment>315</comment>
+  </data>
+  <data name="loginError9" xml:space="preserve">
+    <value>Expiro el tiempo para confirmar la cuenta de correo electrónico. Por favor, confirme su cuenta de correo o comuníquese con soporte.</value>
+    <comment>316</comment>
+  </data>
+</root>

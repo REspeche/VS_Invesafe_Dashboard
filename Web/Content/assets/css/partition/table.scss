@@ -1,0 +1,17 @@
+﻿table.table {
+	background-color: #fff;
+
+	td.fit, 
+	th.fit {
+		white-space: nowrap;
+		width: 1%;
+	}
+	thead th {
+		font-weight: 300;
+	}
+	tbody.cell-button {
+		td {
+			line-height: 45px;
+		}
+	}
+}

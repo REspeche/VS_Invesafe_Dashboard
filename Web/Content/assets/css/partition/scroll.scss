@@ -1,0 +1,42 @@
+﻿/* Body */
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+body::-webkit-scrollbar {
+	width: 8px;
+	background-color: transparent;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+/* Menu */
+.scrollbar
+{
+	overflow-y: auto;
+}
+
+.scrollbar::-webkit-scrollbar-track
+{
+	background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb
+{
+	background-color: #d8d8d8;
+}

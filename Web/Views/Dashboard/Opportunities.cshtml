@@ -1,0 +1,138 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-opportunities" ng-controller="opportunitiesController" ng-init="loadOpportunities()">
+
+    <section class="section section-title">
+        <h2>@Resource.Views.Dashboard.Opportunities.title</h2>
+    </section>
+
+    <!--Section: Opportunities-->
+    <section class="section section-intro">
+
+        <!-- Card deck -->
+        <div class="card-deck">
+
+            <!-- Card -->
+            <div class="card mb-4" ng-repeat="project in projects" id="pro_{{project.id}}">
+                <div class="card-front">
+
+                    <div class="card-top col-xs-12">
+                        <!--Title-->
+                        <h5>{{project.name}}</h5>
+                        <p>{{project.city}} | {{project.subName}}</p>
+                        <a ng-click="flipCard(project.id,true)"><i class="fa fa-question-circle"></i></a>
+                    </div>
+
+                    <!--Card image-->
+                    <div class="card-image">
+                        <a ng-click="viewProject(project.id)">
+                            <img class="card-img-top" ng-src="@(CommonHelper.getHandlerPath())projects/{{project.id}}.jpg?width=400" alt="{{project.name}}">
+                            <div class="card-type bg-success rounded-right">
+                                <div class="icon-financial-type">
+                                    <span>{{project.type | translate}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body pb-0">
+                        <div class="_status funding">
+                            <div class="row _s-row">
+                                <div class="col-6">
+                                    <span class="_s-text-primary">
+                                        ${{project.totalInvested | number : 0}} <span class="small-percent">({{project.percentInvested}}%)</span>
+                                    </span>
+                                </div>
+                                <div class="col-6 text-right">
+                                    <span class="_s-text-primary">
+                                        ${{project.goalAmount | number : 0}}
+                                    </span>
+                                </div>
+                                <div class="col-12">
+                                    <dl class="_s-investment-bar">
+                                        <dd class="_s-total">
+                                            <span class="_s-percent" style="width: {{project.percentInvested}}%; max-width: 100%;"></span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="col-6">
+                                    <i class="fa fa-user pull-left"></i>
+                                    <span class="_s-text-primary">{{project.countClients}}</span><span class="_s-text-secondary"> @Resource.Views.Dashboard.Opportunities.lblInvestor{{(project.countClients<=1)?'':'@Resource.Views.Dashboard.Opportunities.lblInvestor_S'}}</span>
+                                </div>
+                                <div class="col-6 text-right"
+                                     title="@Resource.Views.Dashboard.Opportunities.txtInfo"
+                                     data-toggle="tooltip" data-placement="top">
+                                    <span class="_s-text-secondary">
+                                        {{project.daysRuning}} @Resource.Views.Dashboard.Opportunities.lblDay{{(project.daysRuning==1)?'':'@Resource.Views.Dashboard.Opportunities.lblDay_S'}} <sup> (i)</sup>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body bg-gray">
+                        <div class="_data">
+                            <div class="row _s-row">
+                                <div class="col-6">
+                                    <div class="_data-value">
+                                        <span class="_number">
+                                            {{project.profitability}}<span class="">%</span>
+                                        </span>
+                                        <p class="_s-text-secondary">@Resource.Views.Dashboard.Opportunities.lblTotalProf</p>
+                                    </div>
+                                </div>
+                                <div class="_separator"></div>
+                                <div class="col-6">
+                                    <div class="_data-value">
+                                        <span class="_number">
+                                            {{project.timeLimit}}<span class=""> mes{{(project.timeLimit==1)?'':'es'}}</span>
+                                        </span>
+                                        <p class="_s-text-secondary">@Resource.Views.Dashboard.Opportunities.lblTerm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="_tir">
+                            <div class="row _s-row">
+                                <div class="col-12 text-center">
+                                    <span class="_description _s-text-secondary">@Resource.Views.Dashboard.Opportunities.lblHistoricTIR <span class="text-lowercase">@Resource.Views.Dashboard.Opportunities.lblProfit</span>: </span>
+                                    <span class="_value _s-text-primary">{{project.historicTIR}} %</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="_button-bar">
+                            <button type="button" class="btn btn-md" ng-class="{'btn-success' : project.finishInvest,'btn-warning' : !project.finishInvest}" ng-click="viewProject(project.id)"><span ng-hide="project.finishInvest">@Resource.Views.Dashboard.Opportunities.btnInvest</span><span ng-show="project.finishInvest">@Resource.Views.Dashboard.Opportunities.btnViewProject</span></button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="card-back">
+
+                    <div class="row _s-row-header">
+                        <div class="col-12 card-top">
+                            <h5>@Resource.Views.Dashboard.Opportunities.titMoreInformation</h5>
+                            <a ng-click="flipCard(project.id,false)"><i class="fa fa-times-circle"></i></a>
+                    </div>
+                    </div>
+                    <div class="row _s-row">
+                        <div class="col-12">
+                            <p>@Html.Raw(Resource.Views.Dashboard.Opportunities.info1)</p>
+                            <p>@Html.Raw(Resource.Views.Dashboard.Opportunities.info2)</p>
+                            <p>@Html.Raw(Resource.Views.Dashboard.Opportunities.info3)</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Card -->
+
+        </div>
+        <!-- Card deck -->
+
+    </section>
+    <!--/Section: Opportunities-->
+
+</div>

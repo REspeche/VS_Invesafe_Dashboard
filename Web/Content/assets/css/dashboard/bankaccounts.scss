@@ -1,0 +1,35 @@
+﻿.page-bank-accounts {
+    .bankAccountContainer {
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        padding: 25px;
+        background-color: #fff;
+    }
+    .documentitle {
+        font-size: 18px;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 5px;
+    }
+    .fa.fa-check-circle {
+        font-size: 18px;
+        color: #0c9;
+    }
+    p.titular-info {
+        font-weight: 700;
+        font-size: 16px;
+        color: #46393e;
+        text-align: left;
+    }
+    .roundedbutton {
+        color: #fff;
+        background-color: #91ccc9;
+        padding: 10px 30px;
+        display: inline-block;
+    }
+    .removeBankAccountButton {
+        padding: 10px 20px!important;
+        .fa {
+            margin-right: 10px;
+        }
+    }
+}

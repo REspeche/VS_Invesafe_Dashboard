@@ -1,0 +1,81 @@
+﻿<div class="container-fluid page-my-investments" ng-controller="myinvestmentsController" ng-init="loadMyInvestments()">
+
+    <!--First column-->
+    <div class="col-md-6 section-title">
+        <h2>@Resource.Views.Dashboard.MyInvestments.title</h2>
+    </div>
+
+    <div class="col-md-12">
+        <div class="resumee">
+            <div class="card card-cascade mb-2">
+                <!--Naked Form-->
+                <div class="card-block pb-0">
+                    <div ng-hide="loadForm" class="mb-1">@Resource.Common.loading</div>
+                    <form method="get" class="form-inline form-horizontal" id="frmFilter" ng-show="loadForm">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <input placeholder="@Resource.Views.Dashboard.MyInvestments.inpQuery" type="text" id="txtSearch" class="form-control"
+                                       minlength="2" maxlength="100"
+                                       ng-model="filterForm.search"
+                                       ng-change="isEditingForm()">
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control" ng-model="filterForm.typeProject"
+                                        ng-options="item.id as item.label for item in typeProject"
+                                        ng-change="isEditingForm()">
+                                    <option value="">@Resource.Common.optionSelect</option>
+                                </select>
+                                <label>@Resource.Views.Dashboard.MyInvestments.lblTypeProject</label>
+                            </div>
+                            <div class="col-md-5 pr-0">
+                                <button class="btn btn-info waves-effect waves-light float-right"
+                                        ng-click="filterExecute()"
+                                        ng-disabled="!editForm">
+                                    @Resource.Views.Dashboard.MyInvestments.btnFilter
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--Table-->
+            <div ng-hide="loadList">@Resource.Common.loading</div>
+            <table class="table table-bordered table-hover" ng-show="loadList">
+
+                <!--Table head-->
+                <thead class="mdb-color darken-3">
+                    <tr class="text-white">
+                        <th>@Resource.Views.Dashboard.MyInvestments.col1</th>
+                        <th>@Resource.Views.Dashboard.MyInvestments.col2</th>
+                        <th>@Resource.Views.Dashboard.MyInvestments.col3</th>
+                        <th>@Resource.Views.Dashboard.MyInvestments.col4</th>
+                        <th>@Resource.Views.Dashboard.MyInvestments.col5</th>
+                    </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody ng-show="myinvestments.length==0">
+                    <tr class="movements-table-blank-row">
+                        <td colspan="6" style="text-align: center !important;">
+                            <p>@Html.Raw(Resource.Views.Dashboard.MyInvestments.noData)</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="cell-button" ng-hide="myinvestments.length==0">
+                    <tr ng-repeat="investment in myinvestments">
+                        <td>{{investment.name}}</td>
+                        <td>{{investment.type | translate}}</td>
+                        <td>{{getDate(investment.date)}}</td>
+                        <td>{{investment.amount}}<span ng-show="investment.isSold"> [{{investment.amountSin}}]</span></td>
+                        <td>$ {{investment.fraction | number : 2}} <span ng-show="investment.isSold"> [$ {{investment.fractionSin | number : 2}} <i class="fas" ng-class="(investment.fractionSin>investment.fraction) ? 'fa-chevron-circle-up text-success' : ((investment.fractionSin==investment.fraction) ? 'fa-dot-circle text-info' : 'fa-chevron-circle-down text-danger')"></i>]</span></td>
+                    </tr>
+                </tbody>
+                <!--Table body-->
+
+            </table>
+            <!--Table-->
+        </div>
+
+    </div>
+</div>

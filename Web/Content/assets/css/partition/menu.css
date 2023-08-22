@@ -1,0 +1,65 @@
+﻿.navbar .nav-flex-icons {
+  padding-top: 0; }
+
+.navbar .button-collapse {
+  margin-top: 5px; }
+
+.user-box p {
+  margin-top: .3rem; }
+
+.white-skin .side-nav .collapsible {
+  margin-top: 16px; }
+  .white-skin .side-nav .collapsible li a {
+    color: #616161;
+    border-radius: 0; }
+  .white-skin .side-nav .collapsible li a.collapsible-header.active {
+    color: #616161;
+    background-color: rgba(0, 0, 0, 0.1); }
+    .white-skin .side-nav .collapsible li a.collapsible-header.active i.fa {
+      color: #616161; }
+  .white-skin .side-nav .collapsible li a.collapsible-header.select {
+    color: #039be5;
+    background-color: rgba(3, 155, 229, 0.2); }
+    .white-skin .side-nav .collapsible li a.collapsible-header.select i.fa {
+      color: #039be5; }
+  .white-skin .side-nav .collapsible li a.active:not(.collapsible-header) {
+    background-color: #039be5;
+    color: #fff; }
+    .white-skin .side-nav .collapsible li a.active:not(.collapsible-header) i.fa {
+      color: #fff; }
+
+.side-nav {
+  text-align: left; }
+  .side-nav .user-box {
+    padding: 20px 10px 0 20px; }
+  .side-nav ul.collapsible li {
+    padding-right: 0;
+    padding-left: 0; }
+    .side-nav ul.collapsible li a {
+      height: 50px;
+      padding-left: 15px;
+      margin-bottom: 0;
+      padding-top: 2px; }
+      .side-nav ul.collapsible li a .fa {
+        color: #616161; }
+      .side-nav ul.collapsible li a .fa:not(.rotate-icon) {
+        position: relative;
+        top: 2px; }
+  .side-nav ul.collapsible .collapsible-body li {
+    padding-left: 0px; }
+  .side-nav ul.collapsible a.collapsible-header.active + .collapsible-body {
+    border-left: 10px solid rgba(0, 0, 0, 0.1); }
+  .side-nav ul.collapsible a.collapsible-header.select + .collapsible-body {
+    border-left: 10px solid rgba(3, 155, 229, 0.2); }
+  .side-nav .social {
+    position: fixed;
+    width: calc(100% - 40px);
+    margin-left: 18px;
+    border-top: 1px solid rgba(153, 153, 153, 0.298039);
+    border-bottom: none;
+    background-color: #F9F9F9; }
+
+@media only screen and (min-width: 768px) {
+  .top-nav-collapse {
+    padding-top: 1px;
+    padding-bottom: 1px; } }

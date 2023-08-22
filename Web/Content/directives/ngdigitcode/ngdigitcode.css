@@ -1,0 +1,13 @@
+﻿table.digit-code {
+  margin: 0 auto; }
+  table.digit-code .clock {
+    color: darkgray;
+    border-style: none;
+    width: 40px;
+    height: 60px;
+    font-size: 60px;
+    margin-right: 3px;
+    border: 2px solid darkgray;
+    text-align: center; }
+  table.digit-code table {
+    border-collapse: collapse; }

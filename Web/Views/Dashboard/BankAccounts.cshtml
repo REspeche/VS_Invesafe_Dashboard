@@ -1,0 +1,112 @@
+﻿<div class="container-fluid page-bank-accounts" ng-controller="bankaccountsController" ng-init="loadBankAccounts()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.BankAccounts.title</h6>
+        <h2>@Resource.Views.Dashboard.BankAccounts.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+        <div ng-hide="loadForm">@Resource.Common.loading</div>
+        <div class="row" ng-show="loadForm">
+            <div class="col-md-12" ng-show="blockPage">
+                <div>@Html.Raw(Resource.Views.Dashboard.BankAccounts.text)</div>
+
+                <div class="text-center mt-3">
+                    <button type="button" class="btn btn-info waves-effect waves-light"
+                            ng-click="clickSlideAjax('personaldata')">@Resource.Views.Dashboard.BankAccounts.lnkGoToDocumentation</button>
+                </div>
+            </div>
+            <div class="col-md-12" ng-hide="blockPage">
+                <div class="mb-1">@Html.Raw(Resource.Views.Dashboard.BankAccounts.text2)</div>
+                <div class="alert alert-info" role="alert" ng-hide="accounts.length>0">@Resource.Views.Dashboard.BankAccounts.msgAlert</div>
+            </div>
+        </div>
+
+        <div class="card card-cascade mt-1" ng-repeat="account in accounts" id="acc_{{account.id}}">
+            <!--Naked Form-->
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                                <p class="documentitle documentdescription">@Resource.Views.Dashboard.BankAccounts.titDataAccount</p>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p>@Resource.Views.Dashboard.BankAccounts.lblBank</p>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <p class="titular-info">{{account.bankName}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p>@Resource.Views.Dashboard.BankAccounts.lblOwner</p>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <p class="titular-info">{{account.holder}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p>@Resource.Views.Dashboard.BankAccounts.lblAccountNbr</p>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <p class="titular-info">{{account.accountNbr}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p>@Resource.Views.Dashboard.BankAccounts.lblCBU</p>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <p class="titular-info">{{account.cbu}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-sm-12">
+                                <div class="separador-16 hidden-md hidden-lg"></div>
+                                <p class="documentitle documentdescription">@Resource.Views.Dashboard.BankAccounts.titTicketAccount</p>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <p>@Resource.Views.Dashboard.BankAccounts.lblDocument</p>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <a href="{{account.fileDocument}}" target="_blank">visualizar <i class="fa fa-eye"></i></a>
+                                    </div>
+                                </div>
+                                <div class="separador-16 hidden-md hidden-lg"></div>
+                                <p class="documentitle documentdescription">@Resource.Views.Dashboard.BankAccounts.titAccountStatus</p>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span ng-show="account.state==2">@Resource.Views.Dashboard.BankAccounts.status1 <i class="fa fa-hourglass-half color-2"></i></span>
+                                        <span ng-show="account.state==4">@Resource.Views.Dashboard.BankAccounts.status2 <i class="fa fa-check color-4"></i></span>
+                                        <span ng-show="account.state==3">@Resource.Views.Dashboard.BankAccounts.status3 <i class="fa fa-exclamation color-3"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row" ng-show="account.state>=3">
+                            <div class="col-sm-12">
+                                <div class="float-right">
+                                    <button type="button" class="btn btn-info removeBankAccountButton" ng-click="removeAccount($index)">
+                                        <i class="fa fa-trash-alt" aria-hidden="true"></i>@Resource.Views.Dashboard.BankAccounts.btnRemove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large btn-info" ng-click="openAddAccount()">
+            <i class="fa fa-plus"></i>
+        </a>
+    </div>
+</div>
+

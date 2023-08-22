@@ -1,0 +1,124 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-patrimonial-situation" ng-controller="patrimonialsituationController" ng-init="loadPatrimonialSituation()">
+    <section class="section section-title">
+        <h2>@Resource.Views.Dashboard.PatrimonialSituation.title</h2>
+    </section>
+
+    <div class="col-md-12">
+
+        <div ng-show="blockPage">
+            @Html.Raw(Resource.Views.Dashboard.PatrimonialSituation.text)
+        </div>
+
+        <div class="resumee" ng-hide="blockPage">
+            <div class="row">
+                <div class="col-sm-8 admin-panel card-cascade">
+                    <div ng-show="viewChart" style="height:442px">
+                        <!--Cascading element-->
+                        <div class="view right primary-color">
+                            <!--Main chart-->
+                            <canvas id="mychart"></canvas>
+                        </div>
+                        <!--/Cascading element-->
+                    </div>
+                    <div class="separador-30" ng-show="viewChart"></div>
+                    <div class="card card-cascade mb-2">
+                        <!--Naked Form-->
+                        <div class="card-block pb-0">
+                            <!--Header-->
+                            <div class="text-left">
+                                <h4 class="font-weight-bold">@Resource.Views.Dashboard.PatrimonialSituation.titResults</h4>
+                                <hr class="mt-1 mb-2">
+                            </div>
+
+                            <div class="incometable">
+                                <div class="incomeline greyLine">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblBenefits</span>
+                                    <span class="amount">$ {{ammounts.benefit_1 | number : 0}}</span>
+                                </div>
+                                <div class="incomeline">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblExtraBenefits</span>
+                                    <span class="amount">$ {{ammounts.benefit_2 | number : 0}}</span>
+                                </div>
+                                <div class="incomeline greyLine">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblSaleBenefits</span>
+                                    <span class="amount">$ {{ammounts.benefit_3 | number : 0}}</span>
+                                </div>
+                                <div class="incomeline">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblTaxBenefits</span>
+                                    <span class="amount">$ {{ammounts.benefit_4 | number : 0}}</span>
+                                </div>
+                                <div class="incomeline greyLine">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblPurchaseBenefits</span>
+                                    <span class="amount">$ {{ammounts.benefit_5 | number : 0}}</span>
+                                </div>
+                                <div class="incomeline final">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblSubtotalBenefits</span>
+                                    <span class="amount">$ {{ammounts.benefitTotal | number : 0}}</span>
+                                </div>
+                            </div>
+
+                            <div class="incometable last">
+                                <div class="incomeline">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblInvesafeFee (@CommonHelper.getParamCache().commissionInvestor%)</span>
+                                    <span class="amount">$ {{ammounts.expenseInvesafe | number : 0}}</span>
+                                </div>
+                                <div class="incomeline greyLine">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblExtraExpense</span>
+                                    <span class="amount">$ {{ammounts.expenseExtra | number : 0}}</span>
+                                </div>
+                                <div class="incomeline">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblLosses</span>
+                                    <span class="amount">$ {{ammounts.expenseLeak | number : 0}}</span>
+                                </div>
+                                <div class="incomeline greyLine final">
+                                    <span>@Resource.Views.Dashboard.PatrimonialSituation.lblSubtotalExpense</span>
+                                    <span class="amount">$ {{ammounts.expenseTotal | number : 0}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card card-cascade gradient-card-header blue-gradient">
+                        <!--Naked Form-->
+                        <div class="card-block pb-0 totaltable">
+                            <!--Header-->
+                            <div class="text-left">
+                                <h4 class="font-weight-bold">@Resource.Views.Dashboard.PatrimonialSituation.lblNetBenefit</h4>
+                                <hr class="mt-1 mb-2">
+                            </div>
+                            <p class="amount">$ {{ammounts.benefit | number : 0}}</p>
+                        </div>
+                    </div>
+                    <div class="separador-30"></div>
+                    <div id="box-info">
+                        <div class="billitem">
+                            <p>@Resource.Views.Dashboard.PatrimonialSituation.lblTotalPatrimonial</p>
+                            <p class="amount">$ {{ammounts.total | number : 0}}</p>
+                        </div>
+                        <div class="billitem">
+                            <p>@Resource.Views.Dashboard.PatrimonialSituation.lblAvailableMoney</p>
+                            <p class="amount">$ {{ammounts.available | number : 0}}</p>
+                        </div>
+                        <div class="billitem">
+                            <p>@Resource.Views.Dashboard.PatrimonialSituation.lblNbrProject</p>
+                            <p class="amount">{{ammounts.projects}} </p>
+                        </div>
+                        <div class="billitem">
+                            <p>@Resource.Views.Dashboard.PatrimonialSituation.lblCapitalInvested</p>
+                            <p class="amount">$ {{ammounts.invest | number : 0}}</p>
+                        </div>
+                        <div class="billitem last">
+                            <p>@Resource.Views.Dashboard.PatrimonialSituation.lblAvgCapitalInvested</p>
+                            <p class="amount">$ {{ammounts.avgInvest | number : 0}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,15 @@
+<div class="modal" id="idleModal" aria-hidden="true" ng-init="loadIdle()">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> Atencion!</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div idle-countdown="countdown" class="modal-body">
+                <p>Por inactividad en el sistema su sesi&oacute;n se cerrara automaticamente en <span class="countdown">{{countdown}}</span> segundo/s.</p>
+            </div>
+        </div>
+    </div>
+</div>

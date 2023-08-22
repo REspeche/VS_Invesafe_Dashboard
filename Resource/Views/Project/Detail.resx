@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="infoProject" xml:space="preserve">
+    <value>For more details see the &lt;a href="#" ng-click="openDocumentation()"&gt;project documentation&lt;/a&gt;.</value>
+  </data>
+  <data name="infoRef1" xml:space="preserve">
+    <value>Loan amount requested by the developer.</value>
+  </data>
+  <data name="infoRef2" xml:space="preserve">
+    <value>Interest to be distributed monthly among investors.</value>
+  </data>
+  <data name="infoRef3" xml:space="preserve">
+    <value>Purchase of the asset (${{project.purchasePrice}}) including all expenses associated with the operation: real estate acquisition price, brokerage fees, legal costs, sales and fees charged by Invesafe to the developer.</value>
+  </data>
+  <data name="infoRef4" xml:space="preserve">
+    <value>Corporate legal expenses, VAT deductible and mattress for exploitation. Also in case of reform: construction / reform costs, taxes, procedures and legal costs of the reform and furniture.</value>
+  </data>
+  <data name="infoRef5" xml:space="preserve">
+    <value>Estimated profit after the sale of the Property.</value>
+  </data>
+  <data name="lblEstimatedAmount" xml:space="preserve">
+    <value>Estimated amount on the performance obtained at the end of the project.</value>
+  </data>
+  <data name="lblFinancialClose" xml:space="preserve">
+    <value>Closed Financing</value>
+  </data>
+  <data name="lblFinancialDocuments" xml:space="preserve">
+    <value>Financial documents</value>
+  </data>
+  <data name="lblFinancialStart" xml:space="preserve">
+    <value>Started Financing</value>
+  </data>
+  <data name="lblFractions" xml:space="preserve">
+    <value>fractions</value>
+  </data>
+  <data name="lblGoalFinancial" xml:space="preserve">
+    <value>Financing objective</value>
+  </data>
+  <data name="lblInitialValue" xml:space="preserve">
+    <value>Initial Value Fraction</value>
+  </data>
+  <data name="lblInvest" xml:space="preserve">
+    <value>Investment</value>
+  </data>
+  <data name="lblInvestNow" xml:space="preserve">
+    <value>Invest now</value>
+  </data>
+  <data name="lblInvestor" xml:space="preserve">
+    <value>investor</value>
+  </data>
+  <data name="lblInvestor_S" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="lblIWantInvest" xml:space="preserve">
+    <value>I want to invest</value>
+  </data>
+  <data name="lblIwillGet" xml:space="preserve">
+    <value>Could receive</value>
+  </data>
+  <data name="lblLegalDocuments" xml:space="preserve">
+    <value>Legal documents</value>
+  </data>
+  <data name="lblMarketValue" xml:space="preserve">
+    <value>Fraction Market Value</value>
+  </data>
+  <data name="lblMonetaryInvest" xml:space="preserve">
+    <value>Monetary investment</value>
+  </data>
+  <data name="lblMonth" xml:space="preserve">
+    <value>month</value>
+  </data>
+  <data name="lblMonth_S" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="lblOperationAnalysis" xml:space="preserve">
+    <value>OPERATION ANALYSIS</value>
+  </data>
+  <data name="lblOperationData" xml:space="preserve">
+    <value>OPERATION DATA</value>
+  </data>
+  <data name="lblOperationProfit" xml:space="preserve">
+    <value>Operation Benefit</value>
+  </data>
+  <data name="lblOportunityDocuments" xml:space="preserve">
+    <value>Documents of the opportunity</value>
+  </data>
+  <data name="lblPurchase" xml:space="preserve">
+    <value>Purchase</value>
+  </data>
+  <data name="lblSaleAnalysis" xml:space="preserve">
+    <value>SALE ANALYSIS</value>
+  </data>
+  <data name="lblSaleProfit" xml:space="preserve">
+    <value>Profit from the sale</value>
+  </data>
+  <data name="lblStatus" xml:space="preserve">
+    <value>state</value>
+  </data>
+  <data name="lblTerm" xml:space="preserve">
+    <value>TERM</value>
+  </data>
+  <data name="lblTotalProfit" xml:space="preserve">
+    <value>TOTAL PROFITABILITY</value>
+  </data>
+  <data name="lnkBack" xml:space="preserve">
+    <value>Back to Opportunities</value>
+  </data>
+  <data name="noData" xml:space="preserve">
+    <value>There are no documents uploaded for this project.</value>
+  </data>
+  <data name="tab1" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="tab2" xml:space="preserve">
+    <value>Financial information</value>
+  </data>
+  <data name="tab3" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Opportunities</value>
+  </data>
+</root>

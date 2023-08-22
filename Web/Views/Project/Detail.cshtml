@@ -1,0 +1,432 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-project-details" ng-controller="opportunitiesController" ng-init="loadProjectDetail()">
+
+    <section class="section section-title">
+        <div class="row">
+
+            <div class="col-xs-10 col-sm-8">
+                <h6>@Resource.Views.Project.Detail.title</h6>
+                <h2>{{project.name}}</h2>
+            </div>
+            <div class="col-xs-2 col-sm-4">
+                <div class="pull-right">
+                    <a ng-click="clickSlideAjax('opportunities')"><i class="fa fa-arrow-circle-left"></i>&nbsp;<span class="hidden-xs">@Resource.Views.Project.Detail.lnkBack</span></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--Section: Project Details-->
+    <div class="row" ng-show="loadPage">
+        <div class="col-sm-12 col-md-8">
+            <div class="_ficha-image">
+                <div class="bottom-background loan">
+                    <div class="icon-financial-type">
+                        <i class="fa fa-{{project.icon}}"></i>
+                        <span class="text-uppercase">{{project.typeName | translate}}</span>
+                    </div>
+                </div>
+                <img class="img-responsive" ng-src="@(CommonHelper.getHandlerPath())projects/{{project.id}}.jpg?width=800">
+            </div>
+            <div class="separador-30"></div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul id="project-tabs" class="nav nav-tabs nav-justified hidden-xs project-intro-links" role="tablist">
+                        <li class="nav-item three-tabs">
+                            <a data-toggle="tab" href="#tab1" role="tab" ng-class="{active:selectTab=='tab1'}">@Resource.Views.Project.Detail.tab1</a>
+                        </li>
+                        <li class="nav-item three-tabs ">
+                            <a data-toggle="tab" href="#tab2" role="tab" ng-class="{active:selectTab=='tab2'}">@Resource.Views.Project.Detail.tab2</a>
+                        </li>
+                        <li class="nav-item three-tabs">
+                            <a data-toggle="tab" href="#tab3" role="tab" ng-class="{active:selectTab=='tab3'}" ng-click="loadDocuments()">@Resource.Views.Project.Detail.tab3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-content tab-content-single-project">
+                <div class="tab-pane fade" id="tab1" role="tabpanel" ng-class="{'in show active':selectTab=='tab1'}">
+                    <div class="separador-16 visible-xs"></div>
+                    <div class="project-content"></div>
+                </div>
+                <div class="tab-pane fade" id="tab2" role="tabpanel" ng-class="{'in show active':selectTab=='tab2'}">
+                    <div class="separador-16 visible-xs"></div>
+                    <div class="project-content">
+                        <div class="flip-container vertical">
+                            <div class="flip-container__wrapper">
+                                <div class="flip-container__wrapper__flipper valores">
+                                    <div class="front">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 nopadding-right-md">
+                                                <div class="front-info-profitability">
+                                                    <p>
+                                                        <span class="ahorro-box-text">@Resource.Views.Project.Detail.lblTotalProfit</span>
+                                                    </p>
+                                                    <span class="number-wrapper">
+                                                        {{project.profitability}}<span class="">%</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 nopadding-left-md">
+                                                <div class="front-info-investment inversion">
+                                                    <p>
+                                                        <span class="ahorro-box-text">@Resource.Views.Project.Detail.lblTerm</span>
+                                                    </p>
+                                                    <span class="number-wrapper">
+                                                        {{project.timeLimit}}<span class=""> @Resource.Views.Project.Detail.lblMonth{{(project.timeLimit==1)?'':'@Resource.Views.Project.Detail.lblMonth_S'}}</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="separador-30"></div>
+                        <div class="row" ng-show="project.typeId==1">
+                            <div class="col-md-6">
+                                <div class="table-responsive">
+                                    <table class="table resumen-ahorro-financiero">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">@Resource.Views.Project.Detail.lblOperationData</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@Resource.Views.Project.Detail.lblGoalFinancial<sup>1</sup></td>
+                                                <td align="right">${{project.price1 | number:2}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="table-responsive">
+                                    <table class="table resumen-ahorro-financiero">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">@Resource.Views.Project.Detail.lblOperationAnalysis</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@Resource.Views.Project.Detail.lblOperationProfit<sup>2</sup></td>
+                                                <td><strong>${{project.price2 | number:2}}</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="explanations">
+                                <div class="explanations-list">
+                                    <p><strong>1 - </strong> @Html.Raw(Resource.Views.Project.Detail.infoRef1)</p>
+                                    <p><strong>2 - </strong> @Html.Raw(Resource.Views.Project.Detail.infoRef2)</p>
+                                    <p>@Html.Raw(Resource.Views.Project.Detail.infoProject)</p>
+                                </div>
+                            </div>
+                            <div class="separador-30"></div>
+                        </div>
+                        <div class="row" ng-show="project.typeId==2">
+                            <div class="col-md-6">
+                                <div class="table-responsive">
+                                    <table class="table resumen-ahorro-financiero">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">@Resource.Views.Project.Detail.lblOperationData</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@Resource.Views.Project.Detail.lblPurchase<sup>1</sup></td>
+                                                <td align="right">${{project.price1 | number:2}}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>@Resource.Views.Project.Detail.lblInvest<sup>2</sup></td>
+                                                <td align="right">${{project.price2 | number:2}}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td><strong>@Resource.Views.Project.Detail.lblGoalFinancial</strong></td>
+                                                <td align="right"><strong>${{project.priceTotal | number:2}}</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="table-responsive">
+                                    <table class="table resumen-ahorro-financiero">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">@Resource.Views.Project.Detail.lblSaleAnalysis</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@Resource.Views.Project.Detail.lblSaleProfit<sup>3</sup></td>
+                                                <td><strong>${{project.price4 | number:2}}</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="explanations">
+                                <div class="explanations-list">
+                                    <p><strong>1 - </strong> @Html.Raw(Resource.Views.Project.Detail.infoRef3)</p>
+                                    <p><strong>2 - </strong> @Html.Raw(Resource.Views.Project.Detail.infoRef4)</p>
+                                    <p><strong>3 - </strong> @Html.Raw(Resource.Views.Project.Detail.infoRef5)</p>
+                                    <p>@Html.Raw(Resource.Views.Project.Detail.infoProject)</p>
+                                </div>
+                            </div>
+                            <div class="separador-30"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab3" role="tabpanel" ng-class="{'in show active':selectTab=='tab3'}">
+                    <div class="separador-16 visible-xs"></div>
+                    <div class="project-content">
+                        <div class="row documents">
+                            <div class="col-md-12" ng-show="!docCount.cad1 && !docCount.cad2 && !docCount.cad3">
+                                <span>@Resource.Views.Project.Detail.noData</span>
+                            </div>
+                            <div class="col-md-12" ng-show="docCount.cad1">
+                                <p class="document-category">@Resource.Views.Project.Detail.lblFinancialDocuments</p>
+                                <div class="row">
+                                    <div class="col-md-6 promotor-documents" ng-repeat="doc in documents | filter: { cadId: 1 }">
+                                        <p><a href="#" ng-href="@(CommonHelper.getStoragePath())documents/pro_{{project.id}}-cad_{{doc.cadId}}/{{doc.file_lang}}" target="_blank"><i class="fa fa-file-pdf primary-text"></i> {{doc.name}}</a></p>
+                                    </div>
+                                </div>
+                                <div class="separador-30"></div>
+                            </div>
+                            <div class="col-md-12" ng-show="docCount.cad2">
+                                <p class="document-category">@Resource.Views.Project.Detail.lblOportunityDocuments</p>
+                                <div class="row">
+                                    <div class="col-md-6 promotor-documents" ng-repeat="doc in documents | filter: { cadId: 2 }">
+                                        <p><a href="#" ng-href="@(CommonHelper.getStoragePath())documents/pro_{{project.id}}-cad_{{doc.cadId}}/{{doc.file_lang}}" target="_blank"><i class="fa fa-file-pdf primary-text"></i> {{doc.name}}</a></p>
+                                    </div>
+                                </div>
+                                <div class="separador-30"></div>
+                            </div>
+                            <div class="col-md-12" ng-show="docCount.cad3">
+                                <p class="document-category">@Resource.Views.Project.Detail.lblLegalDocuments</p>
+                                <div class="row">
+                                    <div class="col-md-6 promotor-documents" ng-repeat="doc in documents | filter: { cadId: 3 }">
+                                        <p><a href="#" ng-href="@(CommonHelper.getStoragePath())documents/pro_{{project.id}}-cad_{{doc.cadId}}/{{doc.file_lang}}" target="_blank"><i class="fa fa-file-pdf primary-text"></i> {{doc.name}}</a></p>
+                                    </div>
+                                </div>
+                                <div class="separador-16"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="separador-16 visible-xs"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+
+            <div class="project-grouped-info-sheet">
+                <div class="row">
+                    <div class="col-7 city-info">
+                        <div class="pull-left ellipsis" style="width: 100%;">{{project.city}}</div>
+                    </div>
+                    <div class="col-5 property-info">
+                        <div class="pull-right ellipsis text-right" style="width: 100%;">{{project.subName}}</div>
+                    </div>
+                    <div class="col-12 separador-16"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 status-project-band standar-color">
+                        <div class="row">
+                            <div class="col-3 status-text">@Resource.Views.Project.Detail.lblStatus</div>
+                            <div class="col-9 text-right">
+                                <span class="status-name">{{project.typeName | translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row percents">
+                    <div class="col-sm-12">
+                        <div class="separador-16"></div>
+                        <div class="row total">
+                            <div class="col-7">
+                                <span class="founds">${{project.totalInvested}} <span class="small-percent">({{project.percentInvested}}%)</span></span>
+                            </div>
+                            <div class="col-5 text-right">
+                                <span class="title total-amount">${{project.goalAmount}}</span>
+                            </div>
+                        </div>
+                        <dl class="investment-bar">
+                            <dd class="total">
+                                <span class="percent" style="width: {{project.percentInvested}}%; max-width: 100%;"></span>
+                            </dd>
+                        </dl>
+                        <div class="row">
+                            <div class="col-7">
+                                <span class="founds">{{project.countClients}}</span><span class="time"> @Resource.Views.Project.Detail.lblInvestor{{(project.countClients==1)?'':'@Resource.Views.Project.Detail.lblInvestor_S'}}</span>
+                            </div>
+                            <div class="col-5 text-right">
+                                <span class="time">
+                                    {{project.daysRuning}} día{{(project.daysRuning==1)?'':'s'}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="separador-16"></div>
+                <div class="flip-container vertical">
+                    <div class="flip-container__wrapper">
+                        <div class="flip-container__wrapper__flipper valores" style="height: auto;">
+                            <div class="front clearfix">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 nopadding-right-md">
+                                        <div class="front-info-profitability">
+                                            <p>@Resource.Views.Project.Detail.lblTotalProfit</p>
+                                            <span class="number-wrapper">
+                                                {{project.profitability}}<span class="">%</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 nopadding-left-md">
+                                        <div class="front-info-investment inversion">
+                                            <p>@Resource.Views.Project.Detail.lblTerm</p>
+                                            <span class="number-wrapper">{{project.timeLimit}}</span><span class="small-unit"> @Resource.Views.Project.Detail.lblMonth{{(project.timeLimit==1)?'':'@Resource.Views.Project.Detail.lblMonth_S'}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="separador-16"></div>
+                <div class="row simulador-row">
+                    <div class="col-sm-12 col-md-6">
+                        <span class="simulador-text">@Resource.Views.Project.Detail.lblInitialValue</span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 result-field text-right nopadding-left-md">
+                        <span>$ {{project.fractionInitial | number : 2}}</span>
+                    </div>
+                </div>
+                <div class="row simulador-row" ng-show="project.finishInvest">
+                    <div class="col-sm-12 col-md-6">
+                        <span class="simulador-text">@Resource.Views.Project.Detail.lblMarketValue</span>
+                    </div>
+                    <div class="col-sm-12 col-md-6 result-field text-right nopadding-left-md">
+                        <span id="simulador-result">$ {{project.fractionActual | number : 2}}</span>
+                    </div>
+                </div>
+                <section ng-hide="project.finishInvest">
+                    <div class="row simulador-row">
+                        <div class="col-sm-12 col-md-5">
+                            <span class="simulador-text">@Resource.Views.Project.Detail.lblIWantInvest</span>
+                        </div>
+                        <div class="col-sm-12 col-md-7">
+                            <div class="input-group">
+                                <input id="amount-inversion" type="number" class="form-control text-warning" ng-model="formInvest.amount" value="{{project.maxInvest}}" ng-change="calculateProfit()">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">@Resource.Views.Project.Detail.lblFractions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="separador-16"></div>
+                    <div class="row simulador-row">
+                        <div class="col-sm-12 col-md-6 nopadding-right-md">
+                            <span class="simulador-text">@Resource.Views.Project.Detail.lblMonetaryInvest</span>
+                        </div>
+                        <div class="col-sm-12 col-md-6 result-field text-right nopadding-left-md"><span id="simulador-result" class="text-warning">$ {{formInvest.amount | number : 0}}</span></div>
+                    </div>
+                    <div class="row simulador-row">
+                        <div class="col-sm-12 col-md-6 nopadding-right-md share-tooltip"
+                             title="@Resource.Views.Project.Detail.lblEstimatedAmount"
+                             data-toggle="tooltip" data-placement="top">
+                            <span class="simulador-text">@Resource.Views.Project.Detail.lblIwillGet <sup> (i)</sup></span>
+                        </div>
+                        <div class="col-sm-12 col-md-6 result-field text-right nopadding-left-md">
+                            <span id="simulador-result">$ {{formInvest.amountProfit | number : 0}}</span>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <div class="separador-16"></div>
+                            <span class="hidden-xl-down investZero">@Resource.Messages.Warning.investZero</span>
+                            <span class="hidden-xl-down amountFail">@Resource.Messages.Warning.amountFail</span>
+                            <a ng-click="toInvest(project.id)" id="buttonInvest" class="btn btn-warning" style="">@Resource.Views.Project.Detail.lblInvestNow</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="separador-12 visible-lg"></div>
+            <div class="separador-30 hidden-xs"></div>
+            <div class="project-grouped-info-sheet social-buttons">
+                <div class="st-btns">
+                    <div class="st-btn st-custom-button" data-network="facebook" data-url="/site/project?id={{project.id}}">
+                        <i class="fab fa-facebook-f fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="st-btn st-custom-button" data-network="twitter" data-url="/site/project?id={{project.id}}">
+                        <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="st-btn st-custom-button st-hide-label" data-network="linkedin" data-url="/site/project?id={{project.id}}">
+                        <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="st-btn st-custom-button st-hide-label" data-network="googleplus" data-url="/site/project?id={{project.id}}">
+                        <i class="fab fa-google-plus fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="st-btn st-custom-button" data-network="email" data-url="/site/project?id={{project.id}}">
+                        <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="separador-30"></div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="linea-temporal-section">
+
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <i class="fa fa-check"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <p class="temporal-point-title">@Resource.Views.Project.Detail.lblFinancialStart</p>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <p class="temporal-point-date">{{project._startFinancing}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" ng-show="project._endFinancing">
+                            <div class="col-sm-2">
+                                <i class="fa fa-check text-success"></i>
+                            </div>
+                            <div class="col-sm-10">
+                                <div class="row">
+                                    <div class="col-sm-10">
+                                        <p class="temporal-point-title">@Resource.Views.Project.Detail.lblFinancialClose</p>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <p class="temporal-point-date">{{project._endFinancing}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Section: Project Details-->
+
+</div>

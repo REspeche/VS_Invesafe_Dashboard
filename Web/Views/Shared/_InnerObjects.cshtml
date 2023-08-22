@@ -1,0 +1,42 @@
+﻿@using Newtonsoft.Json
+
+<div id="loader" class="progress primary-color-dark" ng-show="isBusy && !transitionPage"><div class="indeterminate"></div></div>
+<div class="transitionPage bg-buildings" ng-show="transitionPage">
+    <div class="spinner"></div>
+    <div class="label">@Resource.Views.Shared._InnerObjects.msgWait...</div>
+</div>
+
+<!-- Modal Confirm Message -->
+<div class="modal fade" id="dialogMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">@Resource.Views.Shared._InnerObjects.titMsgConfirm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>@Resource.Views.Shared._InnerObjects.txtMsgConfirm</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary cancel" data-dismiss="modal">@Resource.Views.Shared._InnerObjects.btnCancel</button>
+                <button type="button" class="btn btn-primary accept">@Resource.Views.Shared._InnerObjects.btnAccept</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="SessionVars" value="@JsonConvert.SerializeObject(new {
+                id = Session["id"],
+                fullname = Session["fullname"],
+                locate = Session["locate"],
+                active = Session["active"],
+                email = Session["email"],
+                token = Session["token"],
+                isLogin = (bool)Session["isLogin"],
+                lang = Common.meta_lang
+            })" />
+<input type="hidden" id="language" value="@Common.meta_lang"/>
+
+<ng-idle ng-if="session.isLogin"></ng-idle>

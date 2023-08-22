@@ -1,0 +1,62 @@
+﻿body {
+  color: #616161;
+  background: linear-gradient(135deg, #efefef 40%, #c0d0d2 100%); }
+
+img.logo {
+  height: 25px;
+  position: relative;
+  top: -3px;
+  transition: height .5s; }
+
+nav.top-nav-collapse img.logo {
+  height: 21px !important;
+  top: -2px !important; }
+
+/* Main */
+main {
+  min-height: calc(100vh - 20px); }
+
+/* Footer */
+.white-skin .page-footer {
+  background-color: #3E4551; }
+
+footer.page-footer .text-company {
+  text-align: justify;
+  padding: 1.3rem;
+  padding-bottom: 0.5rem;
+  font-size: 12px;
+  font-weight: 100;
+  padding: 0.2rem 1.3rem 0; }
+  footer.page-footer .text-company p {
+    margin-bottom: 0.5rem; }
+
+.navbar .saldo {
+  padding: .25rem .5rem; }
+
+footer {
+  padding-top: 0 !important; }
+  footer .info-invesafe {
+    padding-top: 20px; }
+    footer .info-invesafe a,
+    footer .info-invesafe p {
+      font-size: .8rem;
+      font-weight: 300; }
+  footer hr {
+    margin-top: .6rem;
+    margin-bottom: .6rem; }
+
+/* Forms */
+.border-form {
+  border: 1px solid #ccc; }
+
+.md-form .form-control.ng-not-empty ~ label {
+  font-size: 0.8rem;
+  -webkit-transform: translateY(-140%);
+  -moz-transform: translateY(-140%);
+  -ms-transform: translateY(-140%);
+  -o-transform: translateY(-140%);
+  transform: translateY(-140%); }
+
+img#incloux {
+  margin-top: 3px; }
+

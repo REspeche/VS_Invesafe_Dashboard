@@ -1,0 +1,26 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-information">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.BasicInformation.title</h6>
+        <h2>@Resource.Views.Dashboard.BasicInformation.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+
+        <div class="resumee">
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <p>@Resource.Views.Dashboard.BasicInformation.text</p>
+                    <div class="separador-30"></div>
+                </div>
+                @Html.Partial("Language/" + @Resource.Views.Dashboard.BasicInformation.partialPage)
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

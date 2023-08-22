@@ -1,0 +1,26 @@
+﻿.page-personal-data {
+    #uploadFront, #uploadBack {
+        .thumbnail {
+            margin-top: 35px;
+            height: 140px;
+            background-size: cover;
+        }
+        .thumbnail.empty {
+            height: 95px !important;
+            margin-top: 20px !important;
+        }
+    }
+    .file-field {
+        .btn {
+            float: none;
+            font-size: 0.8rem;
+        }
+        .thumbnail .btn {
+            margin-top: 40px;
+            margin-bottom: -28px;
+        }
+        .thumbnail.empty .btn {
+            margin-top: 0 !important;
+        }
+    }
+}

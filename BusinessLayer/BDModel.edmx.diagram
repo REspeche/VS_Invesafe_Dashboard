@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b3816450a26c4706b81cec71e467f319" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="invesafeModel.cou_country" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="invesafeModel.lan_language" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="invesafeModel.cad_categoryDocuments" Width="1.5" PointX="10.375" PointY="9.25" />
+        <EntityTypeShape EntityType="invesafeModel.spr_statusProject" Width="1.5" PointX="0.75" PointY="14.5" />
+        <EntityTypeShape EntityType="invesafeModel.dbp_documentsByProject" Width="1.5" PointX="12.625" PointY="12.125" />
+        <AssociationConnector Association="invesafeModel.FK_dbp_documentsByProject_cad_categoryDocuments" />
+        <EntityTypeShape EntityType="invesafeModel.axc_alexcli" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="invesafeModel.agr_alertGroup" Width="1.5" PointX="10.375" PointY="1.5" />
+        <EntityTypeShape EntityType="invesafeModel.tac_typeAccount" Width="1.5" PointX="7.375" PointY="8.875" />
+        <EntityTypeShape EntityType="invesafeModel.tpr_typeProject" Width="1.5" PointX="0.75" PointY="11.625" />
+        <EntityTypeShape EntityType="invesafeModel.ban_bankAccount" Width="1.5" PointX="12.625" PointY="4.875" />
+        <AssociationConnector Association="invesafeModel.FK_ban_bankAccount_tac_typeAccount" />
+        <EntityTypeShape EntityType="invesafeModel.blo_blob" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="invesafeModel.rep_report" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="invesafeModel.tpa_typePayment" Width="1.5" PointX="6" PointY="16.125" />
+        <EntityTypeShape EntityType="invesafeModel.rfu_retireFund" Width="1.5" PointX="14.875" PointY="3.875" />
+        <AssociationConnector Association="invesafeModel.FK_rfu_retireFund_ban_bankAccount" />
+        <EntityTypeShape EntityType="invesafeModel.ben_benefit" Width="1.5" PointX="8.25" PointY="11.75" />
+        <EntityTypeShape EntityType="invesafeModel.exp_expense" Width="1.5" PointX="8.25" PointY="15.75" />
+        <EntityTypeShape EntityType="invesafeModel.tbe_typeBenefit" Width="1.5" PointX="6" PointY="19.375" />
+        <EntityTypeShape EntityType="invesafeModel.tex_typeExpense" Width="1.5" PointX="6" PointY="22.125" />
+        <AssociationConnector Association="invesafeModel.FK_ben_benefit_tbe_typeBenefit" />
+        <AssociationConnector Association="invesafeModel.FK_exp_expense_tex_typeExpense" />
+        <EntityTypeShape EntityType="invesafeModel.aca_accreditAccount" Width="1.5" PointX="5.25" PointY="25" />
+        <EntityTypeShape EntityType="invesafeModel.app_appParameters" Width="1.5" PointX="12.375" PointY="9.75" />
+        <EntityTypeShape EntityType="invesafeModel.not_notification" Width="1.5" PointX="8" PointY="27.25" />
+        <EntityTypeShape EntityType="invesafeModel.nxc_notxcli" Width="1.5" PointX="10.25" PointY="0.75" />
+        <AssociationConnector Association="invesafeModel.FK_nxc_notxcli_not_notification" />
+        <EntityTypeShape EntityType="invesafeModel.ale_alert" Width="1.5" PointX="12.625" PointY="0.875" />
+        <AssociationConnector Association="invesafeModel.FK_ale_alert_agr_alertGroup" />
+        <AssociationConnector Association="invesafeModel.FK_axc_alexcli_ale_alert" />
+        <EntityTypeShape EntityType="invesafeModel.pba_projectBankAccount" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="invesafeModel.mov_movement" Width="1.5" PointX="15.625" PointY="0.75" />
+        <EntityTypeShape EntityType="invesafeModel.top_typeOperation" Width="1.5" PointX="9.375" PointY="4.875" />
+        <AssociationConnector Association="invesafeModel.FK_mov_movement_top_typeOperation" />
+        <EntityTypeShape EntityType="invesafeModel.sin_saleInvest" Width="1.5" PointX="17.5" PointY="7.5" />
+        <EntityTypeShape EntityType="invesafeModel.frv_fractionValue" Width="1.5" PointX="15.25" PointY="18.875" />
+        <EntityTypeShape EntityType="invesafeModel.pro_project" Width="1.5" PointX="3" PointY="12.125" />
+        <EntityTypeShape EntityType="invesafeModel.pxc_proxcli" Width="1.5" PointX="15.25" PointY="10" />
+        <AssociationConnector Association="invesafeModel.FK_ben_benefit_pro_project" />
+        <AssociationConnector Association="invesafeModel.FK_dbp_documentsByProject_pro_project" />
+        <AssociationConnector Association="invesafeModel.FK_exp_expense_pro_project" />
+        <AssociationConnector Association="invesafeModel.FK_frv_fractionValue_pro_project" />
+        <AssociationConnector Association="invesafeModel.FK_pro_project_spr_statusProject" />
+        <AssociationConnector Association="invesafeModel.FK_pro_project_tpr_typeProject" />
+        <AssociationConnector Association="invesafeModel.FK_pxc_proxcli_pro_project" />
+        <AssociationConnector Association="invesafeModel.FK_pxc_proxcli_tpa_typePayment" />
+        <AssociationConnector Association="invesafeModel.FK_sin_saleInvest_pxc_proxcli" />
+        <EntityTypeShape EntityType="invesafeModel.his_historyClient" Width="1.5" PointX="10.375" PointY="15.75" />
+        <EntityTypeShape EntityType="invesafeModel.cli_client" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="invesafeModel.FK_aca_accreditAccount_cli_client" />
+        <AssociationConnector Association="invesafeModel.FK_axc_alexcli_cli_client" />
+        <AssociationConnector Association="invesafeModel.FK_ban_bankAccount_cli_cliente" />
+        <AssociationConnector Association="invesafeModel.FK_ben_benefit_cli_client" />
+        <AssociationConnector Association="invesafeModel.FK_cli_cliente_cou_country" />
+        <AssociationConnector Association="invesafeModel.FK_cli_cliente_cou_country1" />
+        <AssociationConnector Association="invesafeModel.FK_cli_cliente_lan_language" />
+        <AssociationConnector Association="invesafeModel.FK_mov_movement_cli_cliente" />
+        <AssociationConnector Association="invesafeModel.FK_nxc_notxcli_cli_client" />
+        <AssociationConnector Association="invesafeModel.FK_pxc_proxcli_cli_client" />
+        <AssociationConnector Association="invesafeModel.FK_rfu_retireFund_cli_client" />
+        <AssociationConnector Association="invesafeModel.FK_sin_saleInvest_cli_client" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

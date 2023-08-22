@@ -1,0 +1,174 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid" ng-controller="homeController" ng-init="loadHome()">
+
+    <div class="col-md-12">
+        <!--Section Message-->
+        <section ng-show="loadPage">
+            <div class="alert alert-warning" role="alert" ng-show="showMessage.pending && !showMessage.validating && !showMessage.rejected">@Html.Raw(Resource.Messages.Info.statePending)</div>
+            <div class="alert alert-info" role="alert" ng-show="showMessage.validating && !showMessage.rejected">@Html.Raw(String.Format(Resource.Messages.Info.stateValidating, @CommonHelper.getParamCache().emailSupport))</div>
+            <div class="alert alert-danger" role="alert" ng-show="showMessage.rejected">@Html.Raw(Resource.Messages.Info.stateRejected)</div>
+        </section>
+
+        <!--Section: Notifications-->
+        <section class="section section-intro mt-1" ng-show="loadPage && alerts.length>0">
+
+            <!--Second row-->
+            <div class="row mb-3">
+
+                <!--First column-->
+                <div class="col-md-12 mb-1">
+
+                    <!--Card-->
+                    <div class="card card-cascade narrower">
+                        <div class="admin-panel info-admin-panel">
+                            <!--Card image-->
+                            <div class="view">
+                                <h5><i class="fa fa-user"></i> @Resource.Views.Dashboard.Home.titStatusAccount</h5>
+                            </div>
+                            <!--/Card image-->
+                            <!--Card content-->
+                            <div class="card-block">
+
+                                <div class="list-group">
+                                    <a href="#" ng-repeat="alert in alerts"
+                                       ng-click="clickSlideAjax(alert.link)" class="list-group-item color-{{alert.state}}">{{alert.groupName | translate}}: {{alert.mesage | translate}}<i class="fa ml-auto" ng-class="{'fa-exclamation-triangle':(alert.state==1),'fa-hourglass-half':(alert.state==2),'fa-exclamation-circle':(alert.state==3),'fa-check-circle':(alert.state==4)}"></i></a>
+                                </div>
+
+                            </div>
+                            <!--/.Card content-->
+
+                        </div>
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/First column-->
+
+            </div>
+            <!--/Second row-->
+
+        </section>
+        <!--/Section: Notifications-->
+        <!--Section: Intro-->
+        <section class="section section-intro" ng-show="loadPage && ammounts.total">
+
+            <!--First row-->
+            <div class="row">
+                <!--First column-->
+                <div class="col-md-3 mb-1">
+                    <!--Card-->
+                    <div class="card card-cascade cascading-admin-card">
+
+                        <!--Card Data-->
+                        <div class="admin-up">
+                            <i class="fa fa-money-bill-alt blue darken-3"></i>
+                            <div class="data">
+                                <p>@Resource.Views.Dashboard.Home.titTotalPatrimonial</p>
+                                <h3>$ {{ammounts.total | number : 0}}</h3>
+                            </div>
+                        </div>
+                        <!--/.Card Data-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: {{percents.patrimony}}%" aria-valuenow="{{percents.patrimony}}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <!--Text-->
+                            <p class="card-text">@Resource.Views.Dashboard.Home.lblAvailable ({{percents.patrimony}}%)</p>
+                        </div>
+                        <!--/.Card content-->
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/First column-->
+                <!--Second column-->
+                <div class="col-md-3 mb-1">
+                    <!--Card-->
+                    <div class="card card-cascade cascading-admin-card">
+
+                        <!--Card Data-->
+                        <div class="admin-up">
+                            <i class="fa fa-chart-line deep-purple darken-4"></i>
+                            <div class="data">
+                                <p>@Resource.Views.Dashboard.Home.titTotalProfit</p>
+                                <h3>$ {{ammounts.benefitTotal | number : 0}}</h3>
+                            </div>
+                        </div>
+                        <!--/.Card Data-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: {{percents.benefit}}%" aria-valuenow="{{percents.benefit}}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <!--Text-->
+                            <p class="card-text">@Resource.Views.Dashboard.Home.lblNetProfit ({{percents.benefit}}%)</p>
+                        </div>
+                        <!--/.Card content-->
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/Second column-->
+                <!--Third column-->
+                <div class="col-md-3 mb-1">
+                    <!--Card-->
+                    <div class="card card-cascade cascading-admin-card">
+
+                        <!--Card Data-->
+                        <div class="admin-up">
+                            <i class="fa fa-home indigo"></i>
+                            <div class="data">
+                                <p>@Resource.Views.Dashboard.Home.titProjects</p>
+                                <h3>{{ammounts.projects}}</h3>
+                            </div>
+                        </div>
+                        <!--/.Card Data-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <div class="progress"></div>
+                            <!--Text-->
+                            <p class="card-text">@Resource.Views.Dashboard.Home.lblProjectInvested</p>
+                        </div>
+                        <!--/.Card content-->
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/Third column-->
+                <!--Fourth column-->
+                <div class="col-md-3 mb-1">
+                    <!--Card-->
+                    <div class="card card-cascade cascading-admin-card">
+
+                        <!--Card Data-->
+                        <div class="admin-up">
+                            <i class="fa fa-coins purple"></i>
+                            <div class="data">
+                                <p>@Resource.Views.Dashboard.Home.titCapital</p>
+                                <h3>$ {{ammounts.avgInvest | number : 0}}</h3>
+                            </div>
+                        </div>
+                        <!--/.Card Data-->
+                        <!--Card content-->
+                        <div class="card-block">
+                            <div class="progress"></div>
+                            <!--Text-->
+                            <p class="card-text">@Resource.Views.Dashboard.Home.lblCapitalInvested</p>
+                        </div>
+                        <!--/.Card content-->
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/Fourth column-->
+
+            </div>
+            <!--/First row-->
+
+        </section>
+        <!--/Section: Intro-->
+
+    </div>
+
+</div>

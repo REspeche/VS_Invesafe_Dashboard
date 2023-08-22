@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lbl2Factor" xml:space="preserve">
+    <value>2-Factor</value>
+  </data>
+  <data name="lblActived" xml:space="preserve">
+    <value>Actived</value>
+  </data>
+  <data name="lblAuthentication" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="lblGain" xml:space="preserve">
+    <value>Gain</value>
+  </data>
+  <data name="lblGoToSite" xml:space="preserve">
+    <value>Go to Main Site</value>
+  </data>
+  <data name="lblHaveAProblem" xml:space="preserve">
+    <value>Do I have a problem?</value>
+  </data>
+  <data name="lblInvest" xml:space="preserve">
+    <value>Invest</value>
+  </data>
+  <data name="lblInvested" xml:space="preserve">
+    <value>Invested</value>
+  </data>
+  <data name="lblInvestSomeProject" xml:space="preserve">
+    <value>Invest in some project</value>
+  </data>
+  <data name="lblMovAccount" xml:space="preserve">
+    <value>Account Movements</value>
+  </data>
+  <data name="lblNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="lblSite" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="lblSms" xml:space="preserve">
+    <value>SMS</value>
+  </data>
+  <data name="lblWithdraw" xml:space="preserve">
+    <value>Withdraw</value>
+  </data>
+  <data name="lblWithdrawProfit" xml:space="preserve">
+    <value>Withdraw Profit</value>
+  </data>
+  <data name="mnuActiveAccount" xml:space="preserve">
+    <value>Active Account</value>
+  </data>
+  <data name="mnuAditionalData" xml:space="preserve">
+    <value>Aditional Data</value>
+  </data>
+  <data name="mnuAuthenticationMethod" xml:space="preserve">
+    <value>Authentication Method</value>
+  </data>
+  <data name="mnuBankAccounts" xml:space="preserve">
+    <value>Bank Accounts</value>
+  </data>
+  <data name="mnuBankActivity" xml:space="preserve">
+    <value>My Bank Activity</value>
+  </data>
+  <data name="mnuBankData" xml:space="preserve">
+    <value>Bank Information</value>
+  </data>
+  <data name="mnuBasicInformation" xml:space="preserve">
+    <value>Basic Information</value>
+  </data>
+  <data name="mnuChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="mnuCloseSession" xml:space="preserve">
+    <value>Close Session</value>
+  </data>
+  <data name="mnuDashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="mnuEntryFunds" xml:space="preserve">
+    <value>Entry Funds</value>
+  </data>
+  <data name="mnuExit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="mnuInfo" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="mnuInvesafeReports" xml:space="preserve">
+    <value>Invesafe Reports</value>
+  </data>
+  <data name="mnuInvestments" xml:space="preserve">
+    <value>My Investments</value>
+  </data>
+  <data name="mnuMyAccount" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="mnuNotifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="mnuOpportunities" xml:space="preserve">
+    <value>Opportunities</value>
+  </data>
+  <data name="mnuPatrimonialSituation" xml:space="preserve">
+    <value>Patrimonial Situation</value>
+  </data>
+  <data name="mnuPersonalData" xml:space="preserve">
+    <value>Personal Data</value>
+  </data>
+  <data name="mnuPersonalDocuments" xml:space="preserve">
+    <value>My Documentation</value>
+  </data>
+  <data name="mnuPrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="mnuRetireFunds" xml:space="preserve">
+    <value>Retire Funds</value>
+  </data>
+  <data name="mnuSupport" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="mnuTypeAccount" xml:space="preserve">
+    <value>Type Account</value>
+  </data>
+  <data name="mnuUseConditions" xml:space="preserve">
+    <value>Use Conditions</value>
+  </data>
+</root>

@@ -1,0 +1,56 @@
+﻿.page-entry-funds .nav-tabs {
+  box-shadow: none;
+  margin-left: 0;
+  margin-right: 0; }
+  .page-entry-funds .nav-tabs li {
+    width: 100%;
+    text-align: center; }
+
+.page-entry-funds .tab-content.ingresos {
+  padding: 25px; }
+
+.page-entry-funds #transferencia .row {
+  margin-bottom: 10px; }
+
+.page-entry-funds #transferencia .row:last-child {
+  margin-bottom: 0; }
+  .page-entry-funds #transferencia .row:last-child p {
+    margin-bottom: 0; }
+
+.page-entry-funds .number {
+  width: 24px;
+  height: 24px;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  background-color: transparent;
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #4285F4;
+  background-color: #d9edf7;
+  font-size: 16px;
+  margin-right: 7px; }
+
+.page-entry-funds .datos-adicionales {
+  font-weight: 400;
+  padding: 20px 50px 10px 25px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-top: 5px;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden; }
+  .page-entry-funds .datos-adicionales .row > div:first-child {
+    text-align: right; }
+  .page-entry-funds .datos-adicionales .titular {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #666; }
+  .page-entry-funds .datos-adicionales .ordenante-text {
+    white-space: initial; }
+
+.page-entry-funds .important-text {
+  color: #f00; }

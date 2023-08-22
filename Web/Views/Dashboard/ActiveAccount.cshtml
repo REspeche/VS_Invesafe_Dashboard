@@ -1,0 +1,16 @@
+﻿<div class="container-fluid page-personal-data" ng-controller="activeaccountController">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.ActiveAccount.title</h6>
+        <h2>@Resource.Views.Dashboard.ActiveAccount.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+        <div>
+            <p>@Html.Raw(Resource.Views.Dashboard.ActiveAccount.text)</p>
+            <div class="text-center mt-2">
+                <button type="button" class="btn btn-info waves-effect waves-light" ng-click="sendEmail()">@Resource.Views.Dashboard.ActiveAccount.btnSend <i class="fa fa-envelope ml-1"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

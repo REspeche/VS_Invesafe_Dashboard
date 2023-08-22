@@ -1,0 +1,4 @@
+﻿<div ng-show="showActiveAccount || showAuthenticationMethod">
+    <div ng-show="showActiveAccount" class="alert alert-danger" role="alert" ng-hide="accounts.length>0">@Resource.Views.Shared._AlertDanger.msgActiveAccount <a ng-click="clickSlideAjax('activeaccount')">"@Resource.Views.Shared._AlertDanger.lnkActiveAccount"</a>.</div>
+    <div ng-show="showAuthenticationMethod" class="alert alert-danger" role="alert">@Resource.Views.Shared._AlertDanger.msgAuthenticationMethod <a ng-click="clickSlideAjax('authenticationmethod')">"@Resource.Views.Shared._AlertDanger.lnkAuthenticationMethod"</a>.</div>
+</div>

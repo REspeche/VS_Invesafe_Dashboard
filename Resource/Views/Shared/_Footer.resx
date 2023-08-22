@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="copyBrand" xml:space="preserve">
+    <value>© 2018 Invesafe P.F.C. S.A.</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>All rights reserved</value>
+  </data>
+  <data name="footerP1" xml:space="preserve">
+    <value>© 2018 INVESAFE | Invesafe SA - Registered in the Registry of Legal Entities in Esc. Nº 345, 02/20/2018, Folio 482, Reg. 134 CBA.,</value>
+  </data>
+  <data name="footerP2" xml:space="preserve">
+    <value>Our platform is in the analysis phase before the CNV. File No. 2350/2016.</value>
+  </data>
+  <data name="footerP3" xml:space="preserve">
+    <value>Invesafe is a participatory financing platform that offers the possibility of investing in Projects of natural persons or societies previously studied and analyzed.</value>
+  </data>
+  <data name="footerP4" xml:space="preserve">
+    <value>Invesafe does not provide financial advice and nothing on this website should be construed as such. The information that appears on these pages is for general information purposes and does not constitute specific advice. Collective financing projects published on the website are not subject to authorization or supervision by the CMNV or the Central Bank of the Argentine Republic or any other regulator, national or foreign. The information provided by the designer or entrepreneur has not been reviewed or approved by the National Securities Commission, nor is it an informational brochure approved by it. The forecasts, and information presented are only business plans, and as such, may be different in the course of operations.</value>
+  </data>
+  <data name="footerP5" xml:space="preserve">
+    <value>Likewise, the instruments to be issued in the event of a successful subscription are automatically excluded from the requirements and requirements of the Public Offering regime that, in the framework of Law No. 26,831, is authorized by the National Securities Commission. The PFC does not hold the status of a bank or financial entity, and it is not attached to any investment guarantee fund.</value>
+  </data>
+  <data name="footerP6" xml:space="preserve">
+    <value>There is a risk of total or partial loss of the invested capital, risk of not obtaining the expected monetary return and risk of illiquidity to recover your investment. In the case of social participation, there is also the risk of dilution, of not receiving dividends, of not being able to influence the management of the company and of the restrictions on free transferability inherent in its legal regime.</value>
+  </data>
+  <data name="footerP7" xml:space="preserve">
+    <value>The capital invested is not guaranteed by the investment guarantee fund or the deposit guarantee fund.</value>
+  </data>
+  <data name="lblBrand" xml:space="preserve">
+    <value>Invesafe</value>
+  </data>
+  <data name="lnkAboutUs" xml:space="preserve">
+    <value>About us?</value>
+  </data>
+  <data name="lnkBasicInformation" xml:space="preserve">
+    <value>Basic information</value>
+  </data>
+  <data name="lnkFAQ" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="lnkHowWork" xml:space="preserve">
+    <value>How does it work</value>
+  </data>
+  <data name="lnkInvesafeReports" xml:space="preserve">
+    <value>Invesafe Reports</value>
+  </data>
+  <data name="lnkOpportunities" xml:space="preserve">
+    <value>Opportunities</value>
+  </data>
+  <data name="lnkPrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="lnkSupport" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="lnkUseConditions" xml:space="preserve">
+    <value>Terms of use</value>
+  </data>
+  <data name="mail" xml:space="preserve">
+    <value>info@invesafe.com</value>
+  </data>
+  <data name="titAboutInvesafe" xml:space="preserve">
+    <value>About Invesafe</value>
+  </data>
+  <data name="titInfo" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="titJoinInvesafe" xml:space="preserve">
+    <value>Participate in Invesafe</value>
+  </data>
+</root>

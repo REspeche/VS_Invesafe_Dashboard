@@ -1,0 +1,71 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@Resource.Views.Error.Http404.title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- Libs CSS -->
+    @Styles.Render("~/css/error")
+    <!-- Template CSS -->
+    <link href="~/Content/assets/css/error/style404.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+    <link href="~/Content/assets/css/error/respons404.css" rel="stylesheet" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,800italic,800,700italic,700,600italic,600,400italic,300' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <!-- Load page -->
+    <div class="animationload">
+        <div class="loader">
+        </div>
+    </div>
+    <!-- End load page -->
+    <!-- Content Wrapper -->
+    <div id="wrapper">
+        <div class="container">
+            <!-- brick of wall -->
+            <div class="brick"></div>
+            <!-- end brick of wall -->
+            <!-- Number -->
+            <div class="number">
+                <div class="four"></div>
+                <div class="zero">
+                    <div class="nail"></div>
+                </div>
+                <div class="four"></div>
+            </div>
+            <!-- end Number -->
+            <!-- Info -->
+            <div class="info">
+                <h2>@Resource.Views.Error.Http404.titInfo</h2>
+                <p>@Resource.Views.Error.Http404.txtInfo</p>
+                <a href="/" class="btn">@Resource.Views.Error.Http404.btnGo</a>
+            </div>
+            <!-- end Info -->
+        </div>
+        <!-- end container -->
+    </div>
+    <!-- end Content Wrapper -->
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <!-- Worker -->
+            <div class="worker"></div>
+            <!-- Tools -->
+            <div class="tools"></div>
+        </div>
+        <!-- end container -->
+    </footer>
+    <!-- end Footer -->
+    <!-- Scripts -->
+    @Scripts.Render("~/js/error")
+    <script src="~/Content/assets/js/error/scripts404.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿.page-type-account {
+	.card-cascade.narrower {
+		.view {
+			margin-left: 23%;
+			margin-right: 23%;
+		}
+	}
+    .card .card-block {
+        min-height: 200px;
+    }
+	.card-block {
+		text-align: center;
+		p {
+			min-height: 73px;
+		}
+	}
+	.card-header {
+		font-size: 1.2rem;
+		text-transform: uppercase;
+
+		.fa {
+			margin-right: 5px;
+		}
+	}
+	.card-footer {
+		border-top: none;
+		background-color: #d6d8d9;
+		padding: .5rem;
+		text-align: center;
+		p {
+			margin: 0;
+		}
+	}
+	.ribbon-wrapper {
+		width: 120px;
+		height: 120px;
+		overflow: hidden;
+		position: absolute;
+		top: -7px;
+		left: -10px;
+		box-shadow: none;
+		.ribbon {
+			text-transform: uppercase;
+			font-size: 13px;
+			text-align: center;
+			-webkit-transform: rotate(-45deg);
+			-moz-transform: rotate(-45deg);
+			-ms-transform: rotate(-45deg);
+			-o-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			position: relative;
+			padding: 10px 0;
+			left: -33px;
+			top: 26px;
+			width: 162px;
+			background-color: #f80;
+			color: #fff;
+		}
+		:before, :after {
+			content: "";
+			border-top: 4px solid #888;
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
+			position: absolute;
+			bottom: -4px;
+		}
+		:before {
+			left: 0;
+		}
+		:after {
+			right: 0;
+		}
+	}
+}

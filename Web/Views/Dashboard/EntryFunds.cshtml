@@ -1,0 +1,138 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-entry-funds" ng-controller="entryfundsController" ng-init="loadEntryFunds()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.EntryFunds.title</h6>
+        <h2>@Resource.Views.Dashboard.EntryFunds.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+        @Html.Partial("_AlertDanger")
+
+        <div ng-hide="showActiveAccount">
+            <p>@Resource.Views.Dashboard.EntryFunds.text</p>
+
+            <!--Section Message-->
+            <section ng-show="loadPage">
+                <div class="alert alert-warning" role="alert" ng-show="showMessage.pending && !showMessage.validating && !showMessage.rejected">@Html.Raw(Resource.Messages.Info.statePending)</div>
+                <div class="alert alert-info" role="alert" ng-show="showMessage.validating && !showMessage.rejected">@Html.Raw(String.Format(Resource.Messages.Info.stateValidating, @CommonHelper.getParamCache().emailSupport))</div>
+                <div class="alert alert-danger" role="alert" ng-show="showMessage.rejected">@Html.Raw(Resource.Messages.Info.stateRejected)</div>
+            </section>
+
+        </div>
+
+        <div class="card card-cascade" ng-hide="showActiveAccount">
+            <!--Naked Form-->
+            <div class="card-block">
+                <ul class="nav nav-tabs nav-justified pt-0 primary-text" id="ul-formas-ingreso" role="tablist">
+                    <li role="presentation" class="active">
+                        <h4><i class="fa fa-exchange-alt"></i> <span class="hidden-xs">@Resource.Views.Dashboard.EntryFunds.titTransfer</span></h4>
+                        <h5>@Resource.Views.Dashboard.EntryFunds.subTitleTransfer</h5>
+                    </li>
+                </ul>
+                <div ng-hide="loadForm" class="mb-1">@Resource.Common.loading</div>
+                <form method="get" class="form-inline form-horizontal" id="frmFilter" ng-show="loadForm">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <select class="form-control" ng-model="filterForm.project"
+                                    ng-options="item.id as item.label for item in listProjects"
+                                    ng-change="filterExecute()">
+                                <option value="">@Resource.Common.optionSelect</option>
+                            </select>
+                            <label>@Resource.Views.Dashboard.EntryFunds.lblProject</label>
+                        </div>
+                        <div class="col-md-8 pr-0">
+                        </div>
+                    </div>
+                </form>
+                <div class="tab-content ingresos" ng-show="bankAccount.bank">
+                    <div role="tabpanel" class="tab-pane active" id="transferencia">
+                        <div class="row">
+                            <div class="col-12">
+                                <p><span class="number primary-text">1</span> <span>@Resource.Views.Dashboard.EntryFunds.txtStep1</span></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p><span class="number primary-text">2</span> <span>@Resource.Views.Dashboard.EntryFunds.txtStep2</span></p>
+                            </div>
+                            <div class="col-12">
+
+                                <div class="datos-adicionales">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 bright">
+                                            <p>@Resource.Views.Dashboard.EntryFunds.lblBankName</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6 bright">
+                                            <p class="titular">{{bankAccount.bank}}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <p>@Resource.Views.Dashboard.EntryFunds.lblReceiver</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <p class="titular">{{bankAccount.owner}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <p>@Resource.Views.Dashboard.EntryFunds.lblAccountNbr</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <p class="titular">{{bankAccount.accountNbr}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <p>@Resource.Views.Dashboard.EntryFunds.lblCBU</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <p class="titular">{{bankAccount.cbu}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 bright">
+                                            <p>@Resource.Views.Dashboard.EntryFunds.lblConcept<br><span class="important-text">(@Resource.Views.Dashboard.EntryFunds.lblVeryImportant)</span></p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <p class="titular">{{bankAccount.label}}-{{bankAccount.referenceCode}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 bright">
+                                            <p>Ordenante</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6 ordenante-text">
+                                            <p>@Html.Raw(String.Format(Resource.Views.Dashboard.EntryFunds.txtOwner, "<strong>{{bankAccount.label}}-{{bankAccount.referenceCode}}-TIT</strong>"))</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p><span class="number primary-text">3</span> @Resource.Views.Dashboard.EntryFunds.txtStep3</p>
+                                <div class="alert alert-warning" role="alert">@Resource.Views.Dashboard.EntryFunds.lblStep3</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p><span class="number primary-text">4</span> @Resource.Views.Dashboard.EntryFunds.txtStep4</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btnSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="btnViewDetail" xml:space="preserve">
+    <value>View Detail</value>
+  </data>
+  <data name="check1" xml:space="preserve">
+    <value>I understand that Invesafe may request additional documentation to verify that the indicated data is correct</value>
+  </data>
+  <data name="infoAccredit" xml:space="preserve">
+    <value>You can invest without limit of any amount, as long as your investment does not exceed 5% of the subscription of each Project.</value>
+  </data>
+  <data name="infoNoAccredit" xml:space="preserve">
+    <value>With an economic investment limit: You can invest up to a maximum amount of $ 20,000 per Project, or participate in a maximum of 5% of the Project subscription, whichever is less.</value>
+  </data>
+  <data name="lblAccreditAmount" xml:space="preserve">
+    <value>Unlimited</value>
+  </data>
+  <data name="lblInvestor" xml:space="preserve">
+    <value>Investor</value>
+  </data>
+  <data name="lblNoAccreditAmount" xml:space="preserve">
+    <value>$20,000 maximum</value>
+  </data>
+  <data name="lblSelected" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="option1" xml:space="preserve">
+    <value>Investment funds</value>
+  </data>
+  <data name="option2" xml:space="preserve">
+    <value>Fixed income securities</value>
+  </data>
+  <data name="option3" xml:space="preserve">
+    <value>Equities</value>
+  </data>
+  <data name="option4" xml:space="preserve">
+    <value>Derivative instruments</value>
+  </data>
+  <data name="option5" xml:space="preserve">
+    <value>Other financial instruments</value>
+  </data>
+  <data name="question1" xml:space="preserve">
+    <value>Have you invested in these financial instruments at least twice in the past two years?</value>
+  </data>
+  <data name="subTitle" xml:space="preserve">
+    <value>Accredit Account</value>
+  </data>
+  <data name="titAccredit" xml:space="preserve">
+    <value>Accredited</value>
+  </data>
+  <data name="titInfoInvestor" xml:space="preserve">
+    <value>Information for the Accredited Investor</value>
+  </data>
+  <data name="titInfoInvestorNo" xml:space="preserve">
+    <value>Information for the Uncredited Investor</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="titNoAccredit" xml:space="preserve">
+    <value>Not Accredited</value>
+  </data>
+  <data name="titTypeInvestor" xml:space="preserve">
+    <value>What type of investor are you?</value>
+  </data>
+  <data name="txtInfoInvestor" xml:space="preserve">
+    <value>Law 5/2015 for the Promotion of Business Financing establishes different protection measures for retail investors. Professional investors, large assets or those who receive financial advice can request treatment as an accredited investor and invest with no economic limit. You can request this "accredited investor" treatment now or at any time in the "My data / Credit account" position. Check the option that best suits your characteristics:</value>
+  </data>
+  <data name="txtInfoInvestorNo" xml:space="preserve">
+    <value>We inform you that by default, all users are considered as non-accredited investors. Non-accredited investors cannot invest more than $ 20,000 per project, nor participate in more than 5% of its subscription. Likewise, the amount of your total annual investments in all Collective Financing Platforms cannot exceed 20% of your annual gross income, according to the last fiscal year closed. &lt;br /&gt; &lt;br /&gt; In this sense, you are warned of the following circumstances: &lt;br /&gt; The collective financing projects published in INVESAFE are not subject to authorization or supervision by the Argentine National Securities Commission. The information provided by the PFC and the prospectus prepared by the Collective Financing Designer or Entrepreneur have not been reviewed or approved by the National Securities Commission. Likewise, the instruments to be issued in the event of a successful subscription are automatically excluded from the requirements and requirements of the Public Offering regime that, in the framework of Law No. 26,831, is authorized by the National Securities Commission. The PFC does not hold the status of a bank or financial entity, and it is not attached to any investment guarantee fund.</value>
+  </data>
+</root>

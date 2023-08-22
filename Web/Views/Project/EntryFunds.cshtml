@@ -1,0 +1,131 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-entry-funds" ng-controller="opportunitiesController" ng-init="loadEntryFunds()">
+
+    <section class="section section-title">
+        <div class="row mb-0">
+
+            <div class="col-xs-10 col-sm-8">
+                <h6>@Resource.Views.Project.EntryFunds.title {{project.name}}</h6>
+                <h2>@Resource.Views.Project.EntryFunds.subTitle</h2>
+            </div>
+            <div class="col-xs-2 col-sm-4">
+                <div class="pull-right">
+                    <a ng-click="viewProject(project.id)"><i class="fa fa-arrow-circle-left"></i>&nbsp;<span class="hidden-xs">@Resource.Views.Project.EntryFunds.lnkBack</span></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="col-md-12">
+
+        <div>
+            <p>@Resource.Views.Project.EntryFunds.text</p>
+            <!--Section Message-->
+            <section ng-show="loadPage">
+                <div class="alert alert-warning" role="alert" ng-show="showMessage.pending && !showMessage.validating && !showMessage.rejected">@Html.Raw(Resource.Messages.Info.statePending)</div>
+                <div class="alert alert-info" role="alert" ng-show="showMessage.validating && !showMessage.rejected">@Html.Raw(String.Format(Resource.Messages.Info.stateValidating, @CommonHelper.getParamCache().emailSupport))</div>
+                <div class="alert alert-danger" role="alert" ng-show="showMessage.rejected">@Html.Raw(Resource.Messages.Info.stateRejected)</div>
+            </section>
+        </div>
+
+        <div class="card card-cascade" ng-show="bankAccount.bank">
+            <!--Naked Form-->
+            <div class="card-block">
+                <ul class="nav nav-tabs nav-justified pt-0 primary-text" id="ul-formas-ingreso" role="tablist">
+                    <li role="presentation" class="active">
+                        <h4><i class="fa fa-exchange-alt"></i> <span class="hidden-xs">@Resource.Views.Project.EntryFunds.titTransfer</span></h4>
+                        <h5>@Resource.Views.Project.EntryFunds.subTitleNoCommission</h5>
+                    </li>
+                </ul>
+                <div class="tab-content ingresos">
+                    <div role="tabpanel" class="tab-pane active" id="transferencia">
+                        <div class="row">
+                            <div class="col-12">
+                                <p><span class="number primary-text">1</span> <span>@Resource.Views.Project.EntryFunds.step1</span></p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p><span class="number primary-text">2</span> <span>@Resource.Views.Project.EntryFunds.step2</span></p>
+                            </div>
+                            <div class="col-12">
+
+                                <div class="datos-adicionales">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 bright">
+                                            <p>@Resource.Views.Project.EntryFunds.lblBankName</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6 bright">
+                                            <p class="titular">{{bankAccount.bank}}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <p>@Resource.Views.Project.EntryFunds.lblAddressee</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <p class="titular">{{bankAccount.owner}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <p>@Resource.Views.Project.EntryFunds.lblNroAccount</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <p class="titular">{{bankAccount.accountNbr}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <p>@Resource.Views.Project.EntryFunds.lblCBU</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <p class="titular">{{bankAccount.cbu}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 bright">
+                                            <p>@Resource.Views.Project.EntryFunds.lblConceptTransfer<br><span class="important-text">(@Resource.Views.Project.EntryFunds.lblVeryImportant)</span></p>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <p class="titular">{{bankAccount.label}}-{{bankAccount.referenceCode}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 bright">
+                                            <p>@Resource.Views.Project.EntryFunds.lblOwner</p>
+                                        </div>
+                                        <div class="col-12 col-sm-6 ordenante-text">
+                                            <p>@Html.Raw(Resource.Views.Project.EntryFunds.infoOwner)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p><span class="number primary-text">3</span> @Resource.Views.Project.EntryFunds.step3</p>
+                                <div class="alert alert-warning" role="alert">@Resource.Views.Project.EntryFunds.infoStep3</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p><span class="number primary-text">4</span> @Resource.Views.Project.EntryFunds.step4</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

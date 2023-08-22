@@ -1,0 +1,126 @@
+﻿.md-form .prefix ~ label {
+  width: 100%; }
+
+form .row {
+  margin-bottom: 10px; }
+
+form .text-small {
+  font-size: 12px; }
+
+input[type=text] + label:after {
+  top: 66px; }
+
+input[type=password] + label:after {
+  top: 66px; }
+
+input[type=email] + label:after {
+  top: 66px; }
+
+input[type=url] + label:after {
+  top: 66px; }
+
+input[type=time] + label:after {
+  top: 66px; }
+
+input[type=date] + label:after {
+  top: 66px; }
+
+input[type=datetime-local] + label:after {
+  top: 66px; }
+
+input[type=tel] + label:after {
+  top: 66px; }
+
+input[type=number] + label:after {
+  top: 66px; }
+
+input[type=search-md] + label:after {
+  top: 66px; }
+
+input[type=search] + label:after {
+  top: 66px; }
+
+textarea.md-textarea + label:after {
+  top: 66px; }
+
+.select-wrapper input.select-dropdown {
+  margin: 6px 0 15px 0; }
+
+select.form-control {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  line-height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  margin: 6px 0 15px 0;
+  height: 49px !important; }
+  select.form-control + label {
+    position: absolute;
+    top: -14px;
+    font-size: 0.8rem; }
+
+input.datepicker + div.picker + input + label {
+  position: absolute;
+  top: -14px;
+  font-size: 0.8rem; }
+
+.mdl-textfield__error {
+  color: #F44336;
+  opacity: 1;
+  font-size: 11px;
+  position: absolute;
+  top: 54px;
+  background-color: rgba(255, 0, 0, 0.15);
+  width: 100%;
+  padding: 1px;
+  padding-left: 7px;
+  border-radius: 0 0 7px 7px; }
+
+label.textred {
+  color: red; }
+
+textarea {
+  height: auto; }
+
+.btn-sm {
+  line-height: 1.5 !important;
+  border-radius: .2rem; }
+
+.btn-floating {
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
+  .btn-floating i {
+    width: inherit;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 37px; }
+
+.btn-floating.btn-lg {
+  width: 61.1px;
+  height: 61.1px; }
+  .btn-floating.btn-lg i {
+    font-size: 1.625rem;
+    line-height: 61.1px; }
+
+input.datepicker[readonly="readonly"] + label {
+  color: rgba(0, 0, 0, 0.46);
+  background-color: transparent; }
+
+input#txtEmail[readonly],
+input.datepicker[readonly] {
+  color: #464a4c !important;
+  border-bottom: 1px solid #ccc; }

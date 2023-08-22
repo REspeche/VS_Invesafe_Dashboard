@@ -1,0 +1,84 @@
+﻿@using Resource;
+<div class="container page-login" ng-controller="loginController" ng-init="loadLogin()">
+    <div class="row">
+        <div class="col-md-6 col-lg-5 login-form mx-auto float-none">
+
+            <form name="frmLogin" ng-submit="submitLogin()" novalidate autocomplete="off">
+                <span class="hidden-xl-down formIncomplete">@Resource.Messages.Warning.formIncomplete</span>
+                <div class="card">
+
+                    <div class="card-block">
+
+                        <!--Header-->
+                        <div class="form-header">
+                            <h3><i class="fa fa-user"></i> @Resource.Views.Account.Login.title</h3>
+                        </div>
+
+                        <!--Body-->
+                        <div class="md-form">
+                            <i class="fa fa-envelope prefix"></i>
+                            <input type="email" class="form-control validate" id="txtEmail" name="txtEmail"
+                                   ng-model="dataL.email" maxlength="100" required
+                                   keyEnter="submitLoginKeyPress()"
+                                   readonly onfocus="this.removeAttribute('readonly');">
+                            <label for="txtEmail">@Resource.Views.Account.Login.lblInputEmail</label>
+                        </div>
+
+                        <div class="md-form">
+                            <i class="fa fa-lock prefix"></i>
+                            <input type="password" name="fake_password" style="display:none" aria-hidden="true">
+                            <input type="password" class="form-control validate" id="txtPassword" name="txtPassword"
+                                   ng-model="dataL.password" minlength="5" maxlength="20"
+                                   keyEnter="submitLoginKeyPress()">
+                            <label for="txtPassword" data-error="@String.Format(Resource.Messages.Info.errorNlength,5,20)">@Resource.Views.Account.Login.lblInputPassword</label>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-fb waves-effect waves-light" onclick="loginFacebook(1)"><i class="fab fa-facebook-f mr-1"></i> Facebook</button>
+                            <button type="submit" class="btn btn-info">@Resource.Views.Account.Login.btnLogin <i class="fa fa-sign-in-alt ml-1"></i></button>
+                        </div>
+
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer">
+                        <div class="options text-right text-md-right mt-1">
+                            <p>@Html.Raw(String.Format(Resource.Views.Account.Login.lnkSignup, "<a class=\"blue-text\" ng-click=\"goToSignup()\">"))</p>
+                            <p>@Html.Raw(String.Format(Resource.Views.Account.Login.lnkRecoverPass, "<a class=\"blue-text\" ng-click=\"goToForgot()\">"))</p>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <!-- Modals -->
+    <div class="modal fade" id="modalInfoEndSession" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-warning modal-lg" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">@Resource.Views.Account.Login.titCloseSession</p>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+                    <p class="text-justify" ng-show="querystring.endSession==1">@Resource.Views.Account.Login.msgEndSession</p>
+                    <p class="text-justify" ng-show="querystring.endToken==1">@Resource.Views.Account.Login.msgEndToken</p>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-outline-warning waves-effect" data-dismiss="modal">@Resource.Views.Account.Login.btnClose</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+</div>

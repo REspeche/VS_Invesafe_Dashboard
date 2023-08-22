@@ -1,0 +1,54 @@
+﻿[
+  {
+    "outputFile": "Content/assets/css/style.css",
+    "inputFile": "Content/assets/css/style.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/shared/_layoutDashboard.css",
+    "inputFile": "Content/assets/css/shared/_layoutDashboard.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/dashboard/notifications.css",
+    "inputFile": "Content/assets/css/dashboard/notifications.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/account/login.css",
+    "inputFile": "Content/assets/css/account/login.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/dashboard/opportunities.css",
+    "inputFile": "Content/assets/css/dashboard/opportunities.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/partition/card.css",
+    "inputFile": "Content/assets/css/partition/card.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/partition/modal.css",
+    "inputFile": "Content/assets/css/partition/modal.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/partition/form.css",
+    "inputFile": "Content/assets/css/partition/form.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/partition/alert.css",
+    "inputFile": "Content/assets/css/partition/alert.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/dashboard/authenticationmethod.css",
+    "inputFile": "Content/assets/css/dashboard/authenticationmethod.scss"
+  },
+  {
+    "outputFile": "Content/directives/ngdigitcode/ngdigitcode.css",
+    "inputFile": "Content/directives/ngdigitcode/ngdigitcode.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/partition/menu.css",
+    "inputFile": "Content/assets/css/partition/menu.scss"
+  },
+  {
+    "outputFile": "Content/assets/css/partition/scroll.css",
+    "inputFile": "Content/assets/css/partition/scroll.scss"
+  }
+]

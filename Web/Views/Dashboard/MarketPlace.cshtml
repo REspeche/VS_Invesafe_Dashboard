@@ -1,0 +1,106 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-my-investments" ng-controller="marketplaceController" ng-init="loadMarketPlace()">
+
+    <section class="col-md-6 section-title">
+        <h2>@Resource.Views.Dashboard.MarketPlace.title</h2>
+    </section>
+
+    <div class="col-md-12">
+        <div>
+            <p>El Canal de Comunicación Directa (CCD) es un canal que ponemos a disposición de todos los inversores para que puedas comprar o vender tu inversión de manera directa y sin intermediación en los precios por parte de la plataforma.</p>
+            <!--Section Message-->
+            <section ng-show="loadList">
+                <div class="alert alert-warning" role="alert" ng-show="showMessage.pending && !showMessage.validating && !showMessage.rejected">@Html.Raw(Resource.Messages.Info.statePending)</div>
+                <div class="alert alert-info" role="alert" ng-show="showMessage.validating && !showMessage.rejected">@Html.Raw(String.Format(Resource.Messages.Info.stateValidating, @CommonHelper.getParamCache().emailSupport))</div>
+                <div class="alert alert-danger" role="alert" ng-show="showMessage.rejected">@Html.Raw(Resource.Messages.Info.stateRejected)</div>
+            </section>
+        </div>
+
+        <div class="resumee mt-1">
+            <div class="card card-cascade mb-2">
+                <!--Naked Form-->
+                <div class="card-block pb-0">
+                    <div ng-hide="loadForm">@Resource.Common.loading</div>
+                    <form method="get" class="form-inline form-horizontal" id="frmFilter" ng-show="loadForm">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <select class="form-control" ng-model="filterForm.project"
+                                        ng-options="item.id as item.label for item in listProjects"
+                                        ng-change="isEditingForm()">
+                                    <option value="">@Resource.Common.optionSelect</option>
+                                </select>
+                                <label>@Resource.Views.Dashboard.MarketPlace.lblProject</label>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-control" ng-model="filterForm.typeProject"
+                                        ng-options="item.id as item.label for item in typeProject"
+                                        ng-change="isEditingForm()">
+                                    <option value="">@Resource.Common.optionSelect</option>
+                                </select>
+                                <label>@Resource.Views.Dashboard.MarketPlace.lblTypeProject</label>
+                            </div>
+                            <div class="col-md-8 pr-0">
+                                <button class="btn btn-info waves-effect waves-light float-right"
+                                        ng-click="filterExecute()"
+                                        ng-disabled="!editForm">
+                                    @Resource.Views.Dashboard.MarketPlace.btnFilter
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--Table-->
+            <div ng-hide="loadList">@Resource.Common.loading</div>
+            <table class="table table-bordered table-hover" ng-show="loadList">
+
+                <!--Table head-->
+                <thead class="mdb-color darken-3">
+                    <tr class="text-white">
+                        <th>@Resource.Views.Dashboard.MarketPlace.col1</th>
+                        <th>@Resource.Views.Dashboard.MarketPlace.col2</th>
+                        <th>@Resource.Views.Dashboard.MarketPlace.col3</th>
+                        <th>@Resource.Views.Dashboard.MarketPlace.col4</th>
+                        <th>@Resource.Views.Dashboard.MarketPlace.col5</th>
+                        <th>@Resource.Views.Dashboard.MarketPlace.col6</th>
+                        <th>@Resource.Views.Dashboard.MarketPlace.col7</th>
+                        <th class="fit text-center"><i class="fas fa-shopping-cart"></i></th>
+                    </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody ng-show="marketplace.length==0">
+                    <tr class="movements-table-blank-row">
+                        <td colspan="6" style="text-align: center !important;">@Resource.Views.Dashboard.MarketPlace.noData</td>
+                    </tr>
+                </tbody>
+                <tbody class="cell-button" ng-hide="marketplace.length==0">
+                    <tr ng-repeat="item in marketplace">
+                        <td>{{item.nameProject}}</td>
+                        <td>{{item.typeProject}}</td>
+                        <td>{{getDate(item.date)}}</td>
+                        <td>{{item.amount | number}}</td>
+                        <td>$ {{item.fraction | number : 2}} <i class="fas" ng-class="(item.fraction>item.actualFraction) ? 'fa-chevron-circle-up text-success' : ((item.fraction==item.actualFraction) ? 'fa-dot-circle text-info' : 'fa-chevron-circle-down text-danger')"></i></td>
+                        <td>$ {{item.actualFraction | number : 2}}</td>
+                        <td>$ {{item.amount * item.fraction | number : 2}}</td>
+                        <td class="fit">
+                            <button type="button" class="btn btn-warning btn-md btn-sale"
+                                    ng-click="getInvest(item)" ng-show="item.canBuy">
+                                @Resource.Views.Dashboard.MarketPlace.btnBuy
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <!--Table body-->
+
+            </table>
+            <!--Table-->
+        </div>
+    </div>
+
+</div>
+
+
+

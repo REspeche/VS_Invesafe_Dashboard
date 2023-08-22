@@ -1,0 +1,21 @@
+﻿.page-information {
+	.grey-separator {
+		border-bottom: 1px solid #ccc;
+		margin: 25px 0;
+	}
+	.doc-title {
+		font-size: 18px;
+		color: #493d3e !important;
+		a {
+			color: #2a191d;
+			i {
+				padding-right: 10px;
+				font-size: 25px;
+				color: #33b5e5;
+			}
+		}
+	}
+	.categorias h4 {
+		color: #33b5e5;
+	}
+}

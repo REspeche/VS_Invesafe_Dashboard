@@ -1,0 +1,162 @@
+﻿@using BusinessLayer.Helpers;
+
+<div class="container-fluid page-invest" ng-controller="marketplaceController" ng-init="loadBuyInvest()">
+
+    <section class="section section-title">
+        <div class="row">
+
+            <div class="col-xs-10 col-sm-8">
+                <h6>@Resource.Views.Investment.BuyInvest.title {{invest.namePro}}</h6>
+                <h2>@Resource.Views.Investment.BuyInvest.subTitle</h2>
+            </div>
+            <div class="col-xs-2 col-sm-4">
+                <div class="pull-right">
+                    <a ng-click="clickSlideAjax('marketplace')"><i class="fa fa-arrow-circle-left"></i>&nbsp;<span class="hidden-xs">@Resource.Views.Investment.BuyInvest.btnBack</span></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="col-md-12">
+        <div id="tradingOperation" ng-show="loadPage">
+
+            <div class="row">
+
+                <div class="col-md-12 nopadding-right-md">
+                    <div class="summary">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-center text-uppercase title">
+                                    <h5>@Resource.Views.Investment.BuyInvest.titInvestDetail</h5>
+                                </div>
+                                <div class="separador-20"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="flip-container">
+                                    <div class="row">
+                                        <div class="col-md-4 pr-0 flipperBlock borderRightSeparator">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.BuyInvest.lblNroFractions</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-2 col-md-8">
+                                                    <span class="value">{{invest.amountSin | number}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 pr-0 flipperBlock borderRightSeparator">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.BuyInvest.lblFractionValue</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span class="value">$ {{invest.fractionSin | number : 2}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 nopadding-left-md flipperBlock">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.BuyInvest.lblCapitalToInvest</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-offset-2 col-md-8">
+                                                    <span class="value text-success">$ {{invest.amountSin * invest.fractionSin | number : 2}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="separador-30"></div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="flip-container vertical">
+                                    <div class="row">
+                                        <div class="col-md-6 nopadding-right-md flipperBlock plusSignRightSeparator">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.BuyInvest.titTotalProfit</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span class="value">{{invest.profitability}}<span class="">%</span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 nopadding-left-md flipperBlock">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="title text-uppercase">@Resource.Views.Investment.BuyInvest.titTerm</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <span class="value">
+                                                        {{invest.timeLimit}}<span class=""> @Resource.Views.Investment.BuyInvest.lblMonth{{(invest.timeLimit==1)?'':'@Resource.Views.Investment.BuyInvest.lblMonth_S'}}</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="separador-16"></div>
+                                <hr>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" ng-model="agree" id="defaultCheckbox1">
+                                    <label class="form-check-label" for="defaultCheckbox1">
+                                        @Html.Raw(String.Format(Resource.Views.Investment.BuyInvest.chkAgree,CommonHelper.getStoragePath() + "documents/pro_{{invest.idPro}}-cad_4/contrato-mandato.pdf", CommonHelper.getStoragePath() + "documents/pro_{{invest.idPro}}-cad_4/contrato-inversion.pdf"))
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="separador-16"></div>
+                                <span class="hidden-xl-down aceptAgree">@Resource.Messages.Warning.aceptAgree</span>
+                                <button type="button" class="btn btn-info" data-locale="es"
+                                        ng-click="confirmBuyInvest()">
+                                    @Resource.Views.Investment.BuyInvest.btnConfirm
+                                </button>
+                                <div class="separador-20"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

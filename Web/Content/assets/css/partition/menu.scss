@@ -1,0 +1,113 @@
+﻿.navbar {
+	.nav-flex-icons {
+		padding-top: 0;
+	}
+	.button-collapse {
+		margin-top: 5px;
+	}
+}
+.user-box {
+	p {
+		margin-top: .3rem;
+	}
+}
+.white-skin {
+	.side-nav {
+		.collapsible {
+			margin-top: 16px;
+
+			li {
+				a {
+					color: #616161;
+					border-radius: 0;
+				}
+
+				a.collapsible-header.active {
+					color: #616161;
+					background-color: rgba(0, 0, 0, 0.1);
+
+					i.fa {
+						color: #616161;
+					}
+				}
+
+				a.collapsible-header.select {
+					color: #039be5;
+					background-color: rgba(3, 155, 229, 0.2);
+
+					i.fa {
+						color: #039be5;
+					}
+				}
+
+				a.active:not(.collapsible-header) {
+					background-color: #039be5;
+					color: #fff;
+
+					i.fa {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+.side-nav {
+	text-align: left;
+
+	.user-box {
+		padding: 20px 10px 0 20px;
+	}
+
+	ul.collapsible {
+		li {
+			padding-right: 0;
+			padding-left: 0;
+
+			a {
+				height: 50px;
+				padding-left: 15px;
+				margin-bottom: 0;
+				padding-top: 2px;
+
+				.fa {
+					color: #616161;
+				}
+
+				.fa:not(.rotate-icon) {
+					position: relative;
+					top: 2px;
+				}
+			}
+		}
+
+		.collapsible-body {
+			li {
+				padding-left: 0px;
+			}
+		}
+
+		a.collapsible-header.active + .collapsible-body {
+			border-left: 10px solid rgba(0, 0, 0, 0.1);
+		}
+
+		a.collapsible-header.select + .collapsible-body {
+			border-left: 10px solid rgba(3, 155, 229, 0.2);
+		}
+	}
+
+	.social {
+		position: fixed;
+		width: calc(100% - 40px);
+		margin-left: 18px;
+		border-top: 1px solid rgba(153, 153, 153, 0.298039);
+		border-bottom: none;
+		background-color: #F9F9F9;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.top-nav-collapse {
+		padding-top: 1px;
+		padding-bottom: 1px;
+	}
+}

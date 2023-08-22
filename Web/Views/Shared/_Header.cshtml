@@ -1,0 +1,188 @@
+﻿<!--Double navigation-->
+<header ng-hide="transitionPage">
+    <!-- Sidebar navigation -->
+    <ul id="slide-out" class="side-nav fixed scrollbar">
+
+        <!-- Logo -->
+        <li>
+            <a class="navbar-brand" href="/">
+                <img src="/content/assets/img/logo.png" class="logo">
+            </a>
+        </li>
+        <!--/. Logo -->
+
+        <!-- Side navigation links -->
+        <li>
+            <ul class="collapsible collapsible-accordion">
+                <li id="mnu_home">
+                    <a ng-click="clickSlideAjax('home')" class="waves-effect"><i class="fa fa-tachometer-alt"></i> @Resource.Views.Shared._Header.mnuDashboard</a>
+                </li>
+                <li id="mnu_myinvestments">
+                    <a ng-click="clickSlideAjax('myinvestments')" class="waves-effect"><i class="fa fa-database"></i> @Resource.Views.Shared._Header.mnuInvestments</a>
+                </li>
+                <li id="mnu_opportunities">
+                    <a ng-click="clickSlideAjax('opportunities')" class="waves-effect"><i class="fa fa-search"></i> @Resource.Views.Shared._Header.mnuOpportunities</a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect arrow-r"><i class="fa fa-university"></i> @Resource.Views.Shared._Header.mnuBankData<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="mnu_entryfunds">
+                                <a ng-click="clickSlideAjax('entryfunds')" class="waves-effect">@Resource.Views.Shared._Header.mnuEntryFunds</a>
+                            </li>
+                            <li id="mnu_bankactivity">
+                                <a ng-click="clickSlideAjax('bankactivity')" class="waves-effect">@Resource.Views.Shared._Header.mnuBankActivity</a>
+                            </li>
+                            <li id="mnu_bankaccounts">
+                                <a ng-click="clickSlideAjax('bankaccounts')" class="waves-effect">@Resource.Views.Shared._Header.mnuBankAccounts</a>
+                            </li>
+                            <li id="mnu_retirefunds">
+                                <a ng-click="clickSlideAjax('retirefunds')" class="waves-effect">@Resource.Views.Shared._Header.mnuRetireFunds</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="mnu_patrimonialsituation">
+                    <a ng-click="clickSlideAjax('patrimonialsituation')" class="waves-effect"><i class="fa fa-chart-line"></i> @Resource.Views.Shared._Header.mnuPatrimonialSituation</a>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect arrow-r"><i class="fa fa-user"></i> @Resource.Views.Shared._Header.mnuMyAccount<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="mnu_personaldata">
+                                <a ng-click="clickSlideAjax('personaldata')" class="waves-effect">@Resource.Views.Shared._Header.mnuPersonalData</a>
+                            </li>
+                            <li id="mnu_aditionaldata">
+                                <a ng-click="clickSlideAjax('aditionaldata')" class="waves-effect">@Resource.Views.Shared._Header.mnuAditionalData</a>
+                            </li>
+                            <li id="mnu_personaldocuments">
+                                <a ng-click="clickSlideAjax('personaldocuments')" class="waves-effect">@Resource.Views.Shared._Header.mnuPersonalDocuments</a>
+                            </li>
+                            <li id="mnu_typeaccount">
+                                <a ng-click="clickSlideAjax('typeaccount')" class="waves-effect">@Resource.Views.Shared._Header.mnuTypeAccount</a>
+                            </li>
+                            <li id="mnu_notifications">
+                                <a ng-click="clickSlideAjax('notifications')" class="waves-effect">@Resource.Views.Shared._Header.mnuNotifications</a>
+                            </li>
+                            <li id="mnu_changepassword">
+                                <a ng-click="clickSlideAjax('changepassword')" class="waves-effect">@Resource.Views.Shared._Header.mnuChangePassword</a>
+                            </li>
+                            <li id="mnu_authenticationmethod">
+                                <a ng-click="clickSlideAjax('authenticationmethod')" class="waves-effect">@Resource.Views.Shared._Header.mnuAuthenticationMethod</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a class="collapsible-header waves-effect arrow-r"><i class="fa fa-question-circle"></i> @Resource.Views.Shared._Header.mnuInfo<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li id="mnu_basicinformation">
+                                <a ng-click="clickSlideAjax('basicinformation')" class="waves-effect">@Resource.Views.Shared._Header.mnuBasicInformation</a>
+                            </li>
+                            <li id="mnu_useconditions">
+                                <a ng-click="clickSlideAjax('useconditions')" class="waves-effect">@Resource.Views.Shared._Header.mnuUseConditions</a>
+                            </li>
+                            <li id="mnu_privacypolicy">
+                                <a ng-click="clickSlideAjax('privacypolicy')" class="waves-effect">@Resource.Views.Shared._Header.mnuPrivacyPolicy</a>
+                            </li>
+                            <li id="mnu_invesafereports">
+                                <a ng-click="clickSlideAjax('invesafereports')" class="waves-effect">@Resource.Views.Shared._Header.mnuInvesafeReports</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="mnu_support">
+                    <a ng-click="clickSlideAjax('support')" class="waves-effect"><i class="fa fa-question-circle"></i> @Resource.Views.Shared._Header.mnuSupport</a>
+                </li>
+                <li>
+                    <a ng-click="closeSession()" title="Cerrar sesión" data-toggle="tooltip" data-placement="right" class="waves-effect"><i class="fa fa-power-off"></i> @Resource.Views.Shared._Header.mnuExit</a>
+                </li>
+            </ul>
+        </li>
+        <!--/. Side navigation links -->
+
+        <!-- Social -->
+        <li>
+            <ul class="social">
+                <li><a href="https://www.facebook.com/invesafe/" class="icons-sm fb-ic" target="_blank"><i class="fab fa-facebook-f"> </i></a></li>
+                <li><a href="https://www.linkedin.com/company/invesafe" class="icons-sm pin-ic" target="_blank"><i class="fab fa-linkedin-in"> </i></a></li>
+                <li><a href="https://twitter.com/InvesafeArg" class="icons-sm tw-ic" target="_blank"><i class="fab fa-twitter"> </i></a></li>
+                <li><a href="https://plus.google.com/103120093788462512241" class="icons-sm gplus-ic" target="_blank"><i class="fab fa-google-plus-g"> </i></a></li>
+            </ul>
+        </li>
+        <!--/. Social -->
+
+    </ul>
+    <!--/. Sidebar navigation -->
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-dark scrolling-navbar double-nav">
+
+        <!-- SideNav slide-out button -->
+        <div class="float-left">
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+        </div>
+
+        <!-- Breadcrumb-->
+        <ol class="breadcrumb hidden-lg-down">
+            <li class="breadcrumb-item active"><a ng-click="clickSlideAjax('personaldata')" title="Mi Cuenta" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-user"></i> {{session.fullname}}</a>
+                </li>
+            <li class="breadcrumb-item" ng-class="session.active ? 'success-text' : 'danger-text'"><span ng-if="!session.active">@Resource.Views.Shared._Header.lblNo </span>@Resource.Views.Shared._Header.lblActived</li>
+        </ol>
+
+        <div class="float-left saldo">
+            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+                <li class="nav-item">
+                    <a ng-click="clickSlideAjax('bankactivity')" class="nav-link waves-effect waves-light" title="@Resource.Views.Shared._Header.lblMovAccount" data-toggle="tooltip" data-placement="bottom"><span class="hidden-sm-down">@Resource.Views.Shared._Header.lblInvested:</span> <i class="fa fa-dollar-sign"></i> {{dataHeader.balanceamount | number : 0}}</a>
+                </li>
+                <li class="border border-light rounded nav-item ripple-parent hidden-sm-down" ng-show="dataHeader.balanceamount">
+                    <a class="nav-link waves-effect waves-light" ng-click="clickSlideAjax('opportunities')" title="@Resource.Views.Shared._Header.lblInvestSomeProject" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-angle-left"></i> @Resource.Views.Shared._Header.lblInvest</a>
+                </li>
+                <li class="nav-item">
+                    <a ng-click="clickSlideAjax('bankactivity')" class="nav-link waves-effect waves-light" title="@Resource.Views.Shared._Header.lblMovAccount" data-toggle="tooltip" data-placement="bottom"><span class="hidden-sm-down">@Resource.Views.Shared._Header.lblGain:</span> <i class="fa fa-dollar-sign"></i> {{dataHeader.gainamount | number : 0}}</a>
+                </li>
+                <li class="border border-light rounded nav-item ripple-parent hidden-sm-down" ng-show="dataHeader.balanceamount">
+                    <a class="nav-link waves-effect waves-light" ng-click="clickSlideAjax('retirefunds')" title="@Resource.Views.Shared._Header.lblWithdrawProfit" data-toggle="tooltip" data-placement="bottom"><i class="fas fa-angle-left"></i> @Resource.Views.Shared._Header.lblWithdraw</a>
+                </li>
+                <li class="nav-item" ng-hide="showAuthenticationMethod || dataHeader.authenticationMethod==0">
+                    <a ng-click="clickSlideAjax('authenticationmethod')" class="nav-link waves-effect waves-light" title="@Resource.Views.Shared._Header.mnuAuthenticationMethod" data-toggle="tooltip" data-placement="bottom"><span class="hidden-sm-down">@Resource.Views.Shared._Header.lblAuthentication <span class="badge badge-success ml-1" ng-show="dataHeader.authenticationMethod==1">@Resource.Views.Shared._Header.lbl2Factor</span><span class="badge badge-warning ml-1" ng-show="dataHeader.authenticationMethod==2">@Resource.Views.Shared._Header.lblSms</span></span></a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Navbar links-->
+        <ul class="nav navbar-nav nav-flex-icons ml-auto">
+            <li class="nav-item">
+                <a href="#" ng-click="changeLanguage('es')" class="nav-link mr-2 waves-effect waves-light" title="" ng-show="'en' == '@Common.meta_lang'">
+                    <img src="/content/assets/img/flags/es.png">
+                </a>
+                <a href="#" ng-click="changeLanguage('en')" class="nav-link mr-2 waves-effect waves-light" title="" ng-show="'es' == '@Common.meta_lang'">
+                    <img src="/content/assets/img/flags/en.png">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-click="goToSite()" title="Ir al Sitio Principal" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-home fa-1x"></i> <span class="hidden-sm-down">@Resource.Views.Shared._Header.lblSite</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-click="clickSlideAjax('support')" title="@Resource.Views.Shared._Header.lblHaveAProblem" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-question-circle fa-1x"></i> <span class="hidden-sm-down">@Resource.Views.Shared._Header.mnuSupport</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuSettings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog fa-1x"></i></a>
+                <div class="dropdown-menu dropdown-primary dropdown-menu-right" aria-labelledby="navbarDropdownMenuSettings">
+                    <a class="dropdown-item" ng-click="clickSlideAjax('personaldata')">@Resource.Views.Shared._Header.mnuMyAccount</a>
+                    <a class="dropdown-item" ng-click="clickSlideAjax('notifications')">@Resource.Views.Shared._Header.mnuNotifications</a>
+                    <a class="dropdown-item" ng-click="clickSlideAjax('changepassword')">@Resource.Views.Shared._Header.mnuChangePassword</a>
+                    <a class="dropdown-item" ng-click="clickSlideAjax('activeaccount')" ng-show="showActiveAccount">@Resource.Views.Shared._Header.mnuActiveAccount</a>
+                </div>
+            </li>
+            <li class="border border-light rounded nav-item ripple-parent">
+                <a class="nav-link waves-effect waves-light" ng-click="closeSessionWithConfirm()" title="@Resource.Views.Shared._Header.mnuCloseSession" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-power-off fa-1x"></i> <span class="hidden-sm-down">@Resource.Views.Shared._Header.mnuExit</span></a>
+            </li>
+        </ul>
+        <!--/Navbar links-->
+
+    </nav>
+    <!-- /.Navbar -->
+
+</header>
+<!--/.Double navigation-->

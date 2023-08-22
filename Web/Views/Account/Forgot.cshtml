@@ -1,0 +1,45 @@
+﻿<div class="container" ng-controller="loginController" ng-init="loadLogin()">
+    <div class="row">
+        <div class="col-md-6 col-lg-5 login-form mx-auto float-none">
+
+            <form name="frmPassword" ng-submit="submitSendResetMail()" novalidate autocomplete="off">
+                <span class="hidden-xl-down formIncomplete">@Resource.Messages.Warning.formIncomplete</span>
+                <!--Form with header-->
+                <div class="card">
+
+                    <div class="card-block">
+
+                        <!--Header-->
+                        <div class="form-header">
+                            <h3><i class="fa fa-user-secret"></i> @Resource.Views.Account.Forgot.title</h3>
+                        </div>
+
+                        <!--Body-->
+                        <div class="md-form">
+                            <i class="fa fa-envelope prefix"></i>
+                            <input type="password" name="fake_password" style="display:none" aria-hidden="true">
+                            <input type="email" class="form-control validate" id="txtEmailP" name="txtEmailP"
+                                   ng-model="dataP.email" maxlength="100" required>
+                            <label for="txtEmail">@Resource.Views.Account.Forgot.lblInputEmail</label>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-info">@Resource.Views.Account.Forgot.btnContinue <i class="fa fa-mail-forward ml-1"></i></button>
+                        </div>
+
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer text-center">
+                        <div class="options text-center text-md-right mt-1">
+                            <p>@Html.Raw(String.Format(Resource.Views.Account.Forgot.lnkSignupForgot, "<a class=\"blue-text\" ng-click=\"goToLogin()\">"))</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!--/Form with header-->
+            </form>
+
+        </div>
+    </div>
+</div>

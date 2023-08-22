@@ -1,0 +1,29 @@
+﻿img.logo {
+  width: 132px; }
+
+/* Modals */
+.modal-dialog.cascading-modal {
+  margin-top: 10%; }
+  .modal-dialog.cascading-modal .form-header .close {
+    margin-right: 2.5rem; }
+
+.modal-content .close {
+  position: absolute;
+  right: 15px; }
+
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0; }
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #fff;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .75; }
+  .close :focus, .close :hover {
+    color: #fff;
+    opacity: 1; }

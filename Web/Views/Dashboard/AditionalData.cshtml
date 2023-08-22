@@ -1,0 +1,74 @@
+﻿<div class="container-fluid page-aditional-data" ng-controller="aditionaldataController" ng-init="loadAditionalData()">
+
+    <section class="section section-title">
+        <h6>@Resource.Views.Dashboard.AditionalData.title</h6>
+        <h2>@Resource.Views.Dashboard.AditionalData.subTitle</h2>
+    </section>
+
+    <div class="col-md-12">
+        <div>
+            <p>@Resource.Views.Dashboard.AditionalData.text</p>
+        </div>
+
+        <div ng-hide="loadForm">@Resource.Common.loading</div>
+        <form name="frmAditionalData" ng-submit="submitAditionalData()" novalidate autocomplete="off" ng-show="loadForm">
+            <span class="hidden-xl-down formIncomplete">@Resource.Messages.Warning.formIncomplete</span>
+            <!--Header-->
+            <div class="card card-cascade mb-2">
+                <!--Naked Form-->
+                <div class="card-block">
+
+                    <!--Header-->
+                    <div class="text-left">
+                        <h4 class="font-weight-bold">@Resource.Views.Dashboard.AditionalData.titAdditionalData</h4>
+                        <hr class="mt-1 mb-2">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <select class="form-control" ng-model="aditionalData.gender"
+                                    ng-options="item.id as item.label for item in genderList"
+                                    ng-change="isEditingForm()"></select>
+                            <label>@Resource.Views.Dashboard.AditionalData.inpGender</label>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" ng-model="aditionalData.civilState"
+                                    ng-options="item.id as item.label for item in civilStateList"
+                                    ng-change="isEditingForm()"></select>
+                            <label>@Resource.Views.Dashboard.AditionalData.inpMaritalStatus</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="md-form form-sm">
+                                <input type="text" class="form-control validate" id="txtProfession" name="txtProfession"
+                                       ng-model="aditionalData.profession" minlength="2" maxlength="50"
+                                       ng-change="isEditingForm()">
+                                <label for="txtProfession">@Resource.Views.Dashboard.AditionalData.inpProfession</label>
+                                <span class="mdl-textfield__error" ng-show="frmAditionalData.txtProfession.$touched && frmAditionalData.txtProfession.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmAditionalData.txtProfession.$touched && frmAditionalData.txtProfession.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 50)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="md-form form-sm">
+                                <input type="number" class="form-control validate" id="txtIncome" name="txtIncome"
+                                       ng-model="aditionalData.annualIncome" minlength="1" maxlength="20"
+                                       ng-change="isEditingForm()">
+                                <label for="txtIncome">@Resource.Views.Dashboard.AditionalData.inpAnnualIncome</label>
+                                <span class="mdl-textfield__error" ng-show="frmAditionalData.txtIncome.$touched && frmAditionalData.txtIncome.$error.minlength">@String.Format(Resource.Messages.Info.errorNminlength, 2)</span>
+                                <span class="mdl-textfield__error" ng-show="frmAditionalData.txtIncome.$touched && frmAditionalData.txtIncome.$error.maxlength">@String.Format(Resource.Messages.Info.errorNmaxlength, 50)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-info waves-effect waves-light"
+                                ng-disabled="!editForm">@Resource.Views.Dashboard.AditionalData.btnSave <i class="fa fa-save ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
